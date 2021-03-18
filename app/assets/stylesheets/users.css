@@ -1,1 +1,99 @@
-/* No CSS *//*# sourceMappingURL=users.css.map */
+
+.user-style {
+  margin: 0;
+  height: 100vh;
+  width: 100vw;
+  -webkit-animation-name: kf-img;
+          animation-name: kf-img;
+  -webkit-animation-duration: 5s;
+          animation-duration: 5s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  background-size: cover;
+  color: white;
+}
+
+.user-style .user-sign {
+  color: white;
+  font-size: 70px;
+  text-align: center;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  padding: 20px 0;
+}
+
+.user-style .user-wrap {
+  text-align: center;
+}
+
+.user-style .user-wrap .error-message {
+  font-size: large;
+}
+
+.user-style .user-wrap .user-field {
+  padding: 30px 0;
+  font-size: 40px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  color: white;
+}
+
+.user-style .user-wrap .form-label {
+  font-size: 40px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.user-style .user-wrap .text-field {
+  font-size: 30px;
+  height: 50px;
+  width: 500px;
+  margin-top: 10px;
+  background-color: rgba(99, 97, 97, 0.1);
+  border: none;
+  border-radius: 3px;
+  color: white;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.user-style .user-wrap .user-actions .user-btn {
+  height: 50px;
+  width: 150px;
+  font-size: 20px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+@-webkit-keyframes kf-img {
+  0% {
+    background-image: url(/assets/signup.jpg);
+    opacity: 0.9;
+  }
+  33% {
+    opacity: 1;
+  }
+  66% {
+    background-image: url(/assets/signup.jpg);
+    opacity: 0.9;
+  }
+  100% {
+    background-image: url(/assets/signup.jpg);
+    opacity: 1;
+  }
+}
+
+@keyframes kf-img {
+  0% {
+    background-image: url(/assets/signup.jpg);
+    opacity: 0.9;
+  }
+  33% {
+    opacity: 1;
+  }
+  66% {
+    background-image: url(/assets/signup.jpg);
+    opacity: 0.9;
+  }
+  100% {
+    background-image: url(/assets/signup.jpg);
+    opacity: 1;
+  }
+}
+/*# sourceMappingURL=users.css.map */
+
