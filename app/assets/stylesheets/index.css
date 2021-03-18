@@ -687,8 +687,8 @@ a {
     opacity: 0;
   }
   100% {
-    -webkit-transform: translate(-50%, 50%);
-            transform: translate(-50%, 50%);
+    -webkit-transform: translate(-50%, 80%);
+            transform: translate(-50%, 80%);
     opacity: 1;
   }
 }
@@ -700,8 +700,8 @@ a {
     opacity: 0;
   }
   100% {
-    -webkit-transform: translate(-50%, 50%);
-            transform: translate(-50%, 50%);
+    -webkit-transform: translate(-50%, 80%);
+            transform: translate(-50%, 80%);
     opacity: 1;
   }
 }

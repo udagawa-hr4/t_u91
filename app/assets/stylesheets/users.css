@@ -1,8 +1,8 @@
-
 .user-style {
   margin: 0;
   height: 100vh;
   width: 100vw;
+  background-image: url(/assets/signup.jpg);
   -webkit-animation-name: kf-img;
           animation-name: kf-img;
   -webkit-animation-duration: 5s;
@@ -62,38 +62,25 @@
 
 @-webkit-keyframes kf-img {
   0% {
-    background-image: url(/assets/signup.jpg);
-    opacity: 0.9;
-  }
-  33% {
     opacity: 1;
   }
-  66% {
-    background-image: url(/assets/signup.jpg);
+  50% {
     opacity: 0.9;
   }
   100% {
-    background-image: url(/assets/signup.jpg);
     opacity: 1;
   }
 }
 
 @keyframes kf-img {
   0% {
-    background-image: url(/assets/signup.jpg);
-    opacity: 0.9;
-  }
-  33% {
     opacity: 1;
   }
-  66% {
-    background-image: url(/assets/signup.jpg);
+  50% {
     opacity: 0.9;
   }
   100% {
-    background-image: url(/assets/signup.jpg);
     opacity: 1;
   }
 }
 /*# sourceMappingURL=users.css.map */
-
