@@ -13,12 +13,16 @@
  <span class="nav-mypage"></span>
  <span class="nav-search"></span>
    <nav class="top-nav">
-    <a href="" class="top-nav_left"><span class="char-sub">S</span><span class="char-sub">i</span><span class="char-sub">g</span><span class="char-sub">n</span><span class="char-sub">&nbsp</span><span class="char-sub">u</span><span class="char-sub">p</span></a>
-    <a href="" class="top-nav_right"><span class="char-sub">S</span><span class="char-sub">i</span><span class="char-sub">g</span><span class="char-sub">n</span><span class="char-sub">&nbsp</span><span class="char-sub">i</span><span class="char-sub">n</span></a>
+    <%= link_to  new_user_registration_path, class: "top-nav_left" do%>
+     <span class="char-sub">S</span><span class="char-sub">i</span><span class="char-sub">g</span><span class="char-sub">n</span><span class="char-sub">&nbsp</span><span class="char-sub">u</span><span class="char-sub">p</span>
+     <% end %>
+    <%= link_to  new_user_session_path, class: "top-nav_right" do%><span class="char-sub">L</span><span class="char-sub">o</span><span class="char-sub">g</span><span class="char-sub">&nbsp</span><span class="char-sub">i</span><span class="char-sub">n</span>
+    <% end  %>
    </nav>
    <nav class= "bottom-nav">
     <a href="" class="bottom-nav_left"><span class="char-sub">M</span><span class="char-sub">y</span><span class="char-sub">&nbsp</span><span class="char-sub">p</span><span class="char-sub">a</span><span class="char-sub">g</span><span class="char-sub">e</span></a>
-    <a href="" class="bottom-nav_right"><span class="char-sub">S</span><span class="char-sub">e</span><span class="char-sub">a</span><span class="char-sub">r</span><span class="char-sub">c</span><span class="char-sub">h</span></a>
+    <%= link_to tweets_posts_path,class:"bottom-nav_right" do%><span class="char-sub">S</span><span class="char-sub">e</span><span class="char-sub">a</span><span class="char-sub">r</span><span class="char-sub">c</span><span class="char-sub">h</span>
+    <% end %>
    </nav>
    <p class="main-name"><span class="char">J</span><span class="char">O</span><span class="char">B</span><span class="char">&nbsp</span><span class="char">S</span><span class="char">T</span><span class="char">A</span><span class="char">R</span><span class="char">T</span></p>
    <p class="sub-name">君の履歴書をOneRank上へ</p>
