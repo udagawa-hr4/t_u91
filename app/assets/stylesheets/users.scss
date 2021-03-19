@@ -3,6 +3,7 @@
   margin: 0;
   height: 100%;
   width: 100vw;
+  background-image: url(/assets/signup.jpg);
   animation-name: kf-img;
   animation-duration: 5s;
   animation-iteration-count: infinite;
@@ -56,19 +57,21 @@
 }
 @keyframes kf-img{
   0%{
-    background-image: url(/assets/laptop-5842509_1280.jpg);
+
+    // background-image: url(/assets/signup.jpg);
+    // opacity: 0.9;
     opacity: 1;
   }
-  33%{
-    background-image: url(/assets/laptop-5842509_1280.jpg);
-    opacity: 0.9;
-  }
-  66%{
-    background-image: url(/assets/portrait-1324072_1280.jpg);
+  // 33%{
+  //   opacity: 1;
+  // }
+  50%{
+    // background-image: url(/assets/signup.jpg);
     opacity: 0.9;
   }
   100%{
-    background-image: url(/assets/laptop-5842509_1280.jpg);
+    // background-image: url(/assets/signup.jpg);
+
     opacity: 1;
   }
 }
