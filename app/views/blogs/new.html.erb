@@ -1,0 +1,27 @@
+<div class="new-blog">
+  <h1 class="new-title">Write a diary</h1>
+  <%= form_with(model: @blog, local: true) do |form| %>
+
+    <div class="blog-title">
+      <%= form.label :title, class:"label-title" %>
+      <%= form.text_field :title, class:"field-title" %>
+    </div>
+
+      <div class="blog-time">
+      <%= form.label :start_time, class:"label-time" %>
+      <%= form.datetime_select :start_time, class:"field-time" %>
+    </div>
+
+    <div class="blog-content">
+      <%= form.label :content, class:"label-content" %>
+      <%= form.text_field :content, class:"field-content" %>
+    </div>
+
+
+    <div class="blog-submit">
+      <%= form.submit%>
+    </div>
+
+  <% end %>
+
+</div>

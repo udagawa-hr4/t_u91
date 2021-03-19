@@ -1,6 +1,6 @@
 .user-style {
   margin: 0;
-  height: 100vh;
+  height: 100%;
   width: 100vw;
   background-image: url(/assets/signup.jpg);
   -webkit-animation-name: kf-img;
@@ -62,24 +62,14 @@
 
 @-webkit-keyframes kf-img {
   0% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0.9;
-  }
-  100% {
-    opacity: 1;
-  }
-}
 
-@keyframes kf-img {
-  0% {
     opacity: 1;
   }
   50% {
     opacity: 0.9;
   }
   100% {
+
     opacity: 1;
   }
 }

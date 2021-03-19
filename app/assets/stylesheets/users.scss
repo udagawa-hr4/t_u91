@@ -1,7 +1,7 @@
 // 新規登録画面
 .user-style {
   margin: 0;
-  height: 100vh;
+  height: 100%;
   width: 100vw;
   background-image: url(/assets/signup.jpg);
   animation-name: kf-img;
@@ -57,6 +57,7 @@
 }
 @keyframes kf-img{
   0%{
+
     // background-image: url(/assets/signup.jpg);
     // opacity: 0.9;
     opacity: 1;
@@ -70,6 +71,7 @@
   }
   100%{
     // background-image: url(/assets/signup.jpg);
+
     opacity: 1;
   }
 }
