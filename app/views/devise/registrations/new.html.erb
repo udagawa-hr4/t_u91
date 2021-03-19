@@ -7,6 +7,11 @@
       </div>
 
       <div class="user-field">
+        <%= f.label :nickname, class: "form-label" %><br />
+        <%= f.text_field :nickname, autocomplete: "nickname", class:"text-field" %>
+      </div>
+
+      <div class="user-field">
         <%= f.label :email, class: "form-label" %><br />
         <%= f.email_field :email, autofocus: true, autocomplete: "email", class:"text-field" %>
       </div>

@@ -1,3 +1,124 @@
-// Place all the styles related to the blogs controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.calendar-all {
+  height: 100vh;
+  width: 100vw;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  padding: 10px;
+  background-size: cover;
+  animation-name: bg-img;
+  animation-duration: 15s;
+  animation-iteration-count: infinite;
+  
+  & .calendar-title {
+      font-size: 30px;
+      font-family: Georgia, 'Times New Roman', Times, serif;
+      padding: 20px;
+      text-align: center;
+      &:nth-child(1){
+        font-size: 40px;
+        margin-left: 30px;
+      }
+  }
+
+
+    & .next-month {
+      background-color: #5bffa678;
+    }
+
+  }
+.simple-calendar {
+  & .today {
+    background-color: #c0fff1ab;
+  }
+
+  & .calendar-heading{
+    text-align: center;
+  }
+
+  & th {
+    padding: 6px;
+    border-bottom: 4px double black;
+    border-collapse: collapse;
+    border-left: 4px double black;
+    border-right: 4px double black;
+    border-top: 4px double #333333;
+    box-sizing: border-box;
+    text-align: left;
+  }
+
+  & td {
+    padding: 6px;
+    border-bottom: 2px double black;
+    border-collapse: collapse;
+    border-left: 2px double black;
+    border-right: 2px double black;
+    border-top: 2px double #333333;
+    box-sizing: border-box;
+    text-align: left;
+    padding: 6px;
+    vertical-align: top;
+    width: 14%;
+    border: 2px double black;
+    border-top-color: black;
+    border-top-style: double;
+    border-top-width: 4px;
+    border-right-color: black;
+    border-right-style: double;
+    border-right-width: 4px;
+    border-bottom-color: black;
+    border-bottom-style: double;
+    border-bottom-width: 4px;
+    border-left-color: black;
+    border-left-style: double;
+    border-left-width: 4px;
+  }
+
+  & table {
+    margin-top: 20px;
+    margin: 20px auto 0;
+    width: 90vw;
+    height: 80vh;
+  }
+}
+
+// カレンダー投稿
+.new-blog {
+  height: 100vh;
+  width: 100vw;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  padding: 10px;
+  background-image: url(/assets/calendar.jpeg);
+  background-size: cover;
+  text-align: center;
+  & .new-title {
+    font-size: 50px;
+    padding: 40px 0 80px;
+  }
+  & .blog-title, .blog-time, .blog-content, #blog_start_time_1i {
+    font-size: 30px;
+  }
+  & .field-title, .field-time, .field-content {
+    height: 50px;
+    width: 800px;
+  }
+}
+
+.diary-nik {
+  position: absolute;
+  right: 0;
+  top: 14.5vh;
+}
+
+@keyframes bg-img{
+  0%{
+    background-image: url(/assets/apple.jpeg);
+  }
+  33%{
+    background-image: url(/assets/inside-1499607_1280.jpg);
+  }
+  66%{
+    background-image: url(/assets/laptop-5842509_1280.jpg);
+  }
+  100%{
+    background-image: url(/assets/apple.jpeg);
+  }
+}

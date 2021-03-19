@@ -1,6 +1,6 @@
 .user-style {
   margin: 0;
-  height: 100vh;
+  height: 100%;
   width: 100vw;
   -webkit-animation-name: kf-img;
           animation-name: kf-img;
@@ -61,36 +61,38 @@
 
 @-webkit-keyframes kf-img {
   0% {
-    background-image: url(/assets/signup.jpg);
-    opacity: 0.9;
-  }
-  33% {
+    background-image: url(/assets/laptop-5842509_1280.jpg);
     opacity: 1;
   }
+  33% {
+    background-image: url(/assets/laptop-5842509_1280.jpg);
+    opacity: 0.9;
+  }
   66% {
-    background-image: url(/assets/signup.jpg);
+    background-image: url(/assets/portrait-1324072_1280.jpg);
     opacity: 0.9;
   }
   100% {
-    background-image: url(/assets/signup.jpg);
+    background-image: url(/assets/laptop-5842509_1280.jpg);
     opacity: 1;
   }
 }
 
 @keyframes kf-img {
   0% {
-    background-image: url(/assets/signup.jpg);
-    opacity: 0.9;
-  }
-  33% {
+    background-image: url(/assets/laptop-5842509_1280.jpg);
     opacity: 1;
   }
+  33% {
+    background-image: url(/assets/laptop-5842509_1280.jpg);
+    opacity: 0.9;
+  }
   66% {
-    background-image: url(/assets/signup.jpg);
+    background-image: url(/assets/portrait-1324072_1280.jpg);
     opacity: 0.9;
   }
   100% {
-    background-image: url(/assets/signup.jpg);
+    background-image: url(/assets/laptop-5842509_1280.jpg);
     opacity: 1;
   }
 }
