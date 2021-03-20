@@ -36,9 +36,9 @@ a{
   width: 100vw;
   height: 100vh;
   background-size: cover;
-  // animation-name: bg-img;
-  // animation-iteration-count: infinite;
-  // animation-duration: 20s;
+  animation-name: bg-img;
+  animation-iteration-count: infinite;
+  animation-duration: 20s;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -409,6 +409,56 @@ a{
   20%{
     color: black;
     transform: scale(1);
+  }
+}
+@keyframes bg-img{
+  0%{
+    background-image: url(/assets/notebook-1280538_1280.jpg);
+  }
+  33%{
+    background-image: url(/assets/hennsyuu.jpg);
+  }
+  66%{
+    background-image: url(/assets/laptop-1478822_1280.jpg);
+  }
+ 
+  100%{
+    background-image: url(/assets/notebook-1280538_1280.jpg);
+  }
+}
+.fusen{
+  position: relative;
+  margin: 10px 0 0 10px;
+  width: 45%;
+  height: 13%;
+  background: linear-gradient(45deg, rgb(54, 53, 53), #3d3932 30%, #382d2a 60%, #2c3042);
+  // border-top-left-radius: 20px;
+  // border-bottom-left-radius: 20px;
+  opacity: 1;
+  color: white;
+  font-size: 20px;
+  font-weight: 600;
+  box-shadow: 5px 5px 5px black;
+  & .test-p{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    text-shadow: 3px 3px 2px black;
+  }
+  &::before{
+    content:"";
+    width: 20px;
+    height: 20px;
+    border-radius: 10px;
+    background-color: white;
+    display: inline-block;
+    position: absolute;
+    z-index: 3;
+    top: 50%;
+    left: 10%;
+    transform: translate(-50%,-50%);
+    box-shadow: 3px 3px 2px black inset;
   }
 }
 
