@@ -78,7 +78,7 @@ a{
     animation-fill-mode: both;
     
   }
-  & .nav-signin{
+  & .bg-signin{
     content: "";
     position: absolute;
     display: block;
@@ -95,11 +95,11 @@ a{
     
   }  
   &.menu-open-rt{
-    & .nav-signin{
+    & .bg-signin{
     opacity: 1;
     }
   }
-  & .nav-signup{
+  & .bg-signup{
     content: "";
     position: absolute;
     display: block;
@@ -115,11 +115,11 @@ a{
     z-index: -1;
   }
   &.menu-open-lt{
-    & .nav-signup{
+    & .bg-signup{
       opacity: 1;
     }
   }
-  & .nav-mypage{
+  & .bg-mypage{
     content: "";
     position: absolute;
     display: block;
@@ -135,11 +135,11 @@ a{
     z-index: -1;
   }
   &.menu-open-lb{
-    & .nav-mypage{
+    & .bg-mypage{
       opacity: 1;
     }
   }
-  & .nav-search{
+  & .bg-search{
     content: "";
     position: absolute;
     display: block;
@@ -155,7 +155,7 @@ a{
     z-index: -1;
   }
   &.menu-open-rb{
-    & .nav-search{
+    & .bg-search{
       opacity: 1;
     }
   }
@@ -227,7 +227,7 @@ a{
     &:hover{
       & .char-sub{
         display: inline-block;
-        @for $i from 1 through 10 {
+        @for $i from 1 through 15 {
         &:nth-child(#{$i}) {
             animation-delay: $i * 0.06s;
           }

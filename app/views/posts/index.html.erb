@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+<!-- 各ページで個々のcssを読み込めるように追記 -->
   <% content_for :css do %>
     <%= stylesheet_link_tag 'index' %>
   <% end %>
@@ -12,22 +12,41 @@
 </head>
 <body>
  <div id="global-container">
- <span class="nav-signup"></span>
- <span class="nav-signin"></span>
- <span class="nav-mypage"></span>
- <span class="nav-search"></span>
-   <nav class="top-nav">
-    <%= link_to  new_user_registration_path, class: "top-nav_left" do%>
-     <span class="char-sub">S</span><span class="char-sub">i</span><span class="char-sub">g</span><span class="char-sub">n</span><span class="char-sub">&nbsp</span><span class="char-sub">u</span><span class="char-sub">p</span>
-     <% end %>
-    <%= link_to  new_user_session_path, class: "top-nav_right" do%><span class="char-sub">L</span><span class="char-sub">o</span><span class="char-sub">g</span><span class="char-sub">&nbsp</span><span class="char-sub">i</span><span class="char-sub">n</span>
-    <% end  %>
-   </nav>
-   <nav class= "bottom-nav">
-    <a href="" class="bottom-nav_left"><span class="char-sub">M</span><span class="char-sub">y</span><span class="char-sub">&nbsp</span><span class="char-sub">p</span><span class="char-sub">a</span><span class="char-sub">g</span><span class="char-sub">e</span></a>
-    <%= link_to tweets_posts_path,class:"bottom-nav_right" do%><span class="char-sub">S</span><span class="char-sub">e</span><span class="char-sub">a</span><span class="char-sub">r</span><span class="char-sub">c</span><span class="char-sub">h</span>
-    <% end %>
-   </nav>
+  <!-- ボタンにhoverしたときに表示される擬似要素 -->
+ <span class="bg-signup"></span>
+ <span class="bg-signin"></span>
+ <span class="bg-mypage"></span>
+ <span class="bg-search"></span>
+ <!-- sign inしているときのボタン -->
+     <% if user_signed_in? %> 
+        <nav class="top-nav">
+          <%= link_to  new_user_registration_path, class: "top-nav_left" do%>
+          <span class="char-sub">C</span><span class="char-sub">a</span><span class="char-sub">l</span><span class="char-sub">e</span><span class="char-sub">n</span><span class="char-sub">d</span><span class="char-sub">a</span><span class="char-sub">r</span>
+          <% end %>
+          <%= link_to  new_user_session_path, class: "top-nav_right" do%><span class="char-sub">L</span><span class="char-sub">o</span><span class="char-sub">g</span><span class="char-sub">&nbsp</span><span class="char-sub">o</span><span class="char-sub">u</span><span class="char-sub">t</span>
+          <% end  %>
+        </nav>
+        <nav class= "bottom-nav">
+          <a href="" class="bottom-nav_left"><span class="char-sub">M</span><span class="char-sub">y</span><span class="char-sub">&nbsp</span><span class="char-sub">p</span><span class="char-sub">a</span><span class="char-sub">g</span><span class="char-sub">e</span></a>
+          <%= link_to tweets_posts_path,class:"bottom-nav_right" do%><span class="char-sub">T</span><span class="char-sub">w</span><span class="char-sub">e</span><span class="char-sub">e</span><span class="char-sub">t</span><span class="char-sub">s</span><span class="char-sub">&nbsp</span><span class="char-sub">l</span><span class="char-sub">i</span><span class="char-sub">s</span><span class="char-sub">t</span>
+          <% end %>
+        </nav>
+<!-- sign outしているときのボタン -->        
+     <% else %>
+        <nav class="top-nav">
+          <%= link_to  new_user_registration_path, class: "top-nav_left" do%>
+          <span class="char-sub">S</span><span class="char-sub">i</span><span class="char-sub">g</span><span class="char-sub">n</span><span class="char-sub">&nbsp</span><span class="char-sub">u</span><span class="char-sub">p</span>
+          <% end %>
+          <%= link_to  new_user_session_path, class: "top-nav_right" do%><span class="char-sub">L</span><span class="char-sub">o</span><span class="char-sub">g</span><span class="char-sub">&nbsp</span><span class="char-sub">i</span><span class="char-sub">n</span>
+          <% end  %>
+        </nav>
+        <nav class= "bottom-nav">
+          <a href="" class="bottom-nav_left"><span class="char-sub">M</span><span class="char-sub">y</span><span class="char-sub">&nbsp</span><span class="char-sub">p</span><span class="char-sub">a</span><span class="char-sub">g</span><span class="char-sub">e</span></a>
+          <%= link_to tweets_posts_path,class:"bottom-nav_right" do%><span class="char-sub">T</span><span class="char-sub">w</span><span class="char-sub">e</span><span class="char-sub">e</span><span class="char-sub">t</span><span class="char-sub">s</span><span class="char-sub">&nbsp</span><span class="char-sub">l</span><span class="char-sub">i</span><span class="char-sub">s</span><span class="char-sub">t</span>
+          <% end %>
+        </nav>
+      <% end %>
+<!-- 見出し -->
    <p class="main-name"><span class="char">J</span><span class="char">O</span><span class="char">B</span><span class="char">&nbsp</span><span class="char">S</span><span class="char">T</span><span class="char">A</span><span class="char">R</span><span class="char">T</span></p>
    <p class="sub-name">君の履歴書をOneRank上へ</p>
    <p class="sub-name2">志望動機添削アプリケーション</p>
