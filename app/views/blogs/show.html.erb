@@ -1,19 +1,22 @@
-<p id="notice"><%= notice %></p>
+<%# <p id="notice"><%= notice %>
+<div class="show-blog">
+  <div class="show-content">
+    <p>
+      <strong class="show-title">タイトル：</strong>
+      <%= @blog.title %>
+    </p>
 
-<p>
-  <strong>タイトル</strong>
-  <%= @blog.title %>
-</p>
+    <p>
+      <strong class="show-time">時間：</strong>
+      <%= @blog.start_time.strftime("%Y-%m-%d %H:%M") %>
+    </p>
 
-<p>
-  <strong>時間</strong>
-  <%= @blog.start_time.strftime("%Y-%m-%d %H:%M") %>
-</p>
+    <p>
+      <strong class="show-content">内容：</strong>
+      <%= @blog.content %>
+    </p>
 
-<p>
-  <strong>内容</strong>
-  <%= @blog.content %>
-</p>
-
-<%= link_to 'Edit', edit_blog_path(@blog) %> |
-<%= link_to 'Back', blogs_path %>
+    <%= link_to 'Edit', edit_blog_path(@blog) %> |
+    <%= link_to 'Back', blogs_path %>
+  </div>
+</div>

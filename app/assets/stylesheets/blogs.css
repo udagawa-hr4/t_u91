@@ -158,4 +158,25 @@
     background-image: url(/assets/apple.jpeg);
   }
 }
+
+.show-blog {
+  height: 100vh;
+  width: 100vw;
+  font-size: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  background-image: url(/assets/office-1730939_1280.jpg);
+}
+
+.show-blog p {
+  margin: 50px 0;
+}
 /*# sourceMappingURL=blogs.css.map */

@@ -141,3 +141,18 @@
     background-image: url(/assets/apple.jpeg);
   }
 }
+
+// 詳細ページ
+.show-blog {
+  height: 100vh;
+  width: 100vw;
+  font-size: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  background-image: url(/assets/office-1730939_1280.jpg);
+  & p {
+    margin: 50px 0;
+  }
+}
