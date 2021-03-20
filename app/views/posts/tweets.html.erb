@@ -4,6 +4,9 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <% content_for :css do %>
+    <%= stylesheet_link_tag 'tweets' %>
+  <% end %>
   <title>Document</title>
 </head>
 <body>
@@ -32,7 +35,9 @@
     <section class="tweets-content">
       <p class="tweets-title"><span class="char-title">T</span><span class="char-title">w</span><span class="char-title">e</span><span class="char-title">e</span><span class="char-title">t</span><span class="char-title">s</span><span class="char-title">&nbsp</span><span class="char-title">L</span><span class="char-title">i</span><span class="char-title">s</span><span class="char-title">t</span></p>
       <div class="tweets-list">
-      
+       <div class="fusen">
+       <p class="test-p">こんにちは</p>
+       </div>
       </div>
 
     </section>

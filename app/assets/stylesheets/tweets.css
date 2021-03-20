@@ -39,6 +39,12 @@ a {
   width: 100vw;
   height: 100vh;
   background-size: cover;
+  -webkit-animation-name: bg-img;
+          animation-name: bg-img;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-duration: 20s;
+          animation-duration: 20s;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -836,5 +842,60 @@ a {
     -webkit-transform: scale(1);
             transform: scale(1);
   }
+}
+
+@keyframes bg-img {
+  0% {
+    background-image: url(/assets/notebook-1280538_1280.jpg);
+  }
+  33% {
+    background-image: url(/assets/hennsyuu.jpg);
+  }
+  66% {
+    background-image: url(/assets/laptop-1478822_1280.jpg);
+  }
+  100% {
+    background-image: url(/assets/notebook-1280538_1280.jpg);
+  }
+}
+
+.fusen {
+  position: relative;
+  margin: 10px 0 0 10px;
+  width: 45%;
+  height: 13%;
+  background: linear-gradient(45deg, #363535, #3d3932 30%, #382d2a 60%, #2c3042);
+  opacity: 1;
+  color: white;
+  font-size: 20px;
+  font-weight: 600;
+  -webkit-box-shadow: 5px 5px 5px black;
+          box-shadow: 5px 5px 5px black;
+}
+
+.fusen .test-p {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  text-shadow: 3px 3px 2px black;
+}
+
+.fusen::before {
+  content: "";
+  width: 20px;
+  height: 20px;
+  border-radius: 10px;
+  background-color: white;
+  display: inline-block;
+  position: absolute;
+  z-index: 3;
+  top: 50%;
+  left: 10%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  -webkit-box-shadow: 3px 3px 2px black inset;
+          box-shadow: 3px 3px 2px black inset;
 }
 /*# sourceMappingURL=tweets.css.map */
