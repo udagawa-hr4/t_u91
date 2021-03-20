@@ -96,17 +96,26 @@
   background-image: url(/assets/calendar.jpeg);
   background-size: cover;
   text-align: center;
+  
   & .new-title {
     font-size: 50px;
     padding: 40px 0 80px;
   }
-  & .blog-title, .blog-time, .blog-content, #blog_start_time_1i {
+  & .blog-title, .blog-time, .blog-content {
     font-size: 30px;
+    height: 50px;
+    margin-bottom: 30px;
+    & select {
+      height: 50px;
+    }
   }
   & .field-title, .field-time, .field-content {
     height: 50px;
     width: 800px;
+    font-size: 25px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
   }
+  
 }
 
 .diary-nik {

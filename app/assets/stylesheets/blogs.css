@@ -104,13 +104,21 @@
   padding: 40px 0 80px;
 }
 
-.new-blog .blog-title, .new-blog .blog-time, .new-blog .blog-content, .new-blog #blog_start_time_1i {
+.new-blog .blog-title, .new-blog .blog-time, .new-blog .blog-content {
   font-size: 30px;
+  height: 50px;
+  margin-bottom: 30px;
+}
+
+.new-blog .blog-title select, .new-blog .blog-time select, .new-blog .blog-content select {
+  height: 50px;
 }
 
 .new-blog .field-title, .new-blog .field-time, .new-blog .field-content {
   height: 50px;
   width: 800px;
+  font-size: 25px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
 .diary-nik {
