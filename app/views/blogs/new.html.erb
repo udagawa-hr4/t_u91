@@ -1,4 +1,16 @@
-<div class="new-blog">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <% content_for :css do %>
+    <%= stylesheet_link_tag 'blogs' %>
+  <% end %>
+</head>
+<body>
+  <div class="new-blog">
   <h1 class="new-title">Write a diary</h1>
   <div class="blog-new">
     <%= form_with(model: @blog, local: true) do |form| %>
@@ -25,3 +37,5 @@
     <% end %>
   </div>
 </div>
+</body>
+</html>

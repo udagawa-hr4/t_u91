@@ -1,4 +1,16 @@
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <% content_for :css do %>
+    <%= stylesheet_link_tag 'tweets' %>
+  <% end %>
+</head>
+<body>
+  
 <div class="show-blog">
   <div class="show-content">
     <p>
@@ -21,3 +33,5 @@
     <%= link_to 'Destroy', blog_path(@blog.id), method: :delete %>
   </div>
 </div>
+</body>
+</html>
