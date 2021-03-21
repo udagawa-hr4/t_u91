@@ -1,14 +1,11 @@
+body {
+  background-color: black;
+}
+
 .user-style {
   margin: 0;
-  height: 100%;
+  height: 100vh;
   width: 100vw;
-  background-image: url(/assets/signup.jpg);
-  -webkit-animation-name: kf-img;
-          animation-name: kf-img;
-  -webkit-animation-duration: 5s;
-          animation-duration: 5s;
-  -webkit-animation-iteration-count: infinite;
-          animation-iteration-count: infinite;
   background-size: cover;
   color: white;
 }
@@ -62,25 +59,21 @@
 
 @-webkit-keyframes kf-img {
   0% {
+    background-image: url(/assets/desktop-1155613_1280.jpeg);
     opacity: 1;
   }
+  33% {
+    background-image: url(/assets/desktop-1155613_1280.jpeg);
+    opacity: 0.9;
+  }
   50% {
+    background-image: url(/assets/desktop-1155613_1280.jpeg);
     opacity: 0.9;
   }
   100% {
+    background-image: url(/assets/desktop-1155613_1280.jpeg);
     opacity: 1;
   }
 }
 
-@keyframes kf-img {
-  0% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0.9;
-  }
-  100% {
-    opacity: 1;
-  }
-}
 /*# sourceMappingURL=users.css.map */
