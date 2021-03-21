@@ -33,7 +33,8 @@
         <nav class= "bottom-nav">
           <%= link_to  root_path, class: "bottom-nav_left" do%><span class="char-sub">M</span><span class="char-sub">y</span><span class="char-sub">&nbsp</span><span class="char-sub">p</span><span class="char-sub">a</span><span class="char-sub">g</span><span class="char-sub">e</span></a>
           <% end  %>
-          <%= link_to tweets_posts_path,class:"bottom-nav_right" do%><span class="char-sub">S</span><span class="char-sub">e</span><span class="char-sub">a</span><span class="char-sub">r</span><span class="char-sub">c</span><span class="char-sub">h</span>
+          <%= link_to new_post_path,class:"bottom-nav_right" do%>
+              <span class="char-sub">W</span><span class="char-sub">r</span><span class="char-sub">i</span><span class="char-sub">t</span><span class="char-sub">e</span><span class="char-sub">&nbsp</span><span class="char-sub">a</span><span class="char-sub">&nbsp</span><span class="char-sub">p</span><span class="char-sub">o</span><span class="char-sub">s</span><span class="char-sub">t</span>
           <% end %>
         </nav>
 <!-- sign outしているときのボタン -->        
@@ -59,11 +60,26 @@
    <div class="main-content">
     <section class="tweets-content">
       <p class="tweets-title"><span class="char-title">T</span><span class="char-title">w</span><span class="char-title">e</span><span class="char-title">e</span><span class="char-title">t</span><span class="char-title">s</span><span class="char-title">&nbsp</span><span class="char-title">L</span><span class="char-title">i</span><span class="char-title">s</span><span class="char-title">t</span></p>
-      <div class="tweets-list">
-        <div class="fusen">
-          <p class="test-p">こんにちは</p>
-        </div>
-      </div>
+      <ul class="tweets-list">
+      
+       <% @posts.each do |post| %>
+        <li class="fusen">
+          <%# <p class="test-p"><%= post.title %>
+         
+          <%= link_to root_path,class:"title-post" do%>
+          <%= post.title %>
+          <% end %>
+          
+          <div class="nickname-post">
+         
+          <%= post.created_at.strftime('%C%y-%m-%d %k:%M') %>
+          
+          
+          
+        </li>
+        <% end  %>
+      <%= will_paginate @posts, :previous_label => ' &lt Back', :next_label => 'Next &gt' %>
+      </ul>
 
     </section>
    </div>

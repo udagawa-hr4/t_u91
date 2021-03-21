@@ -1,7 +1,7 @@
 body{
   margin: 0;
   padding: 0;
-  font-family: Lora;
+  font-family: Lora,Shippori Mincho;
 }
 a{
   text-decoration: none;
@@ -253,7 +253,9 @@ a{
       animation-duration: 20s , 20s;
       animation-iteration-count: infinite,infinite;
       border: 10px solid black;
-      
+      display: flex;
+      flex-wrap: wrap;
+
       
       
       
@@ -422,22 +424,73 @@ a{
 }
 .fusen{
   position: relative;
-  margin: 10px 0 0 10px;
-  width: 45%;
-  height: 13%;
-  background: linear-gradient(45deg, rgb(54, 53, 53), #3d3932 30%, #382d2a 60%, #2c3042);
-  // border-top-left-radius: 20px;
-  // border-bottom-left-radius: 20px;
+  width: 47%;
+  height: 15%;
+  // background: linear-gradient(45deg, rgb(54, 53, 53), #3d3932 30%, #382d2a 60%, #2c3042);
   color: white;
   font-size: 20px;
   font-weight: 600;
   box-shadow: 5px 5px 5px black;
-  & .test-p{
+  list-style: none;
+  margin: 10px 0 0 10px;
+  overflow-x: scroll;
+  // white-space: pre-line;
+  word-break: break-all;
+  &:nth-child(1){
+    background-color: rgb(41, 165, 41);
+  } 
+  &:nth-child(2){
+    background-color: rgb(93, 80, 173);
+  }
+  &:nth-child(3){
+    background-color: rgb(85, 148, 148);
+  }
+  &:nth-child(4){
+    background-color: rgb(155, 5, 97);
+    
+  }
+  &:nth-child(5){
+    background-color: rgb(182, 6, 6);
+  }
+  &:nth-child(6){
+    background-color: rgb(179, 124, 5);
+  }
+  &:nth-child(7){
+    background-color: rgb(137, 8, 243);
+  }
+  
+  &:nth-child(8){
+    background-color: rgb(40, 5, 85);
+    
+  }
+  &:nth-child(9){
+    background-color: rgb(55, 240, 17);
+    
+  }
+  &:nth-child(10){
+    background-color: rgb(226, 212, 10);
+    
+  }
+  & .title-post{
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%,-50%);
     text-shadow: 3px 3px 2px black;
+    font-size: 25px;
+    color: white;
+    width: 12em;
+    padding-left: 1em;
+
+    
+  }
+  & .nickname-post{
+    position: absolute;
+    top: 100%;
+    right: 0;
+    transform: translate(-10%,-150%);
+    color: white;
+    font-size: 15px;
   }
   &::before{
     content:"";
@@ -447,11 +500,36 @@ a{
     background-color: white;
     display: inline-block;
     position: absolute;
-    z-index: 3;
+    z-index: 10;
     top: 50%;
     left: 10%;
     transform: translate(-50%,-50%);
     box-shadow: 3px 3px 2px black inset;
+  }
+}
+.pagination{
+  position: absolute;
+  right: 0;
+  bottom: 3%;
+  display: flex;
+  width: 100%;
+  height: 5%;
+  align-items: center;
+  justify-content: space-around;
+  list-style: none;
+  font-weight: 600;
+  & .next{
+    & a{
+      color: black;
+      font-family: Shippori Mincho;
+    }
+  }
+  & .prev{
+    & a{
+      color: rgb(54, 58, 2);
+      font-family: Shippori Mincho;
+      
+    }
   }
 }
 

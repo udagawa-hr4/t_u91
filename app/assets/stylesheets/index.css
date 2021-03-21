@@ -1,6 +1,7 @@
 body {
   margin: 0;
   padding: 0;
+  font-family: Lora, Shippori Mincho;
 }
 
 a {
@@ -116,7 +117,7 @@ a {
           transform: translate(-50%, -50%);
   color: black;
   font-size: 30px;
-  font-weight: 600;
+  font-weight: 700;
   text-shadow: 0 0 5px white;
   opacity: 0;
   -webkit-animation-name: kf-sub;
@@ -138,7 +139,7 @@ a {
           transform: translate(-50%, 50%);
   color: black;
   font-size: 30px;
-  font-weight: 600;
+  font-weight: 700;
   text-shadow: 0 0 5px white;
   opacity: 0;
   -webkit-animation-name: kf-sub2;
@@ -322,6 +323,36 @@ a {
           animation-delay: 0.6s;
 }
 
+.top-nav_right:hover .char-sub:nth-child(11) {
+  -webkit-animation-delay: 0.66s;
+          animation-delay: 0.66s;
+}
+
+.top-nav_right:hover .char-sub:nth-child(12) {
+  -webkit-animation-delay: 0.72s;
+          animation-delay: 0.72s;
+}
+
+.top-nav_right:hover .char-sub:nth-child(13) {
+  -webkit-animation-delay: 0.78s;
+          animation-delay: 0.78s;
+}
+
+.top-nav_right:hover .char-sub:nth-child(14) {
+  -webkit-animation-delay: 0.84s;
+          animation-delay: 0.84s;
+}
+
+.top-nav_right:hover .char-sub:nth-child(15) {
+  -webkit-animation-delay: 0.9s;
+          animation-delay: 0.9s;
+}
+
+.top-nav_right:hover .char-sub:nth-child(16) {
+  -webkit-animation-delay: 0.96s;
+          animation-delay: 0.96s;
+}
+
 .top-nav_left {
   font-size: 30px;
   font-weight: 600;
@@ -388,6 +419,36 @@ a {
 .top-nav_left:hover .char-sub:nth-child(10) {
   -webkit-animation-delay: 0.6s;
           animation-delay: 0.6s;
+}
+
+.top-nav_left:hover .char-sub:nth-child(11) {
+  -webkit-animation-delay: 0.66s;
+          animation-delay: 0.66s;
+}
+
+.top-nav_left:hover .char-sub:nth-child(12) {
+  -webkit-animation-delay: 0.72s;
+          animation-delay: 0.72s;
+}
+
+.top-nav_left:hover .char-sub:nth-child(13) {
+  -webkit-animation-delay: 0.78s;
+          animation-delay: 0.78s;
+}
+
+.top-nav_left:hover .char-sub:nth-child(14) {
+  -webkit-animation-delay: 0.84s;
+          animation-delay: 0.84s;
+}
+
+.top-nav_left:hover .char-sub:nth-child(15) {
+  -webkit-animation-delay: 0.9s;
+          animation-delay: 0.9s;
+}
+
+.top-nav_left:hover .char-sub:nth-child(16) {
+  -webkit-animation-delay: 0.96s;
+          animation-delay: 0.96s;
 }
 
 .bottom-nav {
