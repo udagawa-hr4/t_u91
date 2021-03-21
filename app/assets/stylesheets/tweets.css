@@ -1,7 +1,7 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: Lora;
+  font-family: Lora,Shippori Mincho;
 }
 
 a {
@@ -534,6 +534,11 @@ a {
   -webkit-animation-iteration-count: infinite,infinite;
           animation-iteration-count: infinite,infinite;
   border: 10px solid black;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
 .main-content .tweets-content .tweets-title {
@@ -906,24 +911,80 @@ a {
 
 .fusen {
   position: relative;
-  margin: 10px 0 0 10px;
-  width: 45%;
-  height: 13%;
-  background: linear-gradient(45deg, #363535, #3d3932 30%, #382d2a 60%, #2c3042);
+  width: 47%;
+  height: 15%;
   color: white;
   font-size: 20px;
   font-weight: 600;
   -webkit-box-shadow: 5px 5px 5px black;
           box-shadow: 5px 5px 5px black;
+  list-style: none;
+  margin: 10px 0 0 10px;
+  overflow-x: scroll;
+  word-break: break-all;
 }
 
-.fusen .test-p {
+.fusen:nth-child(1) {
+  background-color: #29a529;
+}
+
+.fusen:nth-child(2) {
+  background-color: #5d50ad;
+}
+
+.fusen:nth-child(3) {
+  background-color: #559494;
+}
+
+.fusen:nth-child(4) {
+  background-color: #9b0561;
+}
+
+.fusen:nth-child(5) {
+  background-color: #b60606;
+}
+
+.fusen:nth-child(6) {
+  background-color: #b37c05;
+}
+
+.fusen:nth-child(7) {
+  background-color: #8908f3;
+}
+
+.fusen:nth-child(8) {
+  background-color: #280555;
+}
+
+.fusen:nth-child(9) {
+  background-color: #37f011;
+}
+
+.fusen:nth-child(10) {
+  background-color: #e2d40a;
+}
+
+.fusen .title-post {
   position: absolute;
   top: 50%;
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
   text-shadow: 3px 3px 2px black;
+  font-size: 25px;
+  color: white;
+  width: 12em;
+  padding-left: 1em;
+}
+
+.fusen .nickname-post {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  -webkit-transform: translate(-10%, -150%);
+          transform: translate(-10%, -150%);
+  color: white;
+  font-size: 15px;
 }
 
 .fusen::before {
@@ -934,12 +995,40 @@ a {
   background-color: white;
   display: inline-block;
   position: absolute;
-  z-index: 3;
+  z-index: 10;
   top: 50%;
   left: 10%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
   -webkit-box-shadow: 3px 3px 2px black inset;
           box-shadow: 3px 3px 2px black inset;
+}
+
+.pagination {
+  position: absolute;
+  right: 0;
+  bottom: 3%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  height: 5%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  list-style: none;
+  font-weight: 600;
+}
+
+.pagination .next a {
+  color: black;
+  font-family: Shippori Mincho;
+}
+
+.pagination .prev a {
+  color: #363a02;
+  font-family: Shippori Mincho;
 }
 /*# sourceMappingURL=tweets.css.map */

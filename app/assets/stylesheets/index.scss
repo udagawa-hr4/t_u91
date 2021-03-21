@@ -1,6 +1,7 @@
 body{
   margin: 0;
   padding: 0;
+  font-family: Lora, Shippori Mincho;
 }
 a{
   text-decoration: none;
@@ -51,7 +52,7 @@ a{
     transform: translate(-50%,-50%);
     color: black;
     font-size: 30px;
-    font-weight: 600;
+    font-weight: 700;
     text-shadow: 0 0 5px white;
     opacity: 0;
     animation-name:kf-sub;
@@ -69,7 +70,7 @@ a{
     transform: translate(-50%,50%);
     color: black;
     font-size: 30px;
-    font-weight: 600;
+    font-weight: 700;
     text-shadow: 0 0 5px white;
     opacity: 0;
     animation-name: kf-sub2;
@@ -176,7 +177,7 @@ a{
     &:hover{
       & .char-sub{
         display: inline-block;
-        @for $i from 1 through 10 {
+        @for $i from 1 through 16 {
         &:nth-child(#{$i}) {
             animation-delay: $i * 0.06s;
           }
@@ -197,7 +198,7 @@ a{
     &:hover{
       & .char-sub{
         display: inline-block;
-        @for $i from 1 through 10 {
+        @for $i from 1 through 16 {
         &:nth-child(#{$i}) {
             animation-delay: $i * 0.06s;
           }

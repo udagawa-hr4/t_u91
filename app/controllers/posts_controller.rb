@@ -8,13 +8,13 @@ class PostsController < ApplicationController
   def create
     @post = Post.new(post_params)
     if @post.save
-      redirect_to action: :show
+      redirect_to action: :tweets
     else
       render :new
     end
   end
   def tweets
-    @posts = Post.all
+    @posts = Post.paginate(page: params[:page], per_page: 8)
   end
   private
   def post_params
