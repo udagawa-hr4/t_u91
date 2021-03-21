@@ -61,6 +61,7 @@
 
 @-webkit-keyframes kf-img {
   0% {
+<<<<<<< Updated upstream
     background-image: url(/assets/signup.jpg);
     opacity: 0.9;
   }
@@ -73,12 +74,28 @@
   }
   100% {
     background-image: url(/assets/signup.jpg);
+=======
+    background-image: url(/assets/desktop-1155613_1280.jpeg);
+    opacity: 1;
+  }
+  33% {
+    background-image: url(/assets/desktop-1155613_1280.jpeg);
+    opacity: 0.9;
+  }
+  50% {
+    background-image: url(/assets/desktop-1155613_1280.jpeg);
+    opacity: 0.9;
+  }
+  100% {
+    background-image: url(/assets/desktop-1155613_1280.jpeg);
+>>>>>>> Stashed changes
     opacity: 1;
   }
 }
 
 @keyframes kf-img {
   0% {
+<<<<<<< Updated upstream
     background-image: url(/assets/signup.jpg);
     opacity: 0.9;
   }
@@ -91,6 +108,21 @@
   }
   100% {
     background-image: url(/assets/signup.jpg);
+=======
+    background-image: url(/assets/desktop-1155613_1280.jpeg);
+    opacity: 1;
+  }
+  33% {
+    background-image: url(/assets/desktop-1155613_1280.jpeg);
+    opacity: 0.9;
+  }
+  50% {
+    background-image: url(/assets/desktop-1155613_1280.jpeg);
+    opacity: 0.9;
+  }
+  100% {
+    background-image: url(/assets/desktop-1155613_1280.jpeg);
+>>>>>>> Stashed changes
     opacity: 1;
   }
 }
