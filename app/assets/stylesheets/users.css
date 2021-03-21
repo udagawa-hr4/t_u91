@@ -59,25 +59,21 @@ body {
 
 @-webkit-keyframes kf-img {
   0% {
+    background-image: url(/assets/desktop-1155613_1280.jpeg);
     opacity: 1;
   }
+  33% {
+    background-image: url(/assets/desktop-1155613_1280.jpeg);
+    opacity: 0.9;
+  }
   50% {
+    background-image: url(/assets/desktop-1155613_1280.jpeg);
     opacity: 0.9;
   }
   100% {
+    background-image: url(/assets/desktop-1155613_1280.jpeg);
     opacity: 1;
   }
 }
 
-@keyframes kf-img {
-  0% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0.9;
-  }
-  100% {
-    opacity: 1;
-  }
-}
 /*# sourceMappingURL=users.css.map */
