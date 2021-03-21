@@ -7,7 +7,7 @@ Rails.application.routes.draw do
 get 'blogs/index'
   resources :blogs
 
-  resources :posts,only: [:show] do
+  resources :posts,only: [:show,:new,:create] do
     collection do
       get 'tweets'
     end
