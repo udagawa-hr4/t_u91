@@ -4,8 +4,8 @@
   font-family: Georgia, 'Times New Roman', Times, serif;
   padding: 10px;
   background-size: cover;
-  -webkit-animation-name: bg-img;
-          animation-name: bg-img;
+  -webkit-animation-name: cbg-img;
+          animation-name: cbg-img;
   -webkit-animation-duration: 15s;
           animation-duration: 15s;
   -webkit-animation-iteration-count: infinite;
@@ -74,6 +74,12 @@
   border-left-color: black;
   border-left-style: double;
   border-left-width: 4px;
+  counter-reset: number 0;
+}
+
+.simple-calendar td a:before {
+  counter-increment: number 1;
+  content: counter(number) ": ";
 }
 
 .simple-calendar table {
@@ -98,48 +104,79 @@
   padding: 40px 0 80px;
 }
 
-.new-blog .blog-title, .new-blog .blog-time, .new-blog .blog-content, .new-blog #blog_start_time_1i {
+.new-blog .blog-title, .new-blog .blog-time, .new-blog .blog-content {
   font-size: 30px;
+  height: 50px;
+  margin-bottom: 30px;
+}
+
+.new-blog .blog-title select, .new-blog .blog-time select, .new-blog .blog-content select {
+  height: 50px;
 }
 
 .new-blog .field-title, .new-blog .field-time, .new-blog .field-content {
   height: 50px;
   width: 800px;
+  font-size: 25px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
 .diary-nik {
   position: absolute;
   right: 0;
   top: 14.5vh;
+  color: black;
+  background-color: blue;
 }
 
-@-webkit-keyframes bg-img {
+@-webkit-keyframes cbg-img {
   0% {
     background-image: url(/assets/apple.jpeg);
   }
   33% {
-    background-image: url(/assets/inside-1499607_1280.jpg);
+    background-image: url(/assets/paper-1345510_1280.jpg);
   }
   66% {
-    background-image: url(/assets/laptop-5842509_1280.jpg);
+    background-image: url(/assets/notebook-1587527_1280.jpg);
   }
   100% {
     background-image: url(/assets/apple.jpeg);
   }
 }
 
-@keyframes bg-img {
+@keyframes cbg-img {
   0% {
     background-image: url(/assets/apple.jpeg);
   }
   33% {
-    background-image: url(/assets/inside-1499607_1280.jpg);
+    background-image: url(/assets/paper-1345510_1280.jpg);
   }
   66% {
-    background-image: url(/assets/laptop-5842509_1280.jpg);
+    background-image: url(/assets/notebook-1587527_1280.jpg);
   }
   100% {
     background-image: url(/assets/apple.jpeg);
   }
+}
+
+.show-blog {
+  height: 100vh;
+  width: 100vw;
+  font-size: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  background-image: url(/assets/office-1730939_1280.jpg);
+}
+
+.show-blog p {
+  margin: 50px 0;
 }
 /*# sourceMappingURL=blogs.css.map */
