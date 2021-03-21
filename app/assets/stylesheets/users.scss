@@ -1,15 +1,15 @@
 // 新規登録画面
+
 .user-style {
   margin: 0;
   height: 100vh;
   width: 100vw;
-<<<<<<< Updated upstream
-=======
-  // background-image: url(/assets/desktop-1155613_1280.jpeg);
->>>>>>> Stashed changes
-  animation-name: kf-img;
-  animation-duration: 5s;
-  animation-iteration-count: infinite;
+  // background-image: url(/assets/signup.jpg);
+  // animation-name: kf-img;
+  background-color: black;
+  // animation-duration: 5s;
+  // animation-iteration-count: infinite;
+
   background-size: cover;
   
   color: white;
@@ -60,36 +60,23 @@
 }
 @keyframes kf-img{
   0%{
-<<<<<<< Updated upstream
-    background-image: url(/assets/signup.jpg);
-    opacity: 0.9;
-  }
-  33%{
-    opacity: 1;
-  }
-  66%{
-    background-image: url(/assets/signup.jpg);
-    opacity: 0.9;
-  }
-  100%{
-    background-image: url(/assets/signup.jpg);
-=======
 
-    background-image: url(/assets/desktop-1155613_1280.jpeg);
+    // background-image: url(/assets/signup.jpg);
+    // opacity: 0.9;
+
     opacity: 1;
   }
-  33%{
-    background-image: url(/assets/desktop-1155613_1280.jpeg);
-    opacity: 0.9;
-  }
+  // 33%{
+  //   opacity: 1;
+  // }
   50%{
-    background-image: url(/assets/desktop-1155613_1280.jpeg);
+    // background-image: url(/assets/signup.jpg);
     opacity: 0.9;
   }
   100%{
-    background-image: url(/assets/desktop-1155613_1280.jpeg);
 
->>>>>>> Stashed changes
+    // background-image: url(/assets/signup.jpg);
+
     opacity: 1;
   }
 }

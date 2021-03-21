@@ -1,0 +1,457 @@
+body{
+  margin: 0;
+  padding: 0;
+  font-family: Lora;
+}
+a{
+  text-decoration: none;
+}
+.bg-dot{
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  z-index: -1;
+  & .bg-cover{
+    content: "";
+    background-image: linear-gradient(45deg, rgba(0,0,0,.3) 50%, rgba(0,0,0,.7) 50%);
+    background-size: 4px 4px;
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    display: block;
+    top: 0;
+    left: 0;
+    z-index: 0;
+  }
+}
+#global-container{
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  background-size: cover;
+  animation-name: bg-img;
+  animation-iteration-count: infinite;
+  animation-duration: 20s;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+  z-index: 10;
+  & .bg-signin{
+    content: "";
+    position: absolute;
+    display: block;
+    top: 0;
+    right: 0;
+    width: 100vw;
+    height: 100vh;
+    background-image: url(/assets/computer-416569_1280.jpg);
+    background-size: cover;
+    opacity: 0;
+    transition: all 0.6s;
+    transition-timing-function: ease-out;
+    z-index: 0;
+    
+  }  
+  &.menu-open-rt{
+    & .bg-signin{
+    opacity: 1;
+    }
+  }
+  & .bg-signup{
+    content: "";
+    position: absolute;
+    display: block;
+    top: 0;
+    right: 0;
+    width: 100vw;
+    height: 100vh;
+    background-image: url(/assets/pen-4337521_1280.jpg);
+    background-size: cover;
+    opacity: 0;
+    transition: all 0.6s;
+    transition-timing-function: ease-out;
+    z-index: 0;
+  }
+  &.menu-open-lt{
+    & .bg-signup{
+      opacity: 1;
+    }
+  }
+  & .bg-mypage{
+    content: "";
+    position: absolute;
+    display: block;
+    top: 0;
+    right: 0;
+    width: 100vw;
+    height: 100vh;
+    background-image: url(/assets/office-1730939_1280.jpg);
+    background-size: cover;
+    opacity: 0;
+    transition: all 0.6s;
+    transition-timing-function: ease-out;
+    z-index: 0;
+  }
+  &.menu-open-lb{
+    & .bg-mypage{
+      opacity: 1;
+    }
+  }
+  & .bg-search{
+    content: "";
+    position: absolute;
+    display: block;
+    top: 0;
+    right: 0;
+    width: 100vw;
+    height: 100vh;
+    background-image: url(/assets/seach.2jpeg.webp);
+    background-size: cover;
+    opacity: 0;
+    transition: all 0.6s;
+    transition-timing-function: ease-out;
+    z-index: 0;
+  }
+  &.menu-open-rb{
+    & .bg-search{
+      opacity: 1;
+    }
+  }
+}
+.top-nav{
+  position: absolute;
+  height: 100px;
+  width: 100vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  &_right{
+    font-size: 30px;
+    font-weight: 600;
+    color: lightgrey;
+    margin:5% 10% 0 0;
+    text-shadow: 0 0 10px black;
+    
+    &:hover{
+      & .char-sub{
+        display: inline-block;
+        @for $i from 1 through 10 {
+        &:nth-child(#{$i}) {
+            animation-delay: $i * 0.06s;
+          }
+        }
+          animation-name: kf-deg;
+          animation-duration: 0.4s;
+          animation-fill-mode: forwards;
+      }
+    }  
+
+  }
+  &_left{
+    font-size: 30px;
+    font-weight: 600;
+    color: lightgrey;
+    margin:5% 0 0 10%;
+    text-shadow: 0 0 10px black;
+    &:hover{
+      & .char-sub{
+        display: inline-block;
+        @for $i from 1 through 10 {
+        &:nth-child(#{$i}) {
+            animation-delay: $i * 0.06s;
+          }
+        }
+          animation-name: kf-deg;
+          animation-duration: 0.4s;
+          animation-fill-mode: forwards;
+      }
+    }  
+
+  }
+}
+.bottom-nav{
+  position: absolute;
+  top: 90%;
+  height: 100px;
+  width: 100vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  &_right{
+    font-size: 30px;
+    font-weight: 600;
+    color: lightgrey;
+    margin: 0 10% 5% 0; 
+    text-shadow: 0 0 10px black;
+    &:hover{
+      & .char-sub{
+        display: inline-block;
+        @for $i from 1 through 15 {
+        &:nth-child(#{$i}) {
+            animation-delay: $i * 0.06s;
+          }
+        }
+          animation-name: kf-deg;
+          animation-duration: 0.4s;
+          animation-fill-mode: forwards;
+      }
+    }  
+
+  }  
+  &_left{
+    font-size: 30px;
+    font-weight: 600;
+    color: lightgrey;
+    margin: 0 0 5% 10%;
+    text-shadow: 0 0 10px black;
+      &:hover{
+        & .char-sub{
+          display: inline-block;
+          @for $i from 1 through 15 {
+          &:nth-child(#{$i}) {
+              animation-delay: $i * 0.06s;
+            }
+          }
+            animation-name: kf-deg;
+            animation-duration: 0.4s;
+            animation-fill-mode: forwards;
+        }
+      }  
+      
+
+    
+  }
+}
+.main-content{
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  
+  
+  & .tweets-content{
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    width: 50vw;
+    height: 100vh;
+    & .tweets-list{
+      width: 60vw;
+      height: 70vh;
+      // background-color:rgba($color: white, $alpha: 0.7);
+      background-size: cover;
+      
+      border-radius: 20px;
+      position: absolute;
+      z-index: 5;
+      top: 15vh;
+      left: 0;
+      transform: translateX(-7%);
+      animation-name:kf-back ,kf-border;
+      animation-duration: 20s , 20s;
+      animation-iteration-count: infinite,infinite;
+      border: 10px solid black;
+      
+      
+      
+      
+
+    }
+    & .tweets-title{
+     font-size: 50px;
+     font-weight: 600;
+     position: absolute;
+     top: 5vh;
+     left: 50%;
+     transform: translateX(-50%);
+     color: white;
+     text-shadow: 0 0 10px gray;
+     & .char-title{
+       display: inline-block;
+       @for $i from 1 through 11 {
+         &:nth-child(#{$i}) {
+           animation-delay: $i * 0.06s;
+          }
+        }
+          animation-name: kf-title;
+          animation-duration: 2.5s;
+          animation-fill-mode: forwards;
+          animation-iteration-count: infinite;
+     }
+
+     
+    }
+  }
+}
+@keyframes bg-img{
+  0%{
+    background-image: url(/assets/notebook-1280538_1280.jpg);
+  }
+  33%{
+    background-image: url(/assets/hennsyuu.jpg);
+  }
+  66%{
+    background-image: url(/assets/laptop-1478822_1280.jpg);
+  }
+ 
+  100%{
+    background-image: url(/assets/notebook-1280538_1280.jpg);
+  }
+}
+@keyframes slide {
+  60% {
+    transform: translate(20px, 0) scale(1);
+    color: black;
+  }
+
+  80% {
+    transform: translate(20px, 0) scale(1);
+    color: black;
+  }
+
+  99% {
+    transform: translate(0) scale(1.3);
+    color: white;
+  }
+
+  100% {
+    transform: translate(0) scale(1);
+    opacity: 1;
+    color: black;
+  }
+}
+
+@keyframes kf-deg {
+  0%{
+    transform:scale(1)rotateY(0);
+  }
+  50%{
+    transform:scale(2) rotateY(-180deg);
+    color: darkcyan;
+  }
+  100%{
+    transform:scale(1)rotateY(0);
+    color: darkcyan;
+  }
+}
+@keyframes kf-sub{
+  0%{
+    transform: translate(-50% ,100%);
+    opacity: 0;
+  }
+  100%{
+    transform: translate(-50% ,-50%);
+    opacity: 1;
+  }
+}
+@keyframes kf-sub2{
+  0%{
+    transform: translate(-50% ,150%);
+    opacity: 0;
+  }
+  100%{
+    transform: translate(-50% ,80%);
+    opacity: 1;
+  }
+}
+@keyframes kf-back{
+  0%{
+    background-color: white;
+    opacity: 0.8;
+  }
+  33%{
+    background-color: darkgray;
+    opacity: 0.8;
+  }
+  66%{
+    background-color: whitesmoke;
+    opacity: 0.8;
+  }
+  100%{
+    background-color: white;
+    opacity: 0.8;
+  }
+}
+@keyframes kf-border{
+  0%{
+    border: 5px solid black;
+  }
+  33%{
+    border: 5px solid rgb(19, 18, 18);
+  }
+  66%{
+    border:5px solid rgb(19, 18, 18);
+  }
+  100%{
+    border: 5px solid black;
+  }
+}
+@keyframes kf-title{
+  0%{
+    color: black;
+  }
+  10%{
+    color: black;
+    transform: scale(1);
+  }
+  15%{
+    color: rgb(252, 250, 245);
+    transform: scale(1.2);
+  }
+  20%{
+    color: black;
+    transform: scale(1);
+  }
+}
+@keyframes bg-img{
+  0%{
+    background-image: url(/assets/notebook-1280538_1280.jpg);
+  }
+  33%{
+    background-image: url(/assets/hennsyuu.jpg);
+  }
+  66%{
+    background-image: url(/assets/laptop-1478822_1280.jpg);
+  }
+ 
+  100%{
+    background-image: url(/assets/notebook-1280538_1280.jpg);
+  }
+}
+.fusen{
+  position: relative;
+  margin: 10px 0 0 10px;
+  width: 45%;
+  height: 13%;
+  background: linear-gradient(45deg, rgb(54, 53, 53), #3d3932 30%, #382d2a 60%, #2c3042);
+  // border-top-left-radius: 20px;
+  // border-bottom-left-radius: 20px;
+  color: white;
+  font-size: 20px;
+  font-weight: 600;
+  box-shadow: 5px 5px 5px black;
+  & .test-p{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    text-shadow: 3px 3px 2px black;
+  }
+  &::before{
+    content:"";
+    width: 20px;
+    height: 20px;
+    border-radius: 10px;
+    background-color: white;
+    display: inline-block;
+    position: absolute;
+    z-index: 3;
+    top: 50%;
+    left: 10%;
+    transform: translate(-50%,-50%);
+    box-shadow: 3px 3px 2px black inset;
+  }
+}
+

@@ -1,9 +1,26 @@
-<div class="user-style">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <% content_for :css do %>
+    <%= stylesheet_link_tag 'users' %>
+  <% end %>
+  <title>Document</title>
+</head>
+<body>
+  <div class="user-style">
   <h2 class="user-sign">Sign up</h2>
   <div class="user-wrap">
     <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
       <div class="error-message">
         <%= render "devise/shared/error_messages", resource: resource %>
+      </div>
+
+      <div class="user-field">
+        <%= f.label :nickname, class: "form-label" %><br />
+        <%= f.text_field :nickname, autocomplete: "nickname", class:"text-field" %>
       </div>
 
       <div class="user-field">
@@ -32,3 +49,5 @@
     <%= render "devise/shared/links" %>
   </div>
 </div>
+</body>
+</html>

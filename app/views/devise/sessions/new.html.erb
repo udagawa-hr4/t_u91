@@ -1,4 +1,16 @@
-<div class="user-style">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <% content_for :css do %>
+    <%= stylesheet_link_tag 'users' %>
+  <% end %>
+  <title>Document</title>
+</head>
+<body>
+  <div class="user-style">
   <h2 class="user-sign">Log in</h2>
   <div class="user-wrap">
     <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
@@ -20,3 +32,5 @@
     <%= render "devise/shared/links" %>
   </div>
 </div>
+</body>
+</html>

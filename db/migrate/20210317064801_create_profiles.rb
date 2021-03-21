@@ -6,9 +6,9 @@ class CreateProfiles < ActiveRecord::Migration[6.0]
       t.integer :phone_number,  null: false
       t.date   :birthday,       null: false
       t.text :introduction
-      t.references :user,        null: false,foreign_key: true
-
+      
       t.timestamps
+      t.references :user,       null: false,foreign_key: true
     end
   end
 end
