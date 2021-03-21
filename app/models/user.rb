@@ -3,6 +3,7 @@ class User < ApplicationRecord
 
   has_many :posts
   has_one :profile
+  has_many :calendar
 
 
   devise :database_authenticatable, :registerable,

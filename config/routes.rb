@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   root to: "posts#index"
 
 
-get 'blogs/index'
+# get 'blogs/index'
   resources :blogs
 
   resources :posts,only: [:show,:new,:create] do

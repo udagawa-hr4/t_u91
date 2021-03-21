@@ -1,4 +1,4 @@
-
+
 
 <div class="calendar-all">
   <%# <p id="notice"><%= notice %>
@@ -26,10 +26,10 @@
       <%# <% end %> 
     <%# </tbody> %> 
   </table>
-
-  <br>
-
-  <%= link_to '日記を書く', new_blog_path, class:"diary-nik"%>
+  
+  <%= link_to new_blog_path, class:"diary-nik" do %>
+     <p class="nik-span">日記を書く</p> 
+   <% end %> 
 
   <%= month_calendar events: @blogs do |date, blogs| %>
     <%= date.day %>
