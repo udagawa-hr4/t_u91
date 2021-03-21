@@ -1,4 +1,4 @@
-<%# <p id="notice"><%= notice %>
+
 <div class="show-blog">
   <div class="show-content">
     <p>
@@ -17,6 +17,7 @@
     </p>
 
     <%= link_to 'Edit', edit_blog_path(@blog) %> |
-    <%= link_to 'Back', blogs_path %>
+    <%= link_to 'Back', blogs_path %> |
+    <%= link_to 'Destroy', blog_path(@blog.id), method: :delete %>
   </div>
 </div>

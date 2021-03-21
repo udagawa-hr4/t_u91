@@ -75,7 +75,7 @@
 
     & a:before {
       counter-increment: number 1;
-      content: counter(number) ": ";  
+      content: counter(number) ": ";
     }
   }
 
