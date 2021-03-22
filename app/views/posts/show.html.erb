@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <% content_for :css do %>
+    <%= stylesheet_link_tag 'new','show' %>
+  <% end %>
+  <title>Document</title>
+</head>
+<body>
+
+ <div id="global-container">
+<!-- 背景のドット調coverの擬似要素 --> 
+    <div class="bg-dot">
+      <span class="bg-cover"></span>
+    </div>
+<!-- ボタンにhoverしたときに表示される擬似要素 -->
+    <span class="bg-signup"></span>
+    <span class="bg-signin"></span>
+    <span class="bg-mypage"></span>
+    <span class="bg-search"></span>
+        <nav class="top-nav">
+          <%= link_to  root_path, class: "top-nav_left" do%>
+              <span class="char-sub">T</span><span class="char-sub">o</span><span class="char-sub">p</span><span class="char-sub">&nbsp</span><span class="char-sub">p</span><span class="char-sub">a</span><span class="char-sub">g</span><span class="char-sub">e</span>
+          <% end %>
+          <%= link_to  new_user_session_path, class: "top-nav_right" do%><span class="char-sub">L</span><span class="char-sub">o</span><span class="char-sub">g</span><span class="char-sub">&nbsp</span><span class="char-sub">o</span><span class="char-sub">u</span><span class="char-sub">t</span>
+          <% end  %>
+        </nav>
+       
+ <!--　一覧表示 -->  
+   <div class="main-content">
+    <section class="list-content">
+      <p class="main-title"><span class="char-title">N</span><span class="char-title">e</span><span class="char-title">w</span><span class="char-title">&nbsp</span><span class="char-title">P</span><span class="char-title">o</span><span class="char-title">s</span><span class="char-title">t</span>
+      <div>
+        <div class ="form-content">
+          
+        </div>
+        
+        <div class = "comment-content">
+        </div>
+     
+      </div>
+    </section>
+   </div>
+   
+ </div>
+ <%= javascript_pack_tag 'main.js' %>
+
+</body>
+</html>
