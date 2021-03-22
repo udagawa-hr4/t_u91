@@ -517,6 +517,7 @@ a {
 }
 
 .main-content .tweets-content .tweets-list {
+  position: relative;
   width: 60vw;
   height: 70vh;
   background-size: cover;
@@ -539,6 +540,7 @@ a {
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  overflow: hidden;
 }
 
 .main-content .tweets-content .tweets-title {
@@ -787,7 +789,7 @@ a {
 @-webkit-keyframes kf-back {
   0% {
     background-color: white;
-    opacity: 0.8;
+    opacity: 1;
   }
   33% {
     background-color: darkgray;
@@ -799,14 +801,14 @@ a {
   }
   100% {
     background-color: white;
-    opacity: 0.8;
+    opacity: 1;
   }
 }
 
 @keyframes kf-back {
   0% {
     background-color: white;
-    opacity: 0.8;
+    opacity: 1;
   }
   33% {
     background-color: darkgray;
@@ -818,7 +820,7 @@ a {
   }
   100% {
     background-color: white;
-    opacity: 0.8;
+    opacity: 1;
   }
 }
 
@@ -909,6 +911,7 @@ a {
   }
 }
 
+
 @-webkit-keyframes kf-fusen {
   0% {
     -webkit-transform: translateX(-100%);
@@ -932,11 +935,14 @@ a {
     -webkit-transform: translateX(0%);
             transform: translateX(0%);
     opacity: 1;
+
   }
 }
 
 .fusen {
   position: relative;
+  -webkit-animation: kf-lists 1s both;
+          animation: kf-lists 1s both;
   width: 47%;
   height: 15%;
   -webkit-animation: kf-fusen 1s both;
@@ -948,12 +954,13 @@ a {
           box-shadow: 5px 5px 5px black;
   list-style: none;
   margin: 10px 0 0 10px;
-  overflow-x: scroll;
+  overflow: scroll;
   word-break: break-all;
   opacity: 0;
 }
 
 .fusen:nth-child(1) {
+
   -webkit-animation-delay: 0.3s;
           animation-delay: 0.3s;
 }
@@ -1006,7 +1013,7 @@ a {
 .fusen:nth-child(11) {
   -webkit-animation-delay: 3.3s;
           animation-delay: 3.3s;
-}
+
 
 .fusen:nth-child(1) {
   background-color: #29a529;

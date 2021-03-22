@@ -238,6 +238,7 @@ a{
     width: 50vw;
     height: 100vh;
     & .tweets-list{
+      position: relative;
       width: 60vw;
       height: 70vh;
       // background-color:rgba($color: white, $alpha: 0.7);
@@ -255,6 +256,7 @@ a{
       border: 10px solid black;
       display: flex;
       flex-wrap: wrap;
+      overflow: hidden;
 
       
       
@@ -361,7 +363,7 @@ a{
 @keyframes kf-back{
   0%{
     background-color: white;
-    opacity: 0.8;
+    opacity: 1;
   }
   33%{
     background-color: darkgray;
@@ -373,7 +375,7 @@ a{
   }
   100%{
     background-color: white;
-    opacity: 0.8;
+    opacity: 1;
   }
 }
 @keyframes kf-border{
@@ -422,6 +424,7 @@ a{
     background-image: url(/assets/notebook-1280538_1280.jpg);
   }
 }
+
 @keyframes kf-fusen{
   0%{
     transform: translateX(-100%);
@@ -430,12 +433,15 @@ a{
   100%{
     transform: translateX(0%);
     opacity: 1;
+
   }
 }
 .fusen{
   position: relative;
+  animation: kf-lists 1s both;
   width: 47%;
   height: 15%;
+
   // background: linear-gradient(45deg, rgb(54, 53, 53), #3d3932 30%, #382d2a 60%, #2c3042);
   animation: kf-fusen 1s both;
   @for $i from 1 through 11 {
@@ -443,16 +449,17 @@ a{
       animation-delay: $i * 0.3s;
      }
    }
+
   color: white;
   font-size: 20px;
   font-weight: 600;
   box-shadow: 5px 5px 5px black;
   list-style: none;
   margin: 10px 0 0 10px;
-  overflow-x: scroll;
-  // white-space: pre-line;
+  overflow: scroll;
   word-break: break-all;
   opacity: 0;
+
   &:nth-child(1){
     background-color: rgb(41, 165, 41);
   } 
