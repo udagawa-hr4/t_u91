@@ -422,11 +422,27 @@ a{
     background-image: url(/assets/notebook-1280538_1280.jpg);
   }
 }
+@keyframes kf-fusen{
+  0%{
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  100%{
+    transform: translateX(0%);
+    opacity: 1;
+  }
+}
 .fusen{
   position: relative;
   width: 47%;
   height: 15%;
   // background: linear-gradient(45deg, rgb(54, 53, 53), #3d3932 30%, #382d2a 60%, #2c3042);
+  animation: kf-fusen 1s both;
+  @for $i from 1 through 11 {
+    &:nth-child(#{$i}) {
+      animation-delay: $i * 0.3s;
+     }
+   }
   color: white;
   font-size: 20px;
   font-weight: 600;
@@ -436,6 +452,7 @@ a{
   overflow-x: scroll;
   // white-space: pre-line;
   word-break: break-all;
+  opacity: 0;
   &:nth-child(1){
     background-color: rgb(41, 165, 41);
   } 
@@ -477,7 +494,7 @@ a{
     left: 50%;
     transform: translate(-50%,-50%);
     text-shadow: 3px 3px 2px black;
-    font-size: 25px;
+    font-size: 20px;
     color: white;
     width: 12em;
     padding-left: 1em;

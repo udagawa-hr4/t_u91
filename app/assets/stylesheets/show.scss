@@ -1,0 +1,117 @@
+.main-content{
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  
+  
+  & .list-content{
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    width: 50vw;
+    height: 100vh;
+    & .form-content{
+      width: 60vw;
+      height: 70vh;
+      // background-color:rgba($color: white, $alpha: 0.7);
+      background-size: cover;
+      
+      border-radius: 20px;
+      position: absolute;
+      z-index: 5;
+      top: 15vh;
+      left: 0;
+      transform: translateX(-7%);
+      animation-name:kf-back ,kf-border;
+      animation-duration: 20s , 20s;
+      animation-iteration-count: infinite,infinite;
+      border: 10px solid black;
+    }
+    & .main-title{
+      font-size: 50px;
+      font-weight: 600;
+      position: absolute;
+      top: 5vh;
+      left: 50%;
+      transform: translateX(-50%);
+      color: white;
+      text-shadow: 0 0 10px gray;
+      & .char-title{
+        display: inline-block;
+        @for $i from 1 through 11 {
+          &:nth-child(#{$i}) {
+            animation-delay: $i * 0.06s;
+           }
+         }
+           animation-name: kf-title;
+           animation-duration: 2.5s;
+           animation-fill-mode: forwards;
+           animation-iteration-count: infinite;
+      }
+  
+      
+     }
+
+  }
+ 
+}
+@keyframes kf-deg {
+  0%{
+    transform:scale(1)rotateY(0);
+  }
+  50%{
+    transform:scale(2) rotateY(-180deg);
+    color: darkcyan;
+  }
+  100%{
+    transform:scale(1)rotateY(0);
+    color: darkcyan;
+  }
+}
+@keyframes kf-back{
+  0%{
+    background-color: white;
+    opacity: 1;
+  }
+  50%{
+    background-color: white;
+    opacity: 0.8;
+  }
+ 
+  100%{
+    background-color: white;
+    opacity: 1;
+  }
+}
+@keyframes kf-border{
+  0%{
+    border: 5px solid black;
+  }
+  33%{
+    border: 5px solid rgb(19, 18, 18);
+  }
+  66%{
+    border:5px solid rgb(19, 18, 18);
+  }
+  100%{
+    border: 5px solid black;
+  }
+}
+@keyframes kf-title{
+  0%{
+    color: black;
+  }
+  10%{
+    color: black;
+    transform: scale(1);
+  }
+  15%{
+    color: rgb(252, 250, 245);
+    transform: scale(1.2);
+  }
+  20%{
+    color: black;
+    transform: scale(1);
+  }
+}
