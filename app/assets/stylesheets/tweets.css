@@ -911,7 +911,6 @@ a {
   }
 }
 
-
 @-webkit-keyframes kf-fusen {
   0% {
     -webkit-transform: translateX(-100%);
@@ -935,7 +934,6 @@ a {
     -webkit-transform: translateX(0%);
             transform: translateX(0%);
     opacity: 1;
-
   }
 }
 
@@ -960,7 +958,6 @@ a {
 }
 
 .fusen:nth-child(1) {
-
   -webkit-animation-delay: 0.3s;
           animation-delay: 0.3s;
 }
@@ -1013,7 +1010,7 @@ a {
 .fusen:nth-child(11) {
   -webkit-animation-delay: 3.3s;
           animation-delay: 3.3s;
-
+}
 
 .fusen:nth-child(1) {
   background-color: #29a529;

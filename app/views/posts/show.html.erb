@@ -28,17 +28,45 @@
           <%= link_to  new_user_session_path, class: "top-nav_right" do%><span class="char-sub">L</span><span class="char-sub">o</span><span class="char-sub">g</span><span class="char-sub">&nbsp</span><span class="char-sub">o</span><span class="char-sub">u</span><span class="char-sub">t</span>
           <% end  %>
         </nav>
+        <nav class= "bottom-nav">
+            <%= link_to  root_path, class: "bottom-nav_left" do%>
+              <span class="char-sub">T</span><span class="char-sub">o</span><span class="char-sub">p</span><span class="char-sub">&nbsp</span><span class="char-sub">p</span><span class="char-sub">a</span><span class="char-sub">g</span><span class="char-sub">e</span></a>
+            <% end  %>
+            <%= link_to new_post_path,class:"bottom-nav_right" do%>
+              <span class="char-sub">W</span><span class="char-sub">r</span><span class="char-sub">i</span><span class="char-sub">t</span><span class="char-sub">e</span><span class="char-sub">&nbsp</span><span class="char-sub">a</span><span class="char-sub">&nbsp</span><span class="char-sub">p</span><span class="char-sub">o</span><span class="char-sub">s</span><span class="char-sub">t</span>
+            <% end %>
+          </nav>
        
  <!--　一覧表示 -->  
-   <div class="main-content">
-    <section class="list-content">
+   <div class="all-content">
+    <section class="main-content">
       <p class="main-title"><span class="char-title">N</span><span class="char-title">e</span><span class="char-title">w</span><span class="char-title">&nbsp</span><span class="char-title">P</span><span class="char-title">o</span><span class="char-title">s</span><span class="char-title">t</span>
-      <div>
+      <div class="list-content">
         <div class ="form-content">
-          
+          <div class= "img-field">
+          </div>
+          <div class= "tweet-field">
+              <div class="tweet-title">
+              <%= "#{@post.title}" %>
+              </div>
+              <span class="fusen-left1"></span>
+              <span class="fusen-left2"></span>
+              <div class = "tweet-text">
+              <%= "#{@post.text}" %>
+              </div>
+          </div>
         </div>
         
         <div class = "comment-content">
+            <p class="comment-title"><span class="char-title">C</span><span class="char-title">o</span><span class="char-title">m</span><span class="char-title">m</span><span class="char-title">e</span><span class="char-title">n</span><span class="char-title">t</span></p>
+            <div class="comments-list">
+
+            </div>
+            <div class ="form-comment">
+              <div class = "com1">aa</div>
+              <div class="com2">cc</div>
+            </div>
+
         </div>
      
       </div>
