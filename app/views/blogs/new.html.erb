@@ -10,31 +10,45 @@
   <% end %>
 </head>
 <body>
+<div class="calendar-all">
+  <nav class="top-nav">
+    <%= link_to  root_path, class: "top-nav_left" do%>
+    <span class="char-sub">T</span><span class="char-sub">o</span><span class="char-sub">p</span><span class="char-sub">&nbsp</span><span class="char-sub">P</span><span class="char-sub">a</span><span class="char-sub">g</span><span class="char-sub">e</span>
+    <% end %>
+    <%= link_to  blogs_path, class: "top-nav_right" do%><span class="char-sub">B</span><span class="char-sub">a</span><span class="char-sub">c</span><span class="char-sub">k</span>
+    <% end  %>
+  </nav>
   <div class="new-blog">
-  <h1 class="new-title">Write a diary</h1>
-  <div class="blog-new">
-    <%= form_with(model: @blog, local: true) do |form| %>
-
+    <h1 class="new-title">Write a diary</h1>
+    <div class="blog-new">
+      <%= form_with(model: @blog, local: true, class:"blog-form") do |form| %>
       <div class="blog-title">
-        <%= form.label :title, class:"label-title" %>
-        <%= form.text_field :title, class:"field-title" %>
-      </div>
-
-        <div class="blog-time">
-        <%= form.label :start_time, class:"label-time" %>
-        <%= form.datetime_select :start_time, class:"field-time" %>
+          <%= form.label :title, class:"label-title" %>
+          <div class="title-style">
+          <span class="title-span"></span>
+          <%= form.text_field :title, autocomplete:"off", class:"field-title" %>
+        </div>
       </div>
 
       <div class="blog-content">
         <%= form.label :content, class:"label-content" %>
-        <%= form.text_field :content, class:"field-content" %>
+          <div class="content-style">
+            <span class="content-span1"></span>
+            <span class="content-span2"></span>
+            <%= form.text_area :content, autocomplete:"off", class:"field-content" %>
+          </div>
       </div>
-
-
-      <div class="blog-submit">
-        <%= form.submit%>
+        <div class="blog-time">
+        <div><%= form.label :start_time, class:"label-time" %></div>
+        <div><%= form.datetime_select :start_time, class:"field-time" %></div>
       </div>
-    <% end %>
+      <div class="blog-button">
+        <span class="btn-span"></span>
+        <%= form.label "Post", for:"blog-submit", class:"blog-btn" %>
+        <%= form.submit id:"blog-submit"%>
+      </div>
+      <% end %>
+    </div>
   </div>
 </div>
 </body>
