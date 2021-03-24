@@ -10,7 +10,7 @@
   <% end %>
 </head>
 <body>
-  <div class="calendar-all">
+  <div class="calendar-all"> 
     <nav class="top-nav">
       <%= link_to  root_path, class: "top-nav_left" do%>
       <span class="char-sub">T</span><span class="char-sub">o</span><span class="char-sub">p</span><span class="char-sub">&nbsp</span><span class="char-sub">P</span><span class="char-sub">a</span><span class="char-sub">g</span><span class="char-sub">e</span>
@@ -18,30 +18,43 @@
       <%= link_to  blogs_path, class: "top-nav_right" do%><span class="char-sub">B</span><span class="char-sub">a</span><span class="char-sub">c</span><span class="char-sub">k</span>
       <% end  %>
     </nav>
+
     <div class="show-blog">
       <h1 class="show-header">Detailed schedule</h1>
-      
       <div class="show-content">
-        <p>
-          <strong class="show-title">タイトル：</strong>
-          <%= @blog.title %>
-        </p>
-
-        <p>
-          <strong class="show-time">時間：</strong>
-          <%= @blog.start_time.strftime("%Y-%m-%d %H:%M") %>
-        </p>
-
-        <p> 
-          <strong class="show-content">内容：</strong>
-          <%= @blog.content %>
-        </p>
-
-        <%= link_to 'Edit', edit_blog_path(@blog) %> |
-        <%= link_to 'Back', blogs_path %> |
-        <%= link_to 'Destroy', blog_path(@blog.id), method: :delete %>
+        <div class="form-contents">
+          
+          <div class="header-show">
+            <div class="show-title">タイトル</div> 
+            <div class="title">
+              <span class="title-span"></span>
+              <div class="title-date"><%= @blog.title%></div>
+            </div>
+          </div>
+          
+          <div class="time-show">
+            <div class="show-time">時間</div>
+            <div class="time">
+              <span class="time-span"></span>
+              <div class="time-date"><%= @blog.start_time.strftime("%Y-%m-%d %H:%M") %></div>
+            </div>
+          </div>
+          
+          <div class="contents-show">
+            <div class="show-contents">内容</div>
+            <div class="contents">
+              <span class="contents-span1"></span>
+              <span class="contents-span2"></span>
+              <div class="contents-date"><%= @blog.content %></div>
+            </div>
+          </div>
+      
+          <%= link_to 'Edit', edit_blog_path(@blog) %> |
+          <%= link_to 'Back', blogs_path %> |
+          <%= link_to 'Destroy', blog_path(@blog.id), method: :delete %>
         </div>
       </div>
     </div>
-  </body>
+  </div>
+</body>
 </html>
