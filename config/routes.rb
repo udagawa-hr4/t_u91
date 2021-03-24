@@ -14,6 +14,7 @@ Rails.application.routes.draw do
     collection do
       get 'tweets'
     end
+    resources :comments, only: :create
   end
 
 end

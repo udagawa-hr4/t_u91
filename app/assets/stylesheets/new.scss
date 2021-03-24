@@ -331,7 +331,7 @@ a{
                   position: absolute;
                   z-index: 3;
                   top: 50%;
-                  left: 37%;
+                  left: 35%;
                   transform: translate(-50%,-50%);
                   box-shadow: 3px 3px 2px black inset;
               
@@ -346,7 +346,8 @@ a{
                 outline: none;
                 font-size: 23px;
                 font-weight: 600;
-                text-indent: 15%;
+                // text-indent: 15%;
+                padding-left: 50px;
                 
               }
               
@@ -424,7 +425,7 @@ a{
                 margin: 0;
                 border: none;
                 outline: none;
-                font-size: 18px;
+                font-size: 22px;
                 font-weight: 600;
                 padding-left: 3em;
                 resize: none;
@@ -578,8 +579,6 @@ a{
             &:hover::before{
               background-color: white;
               box-shadow: 3px 3px 2px black inset;
-              // border-right: 0.5px solid black;
-              // border-bottom: 0.5px solid black;
             }
 
           }

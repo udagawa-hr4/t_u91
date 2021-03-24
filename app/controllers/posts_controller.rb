@@ -18,6 +18,9 @@ class PostsController < ApplicationController
   end
   def show
     @post = Post.find(params[:id])
+    # @comments = @post.comments.includes(:user)
+    @comments = Comment.paginate(page: params[:page], per_page: 2)
+    @comment = Comment.new
   end
   private
   def post_params
