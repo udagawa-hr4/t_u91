@@ -627,7 +627,7 @@ a {
   position: absolute;
   z-index: 3;
   top: 50%;
-  left: 37%;
+  left: 35%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
   -webkit-box-shadow: 3px 3px 2px black inset;
@@ -642,7 +642,7 @@ a {
   outline: none;
   font-size: 23px;
   font-weight: 600;
-  text-indent: 15%;
+  padding-left: 50px;
 }
 
 .main-content .post-content .form-post .form_all .form-text {
@@ -735,7 +735,7 @@ a {
   margin: 0;
   border: none;
   outline: none;
-  font-size: 18px;
+  font-size: 22px;
   font-weight: 600;
   padding-left: 3em;
   resize: none;

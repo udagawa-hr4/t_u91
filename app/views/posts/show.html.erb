@@ -46,25 +46,50 @@
           <div class= "img-field">
           </div>
           <div class= "tweet-field">
+              <span class="cover-title"></span>
               <div class="tweet-title">
-              <%= "#{@post.title}" %>
+              <%= @post.title %>
               </div>
+              <span class="cover-text"></span>
               <span class="fusen-left1"></span>
               <span class="fusen-left2"></span>
               <div class = "tweet-text">
-              <%= "#{@post.text}" %>
+              <%= safe_join(@post.text.split("\n"),tag(:br)) %>
               </div>
           </div>
         </div>
         
         <div class = "comment-content">
-            <p class="comment-title"><span class="char-title">C</span><span class="char-title">o</span><span class="char-title">m</span><span class="char-title">m</span><span class="char-title">e</span><span class="char-title">n</span><span class="char-title">t</span></p>
-            <div class="comments-list">
-
-            </div>
+              <div class="comments-list">
+                <p class="comment-title"><span class="char-title">C</span><span class="char-title">o</span><span class="char-title">m</span><span class="char-title">m</span><span class="char-title">e</span><span class="char-title">n</span><span class="char-title">t</span></p>
+                <ul class="tweets-list">
+                
+                  <% @comments.each do |comment| %>
+                  <li class="com-li">
+                      <span class="cover-comment"></span>
+                    <div class="com-all">
+                      <span class="com-spn1"></span>
+                      <span class="com-spn2"></span>
+                      <%= safe_join(comment.text.split("\n"),tag(:br)) %>
+                    </div>
+                  </li>
+                    <% end  %>
+              
+                </ul>
+                <%= will_paginate @comments, :previous_label => ' &lt Back', :next_label => 'Next &gt' %>
+              </div>
             <div class ="form-comment">
-              <div class = "com1">aa</div>
-              <div class="com2">cc</div>
+              <%= form_with(model: [@post, @comment], local: true,class:"with-all") do |form| %>
+                  <div class="fusen-all_1">
+                    <span class="fusen-left"></span>
+                    <%= form.text_area :text, placeholder: "コメントする", rows: "2",class:"with-text" %>
+                  </div>
+                  <div class="fusen-all_2">
+                  <span class="fusen-left_1"></span>
+                  <%= form.label "SEND",for:"submit-btn",class:"com-submit" %>
+                  <%= form.submit id:"submit-btn" %>
+                  </div>
+              <% end %>
             </div>
 
         </div>
