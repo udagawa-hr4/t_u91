@@ -71,6 +71,10 @@
                       <span class="com-spn1"></span>
                       <span class="com-spn2"></span>
                       <%= safe_join(comment.text.split("\n"),tag(:br)) %>
+                      <br>
+                      
+                      <%= "#{comment.user.nickname}さんの投稿" %>
+                      
                     </div>
                   </li>
                     <% end  %>

@@ -9,6 +9,7 @@ Rails.application.routes.draw do
 
 # get 'blogs/index'
   resources :blogs
+  resources :users,only: [:show]
 
   resources :posts,only: [:show,:new,:create] do
     collection do
@@ -16,5 +17,6 @@ Rails.application.routes.draw do
     end
     resources :comments, only: :create
   end
+
 
 end
