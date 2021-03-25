@@ -22,6 +22,7 @@
     <h1 class="new-title">Write a diary</h1>
     <div class="blog-new">
       <%= form_with(model: @blog, local: true, class:"blog-form") do |form| %>
+      
       <div class="blog-title">
           <%= form.label :title, class:"label-title" %>
           <div class="title-style">
@@ -39,8 +40,11 @@
           </div>
       </div>
         <div class="blog-time">
-        <div><%= form.label :start_time, class:"label-time" %></div>
-        <div><%= form.datetime_select :start_time, class:"field-time" %></div>
+          <%= form.label :start_time, class:"label-time" %>
+          <div class="time-style">
+            <span class="time-span"></span>
+            <%= form.datetime_select :start_time, class:"field-time" %>
+          </div>
       </div>
       <div class="blog-button">
         <span class="btn-span"></span>
