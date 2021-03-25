@@ -23,6 +23,7 @@
       font-weight: 600;
       color: white;
       margin:5% 10% 0 0;
+      text-decoration: none;
       text-shadow: 0 0 10px black;
       &:hover{
         & .char-sub{
@@ -45,6 +46,7 @@
       color: white;
       margin:5% 0 0 10%;
       text-shadow: 0 0 10px black;
+      text-decoration: none;
       &:hover{
         & .char-sub{
           display: inline-block;
@@ -171,38 +173,6 @@
   }
 }
 
-@keyframes kf-deg {
-  0%{
-    transform:scale(1)rotateY(0);
-  }
-  50%{
-    transform:scale(2) rotateY(-180deg);
-    color: darkcyan;
-  }
-  100%{
-    transform:scale(1)rotateY(0);
-    color: darkcyan;
-  }
-}
-
-@keyframes bg-image {
-  0%,100%{
-    background: linear-gradient(0deg, rgba(78, 49, 241, 0.5),rgba(209, 238, 44, 0.5));
-  }
-  33% {
-    background: linear-gradient(120deg, rgba(78, 49, 241, 0.5),rgba(209, 238, 44, 0.5));
-  }
-  34%{
-    background: linear-gradient(121deg, rgba(78, 49, 241, 0.5),rgba(209, 238, 44, 0.5));
-
-  }
-  66% {
-    background: linear-gradient(240deg, rgba(78, 49, 241, 0.5),rgba(209, 238, 44, 0.5));
-  }
-  67% {
-    background: linear-gradient(241deg, rgba(78, 49, 241, 0.5),rgba(209, 238, 44, 0.5));
-  }
-}
 
 
 // カレンダー投稿
@@ -298,7 +268,7 @@
             outline: none; 
             overflow: scroll;
             word-break: break-all;
-
+            
           }
         }
       }
@@ -675,8 +645,7 @@
         }
       }
     }
-
-      & .contents-show {
+    & .contents-show {
         font-size: 30px;
         height: 40%;
         width: 100%;
@@ -733,11 +702,10 @@
             background-color: rgba(203, 255, 239, 0.8);
           }
           & .contents-date {
-            height: 25vh;
+            height: 23vh;
             width: 92%;
             z-index: 30;
-            text-indent: 1em;
-            margin-bottom: 1vh;
+            margin-bottom: 5vh;
             background: linear-gradient(45deg, rgb(54, 53, 53), #3d3932 30%, #382d2a 60%, #2c3042);
             color: white;
             font-family: Georgia, 'Times New Roman', Times, serif;
@@ -752,4 +720,92 @@
       }
     }
   } 
+}
+.show-btn {
+  // position: relative;
+  // z-index: 200;
+  font-size: 30px;
+  display: inline-block;
+  width: 20%;
+  height: 100%;
+  padding: 0 2vw;
+  margin: 0 1%;
+  transform: skew(0);
+  text-decoration: none;
+  color: #fff;
+  border-radius: 0;
+  background-image: linear-gradient(left, #080808 0%, #120a0a 100%);
+  box-shadow: 5px 5px 5px black;
+  &:hover {
+    transition-duration: 0.5s;
+    transform: skew(-20deg);
+    color: red;
+    box-shadow: 5px 5px 5px black;
+
+  }
+}
+// 編集ページ
+.edit-title {
+  overflow: hidden;
+  color: black;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  padding-top: 2vh;
+  font-size: 40px;
+  text-shadow: 5px 5px 5px grey;
+  text-align: center;
+  
+  & span {
+  display: inline-block;
+  animation-name: kf-cl-title;
+  animation-duration: 0.8s;
+  animation-fill-mode: both;
+  @for $i from 1 through 12 {
+    &:nth-child(#{$i}) {
+        animation-delay: $i * 0.2s;
+      }
+    }
+  }
+}
+
+@keyframes kf-deg {
+  0%{
+    transform:scale(1)rotateY(0);
+  }
+  50%{
+    transform:scale(2) rotateY(-180deg);
+    color: darkcyan;
+  }
+  100%{
+    transform:scale(1)rotateY(0);
+    color: darkcyan;
+  }
+}
+
+@keyframes bg-image {
+  0%,100%{
+    background: linear-gradient(0deg, rgba(78, 49, 241, 0.5),rgba(209, 238, 44, 0.5));
+  }
+  33% {
+    background: linear-gradient(120deg, rgba(78, 49, 241, 0.5),rgba(209, 238, 44, 0.5));
+  }
+  34%{
+    background: linear-gradient(121deg, rgba(78, 49, 241, 0.5),rgba(209, 238, 44, 0.5));
+
+  }
+  66% {
+    background: linear-gradient(240deg, rgba(78, 49, 241, 0.5),rgba(209, 238, 44, 0.5));
+  }
+  67% {
+    background: linear-gradient(241deg, rgba(78, 49, 241, 0.5),rgba(209, 238, 44, 0.5));
+  }
+}
+@keyframes kf-cl-title{
+  0%{
+    transform: translateY(-150%);
+    opacity: 0;
+  }
+  100%{
+    transform: translateY(0);
+    opacity: 1;
+  }
 }

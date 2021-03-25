@@ -48,10 +48,18 @@
               <div class="contents-date"><%= @blog.content %></div>
             </div>
           </div>
-      
-          <%= link_to 'Edit', edit_blog_path(@blog) %> |
-          <%= link_to 'Back', blogs_path %> |
-          <%= link_to 'Destroy', blog_path(@blog.id), method: :delete %>
+        
+          <%= link_to edit_blog_path(@blog),class:"show-btn" do%>
+            <div class="edit-path">
+              <span>E</span><span>d</span><span>i</span><span>t</span>
+            </div>
+          <% end %>
+          <%= link_to  blogs_path, class:"show-btn" do %>
+            <span>B</span><span>a</span><span>c</span><span>k</span>
+          <% end %>
+          <%= link_to blog_path(@blog.id), class:"show-btn", method: :delete  do %>
+            <span>D</span><span>es</span><span>tr</span><span>oy</span>
+          <% end %>
         </div>
       </div>
     </div>
