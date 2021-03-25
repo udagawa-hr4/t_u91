@@ -722,8 +722,6 @@
   } 
 }
 .show-btn {
-  // position: relative;
-  // z-index: 200;
   font-size: 30px;
   display: inline-block;
   width: 20%;
@@ -739,9 +737,8 @@
   &:hover {
     transition-duration: 0.5s;
     transform: skew(-20deg);
-    color: red;
+    color: rgb(93, 246, 249);
     box-shadow: 5px 5px 5px black;
-
   }
 }
 // 編集ページ
