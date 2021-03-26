@@ -26,7 +26,8 @@
   <table></table>
   
   <%= link_to new_blog_path, class:"diary-nik" do %>
-     <p class="nik-span">日記を書く</p> 
+    <p class="nik-span">Write a diary</p>
+
    <% end %> 
   <%# <div class="calendar-index"> %>
     <%= month_calendar class:"calendar-index", events: @blogs do |date, blogs| %>
@@ -40,5 +41,6 @@
     <% end %>
   <%# </div> %>
 </div>
+<%= javascript_pack_tag "calendar.js"%>
 </body>
 </html>

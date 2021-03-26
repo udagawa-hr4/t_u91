@@ -222,6 +222,23 @@
           transform: translateX(-50%);
 }
 
+.simple-calendar .calendar-heading a {
+  color: navy;
+}
+
+.simple-calendar .calendar-heading a:hover {
+  font-size: 1.5em;
+}
+
+.simple-calendar .day a {
+  color: black;
+}
+
+.simple-calendar .day a:hover {
+  color: blue;
+  font-size: 1.15em;
+}
+
 .simple-calendar th {
   padding: 6px;
   border-bottom: 4px double black;
@@ -590,14 +607,12 @@
   right: 10.8vw;
   top: 15.2vh;
   color: black;
-  background-color: rgba(60, 231, 244, 0.7);
+  background-color: rgba(235, 244, 60, 0.7);
   border: 4px double black;
-  padding: 2px 6px;
+  padding: 4px 12px;
   z-index: 2;
-}
-
-.diary-nik .nik-span {
-  font-size: 20px;
+  text-decoration: none;
+  font-weight: bold;
 }
 
 @-webkit-keyframes cbg-img {
@@ -964,7 +979,9 @@
   padding: 1vh 0 1vh 3.5vw;
 }
 
-.show-btn {
+.e-btn, .t-btn, .d-btn {
+  position: relative;
+  z-index: 1000;
   font-size: 30px;
   display: inline-block;
   width: 20%;
@@ -980,16 +997,80 @@
   background-image: linear-gradient(left, #080808 0%, #120a0a 100%);
   -webkit-box-shadow: 5px 5px 5px black;
           box-shadow: 5px 5px 5px black;
+  -webkit-animation: field-a;
+          animation: field-a;
+  -webkit-animation-duration: 3s;
+          animation-duration: 3s;
+  -webkit-animation-delay: 2s;
+          animation-delay: 2s;
+  opacity: 0;
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
 }
 
-.show-btn:hover {
+.e-btn:hover, .t-btn:hover, .d-btn:hover {
   -webkit-transition-duration: 0.5s;
           transition-duration: 0.5s;
   -webkit-transform: skew(-20deg);
           transform: skew(-20deg);
-  color: red;
+  color: #5df6f9;
   -webkit-box-shadow: 5px 5px 5px black;
           box-shadow: 5px 5px 5px black;
+}
+
+.e-btn span, .t-btn span, .d-btn span {
+  display: inline-block;
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
+  -webkit-animation-delay: 2s;
+          animation-delay: 2s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  -webkit-animation-name: show-a;
+          animation-name: show-a;
+  opacity: 0;
+}
+
+@-webkit-keyframes show-a {
+  0% {
+    -webkit-transform: translateX(-2000%) rotateZ(-1080deg);
+            transform: translateX(-2000%) rotateZ(-1080deg);
+    color: black;
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes show-a {
+  0% {
+    -webkit-transform: translateX(-2000%) rotateZ(-1080deg);
+            transform: translateX(-2000%) rotateZ(-1080deg);
+    color: black;
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes field-a {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes field-a {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 .edit-title {

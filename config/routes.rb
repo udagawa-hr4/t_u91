@@ -7,8 +7,10 @@ Rails.application.routes.draw do
   root to: "posts#index"
 
 
-# get 'blogs/index'
-  resources :blogs
+# get 'blogs/index' 
+  resources :blogs do
+    get :search, on: :collection
+  end
 
   resources :posts,only: [:show,:new,:create] do
     collection do

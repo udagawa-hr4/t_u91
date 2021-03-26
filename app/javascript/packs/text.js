@@ -11,7 +11,6 @@ class TextChange{
   }
   _changeIntTw(){
       this.DOM.btnTweet.innerHTML = ("投稿");
-
     }
   _changeIntRvTw(){
       this.DOM.btnTweet.innerHTML = ("Tweet");
