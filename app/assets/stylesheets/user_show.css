@@ -536,6 +536,7 @@ a {
   -webkit-animation-iteration-count: infinite,infinite;
           animation-iteration-count: infinite,infinite;
   border: 10px solid black;
+  overflow: hidden;
 }
 
 .main-content .prof-content .form-content .name-content {
@@ -553,14 +554,78 @@ a {
           justify-content: center;
 }
 
+.main-content .prof-content .form-content .name-content::before {
+  content: "";
+  position: absolute;
+  display: inline-block;
+  width: 100%;
+  height: 120%;
+  top: 0;
+  left: 0;
+  -webkit-animation: img-wrap 2s ease-in-out forwards;
+          animation: img-wrap 2s ease-in-out forwards;
+  background-color: white;
+  z-index: 10;
+}
+
+.main-content .prof-content .form-content .name-content .edit-btn {
+  position: absolute;
+  right: 5%;
+  top: 50%;
+  width: 10%;
+  height: 50%;
+  background-color: red;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  text-shadow: 3px 3px 2px black;
+  -webkit-box-shadow: 5px 5px 5px black;
+          box-shadow: 5px 5px 5px black;
+  color: white;
+}
+
+.main-content .prof-content .form-content .name-content .edit-btn::before {
+  content: "";
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  border-radius: 7.5px;
+  -webkit-box-shadow: 3px 3px 2px black inset;
+          box-shadow: 3px 3px 2px black inset;
+  background-color: white;
+  top: 50%;
+  left: 5%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+
 .main-content .prof-content .form-content .name-content .fusen-name {
   position: relative;
-  display: inline-block;
   width: 30%;
   height: 80%;
   background-color: chartreuse;
   -webkit-box-shadow: 5px 5px 5px black;
           box-shadow: 5px 5px 5px black;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  font-size: 20px;
+  font-weight: 600;
+  text-shadow: 3px 3px 2px gray;
 }
 
 .main-content .prof-content .form-content .name-content .fusen-name::before {
@@ -635,7 +700,7 @@ a {
 
 .main-content .prof-content .form-content .post-content {
   width: 100%;
-  height: 25%;
+  height: 24%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -661,6 +726,7 @@ a {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  overflow: hidden;
 }
 
 .main-content .prof-content .form-content .post-content .post-list .list-title {
@@ -705,8 +771,8 @@ a {
 .main-content .prof-content .form-content .post-content .post-list .post-ul .fusen-post {
   width: 45%;
   height: 70%;
-  -webkit-box-shadow: 5px 5px 5px black;
-          box-shadow: 5px 5px 5px black;
+  position: relative;
+  overflow: hidden;
 }
 
 .main-content .prof-content .form-content .post-content .post-list .post-ul .fusen-post:nth-child(1) {
@@ -717,10 +783,31 @@ a {
   background-color: #0a75f0;
 }
 
+.main-content .prof-content .form-content .post-content .post-list .post-ul .fusen-post::before {
+  content: "";
+  position: absolute;
+  display: inline-block;
+  width: 110%;
+  height: 120%;
+  top: 0;
+  left: 0;
+  background: linear-gradient(45deg, #363535, #3d3932 30%, #382d2a 60%, #2c3042);
+  z-index: 10;
+  -webkit-animation: img-wrap 1s 3s forwards;
+          animation: img-wrap 1s 3s forwards;
+}
+
 .main-content .prof-content .form-content .post-content .post-list .post-ul .fusen-post .post-li {
   width: 100%;
   height: 100%;
   position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-left: 10%;
 }
 
 .main-content .prof-content .form-content .post-content .post-list .post-ul .fusen-post .post-li::before {
