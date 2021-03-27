@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <% content_for :css do %>
+    <%= stylesheet_link_tag 'user_show' %>
+  <% end %>
+</head>
+<body>
+
+ <div id="global-container">
+<!-- 背景のドット調coverの擬似要素 --> 
+    <div class="bg-dot">
+      <span class="bg-cover"></span>
+    </div>
+<!-- ボタンにhoverしたときに表示される擬似要素 -->
+    <span class="bg-signup"></span>
+    <span class="bg-signin"></span>
+    <span class="bg-mypage"></span>
+    <span class="bg-search"></span>
+<!-- sign inしているときのボタン -->
+   <% if user_signed_in? %> 
+        <nav class="top-nav">
+          <%= link_to  root_path, class: "top-nav_left" do%>
+              <span class="char-sub">T</span><span class="char-sub">o</span><span class="char-sub">p</span><span class="char-sub">&nbsp</span><span class="char-sub">p</span><span class="char-sub">a</span><span class="char-sub">g</span><span class="char-sub">e</span>
+          <% end %>
+          <%= link_to  new_user_session_path, class: "top-nav_right" do%><span class="char-sub">L</span><span class="char-sub">o</span><span class="char-sub">g</span><span class="char-sub">&nbsp</span><span class="char-sub">o</span><span class="char-sub">u</span><span class="char-sub">t</span>
+          <% end  %>
+        </nav>
+        <nav class= "bottom-nav">
+          <%= link_to  root_path, class: "bottom-nav_left" do%><span class="char-sub">M</span><span class="char-sub">y</span><span class="char-sub">&nbsp</span><span class="char-sub">p</span><span class="char-sub">a</span><span class="char-sub">g</span><span class="char-sub">e</span></a>
+          <% end  %>
+          <%= link_to tweets_posts_path,class:"bottom-nav_right" do%><span class="char-sub">S</span><span class="char-sub">e</span><span class="char-sub">a</span><span class="char-sub">r</span><span class="char-sub">c</span><span class="char-sub">h</span>
+          <% end %>
+        </nav>
+<!-- sign outしているときのボタン -->        
+    <% else %>
+        <nav class="top-nav">
+            <%= link_to  new_user_registration_path, class: "top-nav_left" do%>
+              <span class="char-sub">S</span><span class="char-sub">i</span><span class="char-sub">g</span><span class="char-sub">n</span><span class="char-sub">&nbsp</span><span class="char-sub">u</span><span class="char-sub">p</span>
+            <% end %>
+            <%= link_to  new_user_session_path, class: "top-nav_right" do%>
+              <span class="char-sub">L</span><span class="char-sub">o</span><span class="char-sub">g</span><span class="char-sub">&nbsp</span><span class="char-sub">i</span><span class="char-sub">n</span>
+            <% end  %>
+          </nav>
+          <nav class= "bottom-nav">
+            <%= link_to  root_path, class: "bottom-nav_left" do%>
+              <span class="char-sub">T</span><span class="char-sub">o</span><span class="char-sub">p</span><span class="char-sub">&nbsp</span><span class="char-sub">p</span><span class="char-sub">a</span><span class="char-sub">g</span><span class="char-sub">e</span></a>
+            <% end  %>
+            <%= link_to new_post_path,class:"bottom-nav_right" do%>
+              <span class="char-sub">W</span><span class="char-sub">r</span><span class="char-sub">i</span><span class="char-sub">t</span><span class="char-sub">e</span><span class="char-sub">&nbsp</span><span class="char-sub">a</span><span class="char-sub">&nbsp</span><span class="char-sub">p</span><span class="char-sub">o</span><span class="char-sub">s</span><span class="char-sub">t</span>
+            <% end %>
+          </nav>
+      <% end %>   
+ <!--　一覧表示 -->  
+   <div class="main-content">
+    <section class="prof-content">
+      <p class="post-title"><span class="char-title">M</span><span class="char-title">y</span><span class="char-title">&nbsp</span><span class="char-title">P</span><span class="char-title">a</span><span class="char-title">g</span><span class="char-title">e</span>
+      </p>
+      <div class ="form-content">
+            <div class="name-content">
+              <div class="fusen-name">
+                <%= @user.nickname %>
+              </div>
+              <a href="#" class="edit-btn">Edit</a>
+            </div>
+            <div class="text-content">
+              <div class="fusen-text">
+                 <p>introduction</p>
+              </div>
+            </div>
+            <div class="post-content">
+               <div class="post-list">
+                    <p class="list-title">Post-list</p>
+                    <ul class="post-ul">
+                      <% @posts.each do |post| %>
+                       <div class="fusen-post">
+                          
+                          <li class="post-li">
+                            <%= post.title %>
+                          </li>
+                       </div>
+                      <% end %>
+                    </ul>
+                      <%= will_paginate @posts, :previous_label => ' &lt Back', :next_label => 'Next &gt' %>
+               </div>
+            </div>
+      </div>
+     
+
+    </section>
+   </div>
+   
+ </div>
+ <%= javascript_pack_tag 'main.js' %>
+ 
+
+</body>
+</html>
