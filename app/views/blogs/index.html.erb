@@ -26,7 +26,8 @@
   <table></table>
   
   <%= link_to new_blog_path, class:"diary-nik" do %>
-     <p class="nik-span">日記を書く</p> 
+    <p class="nik-span">Write a diary</p>
+
    <% end %> 
   <%# <div class="calendar-index"> %>
     <%= month_calendar class:"calendar-index", events: @blogs do |date, blogs| %>
@@ -39,6 +40,22 @@
       <% end %>
     <% end %>
   <%# </div> %>
+  
+<div class="cl-search">
+    <%= form_tag(search_blogs_path, class:"search-group", :method => 'get') do %>
+    <%= text_field_tag :search, "", {class:"search-field"} %>
+    <%= submit_tag 'Search', :title => nil, class:"search-btn" %>
+    <% end %>
 </div>
+
+
+
+<%# <div class="blog-button">
+        <span class="btn-span"></span>
+        <%= form.label "Post", for:"blog-submit", class:"blog-btn" %>
+        <%# <%= form.submit id:"blog-submit"%>
+      <%# </div> %> 
+
+<%= javascript_pack_tag "calendar.js"%>
 </body>
 </html>
