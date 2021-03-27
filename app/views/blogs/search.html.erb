@@ -5,32 +5,52 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
+  <% content_for :css do %>
+    <%= stylesheet_link_tag 'blogs' %>
+  <% end %>
 </head>
 <body>
   
-<div class="search-page">
+<div class="calendar-all search">
+  <nav class="top-nav">
+    <%= link_to  root_path, class: "top-nav_left" do%>
+    <span class="char-sub">T</span><span class="char-sub">o</span><span class="char-sub">p</span><span class="char-sub">&nbsp</span><span class="char-sub">P</span><span class="char-sub">a</span><span class="char-sub">g</span><span class="char-sub">e</span>
+    <% end %>
+    <%= link_to  blogs_path, class: "top-nav_right" do%><span class="char-sub">B</span><span class="char-sub">a</span><span class="char-sub">c</span><span class="char-sub">k</span>
+    <% end  %>
+  </nav>
+  
   <div class="search-header">search results</div>
+  
   <div class="search-contents">
     <div class="contents-header">
-      <div class="contents-title">Title</div>
-      <div class="contents-content">Contents</div>
-      <div class="contents-time">Start time</div>
+      <div class="contents-title">
+        <span>T</span><span>i</span><span>t</span><span>l</span><span>e</span>
+      </div>
+      <div class="contents-content">
+        <span>C</span><span>o</span><span>n</span><span>t</span><span>e</span><span>n</span><span>t</span>
+      </div>
+      <div class="contents-time">
+      <span>S</span><span>t</span><span>a</span><span>r</span><span>t</span><span>&nbsp;</span><span>t</span><span>i</span><span>m</span><span>e</span>
+      </div>
     </div>
-  </div>
-  <ul><% @blogs.each do |blog| %>
-    <li>
-      <div class="s-title">
-        <%= link_to blog.title, blog %>
-      </div>
-      <div class="s-content">
-        <%= blog.content %>
-      </div>
-        <div class="s-time">
-          <%= blog.created_at.strftime('%Y/%m/%d') %>
+  
+    <ul>
+      <% @blogs.each do |blog| %>
+      <li class="s-lists">
+        <div class="s-title">
+          <%= link_to blog.title, blog ,class:"b-title" %>
         </div>
-      </li>
-    <% end %>
-  </ul>
+        <div class="s-content">
+          <%= blog.content %>
+        </div>
+          <div class="s-time">
+            <%= blog.created_at.strftime('%Y/%m/%d') %>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+  </div>
 </div>
 
 

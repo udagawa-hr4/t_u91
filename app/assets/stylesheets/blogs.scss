@@ -886,3 +886,106 @@
     opacity: 1;
   }
 }
+
+// 検索結果ページ
+.search-header {
+  padding-top: 2vh;
+  font-size: 4.5em;
+  text-shadow: 5px 5px 5px grey;
+  text-align: center;
+}
+.search-contents {
+  width: 100%;
+  
+  & .contents-header {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 2.5em;
+    display: flex;
+    padding-top: 10vh;
+    & .contents-title {
+      margin: 0 18vw 0 22vw;
+      display: inline-block;  
+      
+      & span{
+        display: inline-block;
+        animation-duration: 1.5s;
+        animation-delay: 2s;
+        animation-fill-mode: forwards;
+        animation-name: search-a;
+        opacity: 0;
+      } 
+    }
+    & .contents-content {
+      margin-right: 17vw;
+      & span{
+        display: inline-block;
+        animation-duration: 2s;
+        animation-delay: 2.5s;
+        animation-fill-mode: forwards;
+        animation-name: search-a;
+        opacity: 0;
+      } 
+    }
+    & .contents-time {
+      & span{
+        display: inline-block;
+        animation-duration: 2.5s;
+        animation-delay: 3s;
+        animation-fill-mode: forwards;
+        animation-name: search-a;
+        opacity: 0;
+      } 
+    }
+  }
+  & .s-lists {
+    border-radius: 5px;
+    width: 80%;
+    height: 70%;
+    margin: 1em auto;
+    font-size: 1.5em;
+    display: flex;
+    justify-content: center;
+    list-style: circle;
+    background-color: #d8ff00ad;
+    & .s-title {
+      text-align: center;
+      height: 10%;
+      width: 30%;
+      margin-right: 3vh;
+      display: inline-block;
+      &:hover {
+        font-size: 1.2em;
+        color: white;
+      }
+      & .b-title{
+        color: black;
+        &:hover {
+          color: blue;
+        }
+      }
+    }
+    & .s-content {
+      text-align: center;
+      height: 10%;
+      width: 30%;
+      margin-right: 3vh;
+      display: inline-block;  
+    }
+    & .s-time {
+      text-align: center;
+      height: 10%;
+      width: 30%;
+      display: inline-block;
+    }
+  }
+}
+@keyframes search-a {
+  0% {
+    transform: translateX(-2000%) rotateZ(-1080deg);
+    color: black;
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
