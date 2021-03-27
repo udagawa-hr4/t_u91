@@ -8,19 +8,31 @@
 </head>
 <body>
   
-<%= form_tag(search_blogs_path,:method => 'get') do %>
-  <%= text_field_tag :search %>
-  <%= submit_tag 'Search', :name => nil %>
-<% end %>
+<div class="search-page">
+  <div class="search-header">search results</div>
+  <div class="search-contents">
+    <div class="contents-header">
+      <div class="contents-title">Title</div>
+      <div class="contents-content">Contents</div>
+      <div class="contents-time">Start time</div>
+    </div>
+  </div>
+  <ul><% @blogs.each do |blog| %>
+    <li>
+      <div class="s-title">
+        <%= link_to blog.title, blog %>
+      </div>
+      <div class="s-content">
+        <%= blog.content %>
+      </div>
+        <div class="s-time">
+          <%= blog.created_at.strftime('%Y/%m/%d') %>
+        </div>
+      </li>
+    <% end %>
+  </ul>
+</div>
 
-<ul><% @blogs.each do |blog| %>
-  <li>
-    <%= link_to blog.title, blog %>
-    <%= blog.content %>
-    <%= blog.created_at.strftime('%Y/%m/%d') %>
-    
-  </li>
-  <% end %>
-</ul>
+
 </body>
 </html>

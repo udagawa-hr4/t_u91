@@ -199,6 +199,38 @@
   text-shadow: 5px 5px 5px grey;
 }
 
+.calendar-all .cl-search {
+  text-align: center;
+  margin-top: 2%;
+}
+
+.calendar-all .cl-search .search-field {
+  height: 40px;
+  width: 60%;
+  font-size: 1.3em;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  outline: none;
+  -webkit-box-shadow: 5px 5px 5px black;
+          box-shadow: 5px 5px 5px black;
+  opacity: 0.6;
+}
+
+.calendar-all .cl-search .search-btn {
+  height: 47px;
+  width: 8%;
+  -webkit-box-shadow: 5px 5px 5px black;
+          box-shadow: 5px 5px 5px black;
+  font-size: 1.3em;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  cursor: pointer;
+  background-color: rgba(172, 255, 47, 0.543);
+}
+
+.calendar-all .cl-search .search-btn:hover {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
 .simple-calendar .today {
   background-color: #f5ffc0a6;
 }
