@@ -97,7 +97,35 @@
     //   background-color: #5bffa678;
     
   }
+  & .cl-search {
+    text-align: center;
+    margin-top: 2%;
+    & .search-field {
+      height: 40px;
+      width: 60%;
+      font-size: 1.3em;
+      font-family: Georgia, 'Times New Roman', Times, serif;
+      outline: none;
+      box-shadow: 5px 5px 5px black;
+      opacity: 0.6;
+      
+    }
+    & .search-btn {
+      height: 47px;
+      width: 8%;
+      box-shadow: 5px 5px 5px black;
+      font-size: 1.3em;
+      font-family: Georgia, 'Times New Roman', Times, serif;
+      cursor: pointer;
+      background-color: rgba(172, 255, 47, 0.543);
+      &:hover{
+        box-shadow: none;
+        
+      }
+    }
+  }
 }
+
 .simple-calendar {
   
   & .today {
@@ -115,11 +143,27 @@
   & .calendar-heading{
     text-align: center;
     position: absolute;
-     width: 40%;
-     top: 15%;
-     left: 50%;
-     z-index: 15;
-     transform: translateX(-50%);
+    width: 40%;
+    top: 15%;
+    left: 50%;
+    z-index: 15;
+    transform: translateX(-50%);
+    & a {
+      color: navy;
+      &:hover {
+        font-size: 1.5em;
+      }
+    }
+  }
+
+  & .day {
+    & a {
+      color: black;
+      &:hover {
+        color:blue;
+        font-size: 1.15em;
+      }
+    }
   }
 
   & th {
@@ -442,13 +486,12 @@
   right: 10.8vw;
   top: 15.2vh;
   color: black;
-  background-color: rgba(60, 231, 244, 0.7);
+  background-color: rgba(235, 244, 60, 0.7);
   border: 4px double black;
-  padding: 2px 6px;
+  padding: 4px 12px;
   z-index: 2;
-  & .nik-span{
-  font-size: 20px;
-  }
+  text-decoration: none;
+  font-weight: bold;
 }
 
 
@@ -721,7 +764,9 @@
     }
   } 
 }
-.show-btn {
+.e-btn,.t-btn,.d-btn {
+  position: relative;
+  z-index: 1000;
   font-size: 30px;
   display: inline-block;
   width: 20%;
@@ -734,13 +779,48 @@
   border-radius: 0;
   background-image: linear-gradient(left, #080808 0%, #120a0a 100%);
   box-shadow: 5px 5px 5px black;
+  animation: field-a;
+  animation-duration: 3s;
+  animation-delay: 2s;
+  opacity: 0;
+  animation-fill-mode: both;
   &:hover {
     transition-duration: 0.5s;
     transform: skew(-20deg);
     color: rgb(93, 246, 249);
     box-shadow: 5px 5px 5px black;
   }
+  & span {
+    display: inline-block;  
+    animation-duration: 2s;
+    animation-delay: 2s;
+    animation-fill-mode: forwards;
+    animation-name: show-a;
+    opacity: 0;
+  }
 }
+
+@keyframes show-a {
+  0% {
+    transform: translateX(-2000%) rotateZ(-1080deg);
+    color: black;
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes field-a {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+
+
 // 編集ページ
 .edit-title {
   overflow: hidden;
@@ -803,6 +883,109 @@
   }
   100%{
     transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+// 検索結果ページ
+.search-header {
+  padding-top: 2vh;
+  font-size: 4.5em;
+  text-shadow: 5px 5px 5px grey;
+  text-align: center;
+}
+.search-contents {
+  width: 100%;
+  
+  & .contents-header {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 2.5em;
+    display: flex;
+    padding-top: 10vh;
+    & .contents-title {
+      margin: 0 18vw 0 22vw;
+      display: inline-block;  
+      
+      & span{
+        display: inline-block;
+        animation-duration: 1.5s;
+        animation-delay: 2s;
+        animation-fill-mode: forwards;
+        animation-name: search-a;
+        opacity: 0;
+      } 
+    }
+    & .contents-content {
+      margin-right: 17vw;
+      & span{
+        display: inline-block;
+        animation-duration: 2s;
+        animation-delay: 2.5s;
+        animation-fill-mode: forwards;
+        animation-name: search-a;
+        opacity: 0;
+      } 
+    }
+    & .contents-time {
+      & span{
+        display: inline-block;
+        animation-duration: 2.5s;
+        animation-delay: 3s;
+        animation-fill-mode: forwards;
+        animation-name: search-a;
+        opacity: 0;
+      } 
+    }
+  }
+  & .s-lists {
+    border-radius: 5px;
+    width: 80%;
+    height: 70%;
+    margin: 1em auto;
+    font-size: 1.5em;
+    display: flex;
+    justify-content: center;
+    list-style: circle;
+    background-color: #d8ff00ad;
+    & .s-title {
+      text-align: center;
+      height: 10%;
+      width: 30%;
+      margin-right: 3vh;
+      display: inline-block;
+      &:hover {
+        font-size: 1.2em;
+        color: white;
+      }
+      & .b-title{
+        color: black;
+        &:hover {
+          color: blue;
+        }
+      }
+    }
+    & .s-content {
+      text-align: center;
+      height: 10%;
+      width: 30%;
+      margin-right: 3vh;
+      display: inline-block;  
+    }
+    & .s-time {
+      text-align: center;
+      height: 10%;
+      width: 30%;
+      display: inline-block;
+    }
+  }
+}
+@keyframes search-a {
+  0% {
+    transform: translateX(-2000%) rotateZ(-1080deg);
+    color: black;
+    opacity: 0;
+  }
+  100% {
     opacity: 1;
   }
 }

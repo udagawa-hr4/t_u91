@@ -42,7 +42,7 @@
           </div>
           
           <div class="contents-show">
-            <div class="show-contents">content</div>
+            <div class="show-contents">Content</div>
             <div class="contents">
               <span class="contents-span1"></span>
               <span class="contents-span2"></span>
@@ -50,16 +50,16 @@
             </div>
           </div>
         
-          <%= link_to edit_blog_path(@blog),class:"show-btn" do%>
+          <%= link_to edit_blog_path(@blog),class:"e-btn" do%>
             <div class="edit-path">
               <span>E</span><span>d</span><span>i</span><span>t</span>
             </div>
           <% end %>
-          <%= link_to  blogs_path, class:"show-btn" do %>
+          <%= link_to  blogs_path, class:"t-btn" do %>
             <span>B</span><span>a</span><span>c</span><span>k</span>
           <% end %>
-          <%= link_to blog_path(@blog.id), class:"show-btn", method: :delete  do %>
-            <span>D</span><span>es</span><span>tr</span><span>oy</span>
+          <%= link_to blog_path(@blog.id), class:"d-btn", method: :delete  do %>
+            <span>D</span><span>e</span><span>l</span><span>e</span><span>t</span><span>e</span>
           <% end %>
         </div>
       </div>
