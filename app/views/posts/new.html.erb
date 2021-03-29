@@ -81,9 +81,10 @@
                <span class="fusen-left1"></span>
                <%= f.label :text,"Upload data",class:"img-label",for:"image-field" %>
                <%= f.file_field :image,class:"img-area",id:"image-field" %>
+               <div id="file-name"></div>
             </div>
             <div class = "form-submit">
-               <%= f.label "Tweet",for:"submit-btn",class:"btn-label" %>
+               <%= f.label "Tweet",for:"submit-btn",class:"btn-label" %> 
                <%= f.submit class:"submit-area",id:"submit-btn" %>
             </div>
           <% end %>

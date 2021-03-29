@@ -658,14 +658,41 @@ a {
           justify-content: center;
 }
 
+.main-content .prof-content .form-content .text-content::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  -webkit-animation: img-wrap 2s  2s ease-in-out forwards;
+          animation: img-wrap 2s  2s ease-in-out forwards;
+  background-color: white;
+  z-index: 10;
+}
+
 .main-content .prof-content .form-content .text-content .fusen-text {
   position: relative;
   display: inline-block;
   width: 80%;
-  height: 90%;
+  height: 80%;
   background-color: chocolate;
   -webkit-box-shadow: 5px 5px 5px black;
           box-shadow: 5px 5px 5px black;
+  font-size: 20px;
+  font-weight: 600;
+  padding-left: 5%;
+  padding-top: 2%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  word-break: break-all;
+  line-height: 105%;
+  overflow: scroll;
+  text-shadow: 3px 3px 2px gray;
 }
 
 .main-content .prof-content .form-content .text-content .fusen-text::before {
@@ -717,7 +744,7 @@ a {
   height: 90%;
   background-size: 2px 2px;
   border: 4px solid black;
-  background: linear-gradient(45deg, #363535, #3d3932 30%, #382d2a 60%, #2c3042);
+  background: linear-gradient(45deg, #1f1e1e, #161514 30%, #1f1c1c 60%, #101013);
   border-radius: 10px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -791,7 +818,7 @@ a {
   height: 120%;
   top: 0;
   left: 0;
-  background: linear-gradient(45deg, #363535, #3d3932 30%, #382d2a 60%, #2c3042);
+  background: linear-gradient(45deg, #1f1e1e, #161514 30%, #1f1c1c 60%, #1f2025);
   z-index: 10;
   -webkit-animation: img-wrap 1s 3s forwards;
           animation: img-wrap 1s 3s forwards;
@@ -808,6 +835,11 @@ a {
       -ms-flex-align: center;
           align-items: center;
   padding-left: 10%;
+}
+
+.main-content .prof-content .form-content .post-content .post-list .post-ul .fusen-post .post-li a {
+  color: white;
+  text-shadow: 3px 3px 2px black;
 }
 
 .main-content .prof-content .form-content .post-content .post-list .post-ul .fusen-post .post-li::before {

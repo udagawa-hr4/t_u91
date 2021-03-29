@@ -69,19 +69,71 @@ li{
             background: linear-gradient(45deg, rgb(54, 53, 53), #3d3932 30%, #382d2a 60%, #2c3042);
             top: 10%;
             left: 3%;
+            
+            & .img-tag{
+              width: 100%;
+              height: 100%;
+            }
+            & .no-img{
+              color: white;
+              position: absolute;
+              top: 50%;
+              left: 50%;
+              transform: translate(-50%,-50%);
+              font-size: 10px;
+
+            }
+            
           }
           & .tweet-field{
+              & .link_us{
+                position: absolute;
+                top: 5.5%;
+                padding-left: 5%;
+                right: 5%;
+                width: 10%;
+                height: 12%;
+                background-color: tomato;
+                display: flex;
+                align-items: center;
+                justify-content: flex-start;
+                text-shadow: 3px 3px 2px rgb(34, 34, 34);
+                box-shadow: 5px 5px 5px black;
+                overflow: scroll;
+                white-space: nowrap;
+                & .link-user{
+                  color: rgb(1, 41, 41);
+                  transition-duration:0.5s ;
+                  &:hover{
+                    color: white;
+                    text-shadow: none;
+                  }
+                }
+                &::before{
+                  content:"";
+                  position: absolute;
+                  display: inline-block;
+                  width:15px;
+                  height: 15px;
+                  border-radius: 7.5px;
+                  top: 50%;
+                  left: 10%;
+                  transform: translateY(-50%);
+                  box-shadow: 3px 3px 2px black inset;
+                  background-color: white;
+                }
+              }
               & .cover-title{
                 content: "";
                 display: inline-block;
-                width: 60%;
+                width: 100%;
                 height: 12vh;
                 background-color: white;
                 z-index: 20;
                 position: absolute;
                 top: 5%;
                 left: 21%;
-                animation: img-wrap 1.5s  ease-in-out forwards;
+                animation: img-wrap2 3s  ease-in-out forwards;
               }
             
               & .tweet-title{
@@ -278,7 +330,18 @@ li{
                     
                     line-height: 1.5em;
                     text-shadow: 3px 3px 2px rgb(34, 34, 34);
-                    
+                    & .link-name{
+                     
+                        & .user-name{
+                          color: rgb(3, 48, 48);
+                          transition-duration: 0.5s;
+                          &:hover{
+                            color: white;
+                            text-shadow: none;
+                          }
+                        }
+                      
+                      }
                     
                     
                     
@@ -515,6 +578,11 @@ li{
 @keyframes img-wrap {
   100% {
     transform: translateX(100%);
+  }
+}
+@keyframes img-wrap2 {
+  100% {
+    transform: translateX(200%);
   }
 }
 @keyframes kf-submit{

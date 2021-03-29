@@ -140,18 +140,84 @@ li {
   left: 3%;
 }
 
+.all-content .main-content .list-content .form-content .img-field .img-tag {
+  width: 100%;
+  height: 100%;
+}
+
+.all-content .main-content .list-content .form-content .img-field .no-img {
+  color: white;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  font-size: 10px;
+}
+
+.all-content .main-content .list-content .form-content .tweet-field .link_us {
+  position: absolute;
+  top: 5.5%;
+  padding-left: 5%;
+  right: 5%;
+  width: 10%;
+  height: 12%;
+  background-color: tomato;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  text-shadow: 3px 3px 2px #222222;
+  -webkit-box-shadow: 5px 5px 5px black;
+          box-shadow: 5px 5px 5px black;
+  overflow: scroll;
+  white-space: nowrap;
+}
+
+.all-content .main-content .list-content .form-content .tweet-field .link_us .link-user {
+  color: #012929;
+  -webkit-transition-duration: 0.5s;
+          transition-duration: 0.5s;
+}
+
+.all-content .main-content .list-content .form-content .tweet-field .link_us .link-user:hover {
+  color: white;
+  text-shadow: none;
+}
+
+.all-content .main-content .list-content .form-content .tweet-field .link_us::before {
+  content: "";
+  position: absolute;
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  border-radius: 7.5px;
+  top: 50%;
+  left: 10%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  -webkit-box-shadow: 3px 3px 2px black inset;
+          box-shadow: 3px 3px 2px black inset;
+  background-color: white;
+}
+
 .all-content .main-content .list-content .form-content .tweet-field .cover-title {
   content: "";
   display: inline-block;
-  width: 60%;
+  width: 100%;
   height: 12vh;
   background-color: white;
   z-index: 20;
   position: absolute;
   top: 5%;
   left: 21%;
-  -webkit-animation: img-wrap 1.5s  ease-in-out forwards;
-          animation: img-wrap 1.5s  ease-in-out forwards;
+  -webkit-animation: img-wrap2 3s  ease-in-out forwards;
+          animation: img-wrap2 3s  ease-in-out forwards;
 }
 
 .all-content .main-content .list-content .form-content .tweet-field .tweet-title {
@@ -431,6 +497,17 @@ li {
   padding-left: 10%;
   line-height: 1.5em;
   text-shadow: 3px 3px 2px #222222;
+}
+
+.all-content .main-content .list-content .comment-content .comments-list .tweets-list .com-li .com-all .link-name .user-name {
+  color: #033030;
+  -webkit-transition-duration: 0.5s;
+          transition-duration: 0.5s;
+}
+
+.all-content .main-content .list-content .comment-content .comments-list .tweets-list .com-li .com-all .link-name .user-name:hover {
+  color: white;
+  text-shadow: none;
 }
 
 .all-content .main-content .list-content .comment-content .comments-list .tweets-list .com-li .com-all .com-spn1 {
@@ -777,6 +854,20 @@ li {
   100% {
     -webkit-transform: translateX(100%);
             transform: translateX(100%);
+  }
+}
+
+@-webkit-keyframes img-wrap2 {
+  100% {
+    -webkit-transform: translateX(200%);
+            transform: translateX(200%);
+  }
+}
+
+@keyframes img-wrap2 {
+  100% {
+    -webkit-transform: translateX(200%);
+            transform: translateX(200%);
   }
 }
 

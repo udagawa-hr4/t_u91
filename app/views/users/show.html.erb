@@ -65,11 +65,16 @@
               <div class="fusen-name">
                 <%= @user.nickname %>
               </div>
-              <a href="#" class="edit-btn">Edit</a>
+              <%# <a href="#" class="edit-btn">Edit</a> %>
+              <%= link_to edit_user_path(@user.id),class:"edit-btn" do%>
+              <p>edit</p>
+              <% end %>
             </div>
             <div class="text-content">
               <div class="fusen-text">
-                 <p>introduction</p>
+               <% if @user.profile %>
+                 <%= safe_join(@user.profile.introduction.split("\n"),tag(:br)) %>
+                 <% end %>
               </div>
             </div>
             <div class="post-content">
@@ -80,7 +85,9 @@
                        <div class="fusen-post">
                           
                           <li class="post-li">
+                          <%= link_to post_path(post.id) do%>
                             <%= post.title %>
+                          <% end %>
                           </li>
                        </div>
                       <% end %>
