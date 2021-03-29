@@ -1,10 +1,10 @@
 class CreateProfiles < ActiveRecord::Migration[6.0]
   def change
     create_table :profiles do |t|
-      t.string :first_name,     null: false
-      t.string :family_name,    null: false
-      t.integer :phone_number,  null: false
-      t.date   :birthday,       null: false
+      t.string :first_name
+      t.string :family_name
+      t.integer :phone_number
+      t.date   :birthday
       t.text :introduction
       
       t.timestamps

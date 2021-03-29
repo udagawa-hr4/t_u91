@@ -7,6 +7,11 @@
   <% content_for :css do %>
     <%= stylesheet_link_tag 'new','show' %>
   <% end %>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.7.1/css/lightbox.css" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js">
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.7.1/js/lightbox.min.js" type="text/javascript">
+ </script>
   <title>Document</title>
 </head>
 <body>
@@ -40,16 +45,33 @@
  <!--　一覧表示 -->  
    <div class="all-content">
     <section class="main-content">
-      <p class="main-title"><span class="char-title">N</span><span class="char-title">e</span><span class="char-title">w</span><span class="char-title">&nbsp</span><span class="char-title">P</span><span class="char-title">o</span><span class="char-title">s</span><span class="char-title">t</span>
+      <p class="main-title"><span class="char-title">D</span><span class="char-title">e</span><span class="char-title">t</span><span class="char-title">a</span><span class="char-title">i</span><span class="char-title">l</span><span class="char-title">s</span><span class="char-title">&nbsp</span><span class="char-title">p</span><span class="char-title">a</span><span class="char-title">g</span><span class="char-title">e</span>
       <div class="list-content">
         <div class ="form-content">
           <div class= "img-field">
+            <% if @post.image.attached? %>
+              
+              <%= link_to @post.image, "data-lightbox" => @post.image do %> 
+              <%= image_tag @post.image,class:"img-tag", height: '250', :style=>"width:300;"%> 
+              <% end %>
+            <% else %>
+             <p class="no-img">No Image</p>
+            <% end %>
+          
           </div>
           <div class= "tweet-field">
-              <span class="cover-title"></span>
-              <div class="tweet-title">
-              <%= @post.title %>
-              </div>
+                  <span class="cover-title"></span>
+                  <div class="tweet-title">
+                  <%= @post.title %>
+                  </div>
+                  
+                <div class="link_us">
+                  <%= link_to user_path(@post.user.id),class:"link-user" do%>
+                  <%= @post.user.nickname %> <br> <span>さん</span>
+                  <% end %>
+                </div>
+                  
+            
               <span class="cover-text"></span>
               <span class="fusen-left1"></span>
               <span class="fusen-left2"></span>
@@ -70,11 +92,14 @@
                     <div class="com-all">
                       <span class="com-spn1"></span>
                       <span class="com-spn2"></span>
-                      <%= safe_join(comment.text.split("\n"),tag(:br)) %>
-                      <br>
-                      
-                      <%= "#{comment.user.nickname}さんの投稿" %>
-                      
+                      <div class="link-name">
+                        <%= safe_join(comment.text.split("\n"),tag(:br)) %>
+                       <br>
+                        <%= link_to user_path(comment.user.id),class:"user-name" do%>
+                        <%= comment.user.nickname %>
+                        <% end %>
+                        <span>さんの投稿</span>
+                      </div>
                     </div>
                   </li>
                     <% end  %>

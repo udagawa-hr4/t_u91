@@ -13,9 +13,13 @@ class PostsController < ApplicationController
       render :new
     end
   end
+  
   def tweets
     @posts = Post.paginate(page: params[:page], per_page: 8)
+    
   end
+ 
+ 
   def show
     @post = Post.find(params[:id])
     # @comments = @post.comments.includes(:user)
