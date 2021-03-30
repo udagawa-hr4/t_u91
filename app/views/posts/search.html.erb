@@ -5,7 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <% content_for :css do %>
-    <%= stylesheet_link_tag 'tweets' %>
+    <%= stylesheet_link_tag 'search' %>
   <% end %>
   <title>Document</title>
 </head>
@@ -62,33 +62,27 @@
     <section class="tweets-content">
       <p class="tweets-title"><span class="char-title">T</span><span class="char-title">w</span><span class="char-title">e</span><span class="char-title">e</span><span class="char-title">t</span><span class="char-title">s</span><span class="char-title">&nbsp</span><span class="char-title">L</span><span class="char-title">i</span><span class="char-title">s</span><span class="char-title">t</span></p>
       <ul class="tweets-list">
-      
-      
-       <% @posts.each do |post| %>
+      　 <% @posts.each do |post| %>
         <li class="fusen">
-          <%# <p class="test-p"><%= post.title %>
-         
-          <%= link_to post_path(post.id),class:"title-post" do%>
-          <%= post.title %>
+         <%= link_to post_path(post.id),class:"title-post" do%>
+        <%= post.title %>
           <% end %>
-          
           <div class="nickname-post">
-         
-          <%= post.created_at.strftime('%C%y-%m-%d %k:%M') %>
-          
-          
-          
+          <%= post.created_at.strftime('%C%y-%m-%d %k:%M') %>  
         </li>
         <% end  %>
       <%= will_paginate @posts, :previous_label => ' &lt Back', :next_label => 'Next &gt' %>
+      
       </ul>
-       <div class="search-form">
+
+    <div class="search-form">
         <%= form_with  url:search_posts_path, class:"search-group", method: :get,local: true do |f| %>
         <%= f.text_field  :search,type: "text", class:"search-field",placeholder: "検索ワードを入力",autocomplete:"off" %>
         <%= f.label "Search" ,for:"submit_btn",class:"btn_label"%>
         <%= f.submit 'Search',class:"search-btn",id:"submit_btn" %>
         <% end %>
      </div>
+
     </section>
    </div>
    

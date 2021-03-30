@@ -1,82 +1,764 @@
 // 新規登録画面
-
-.user-style {
-  margin: 0;
-  height: 100vh;
-  width: 100vw;
-  // background-image: url(/assets/signup.jpg);
-  // animation-name: kf-img;
-  background-color: black;
-  // animation-duration: 5s;
-  // animation-iteration-count: infinite;
-
-  background-size: cover;
-  
-  color: white;
-  & .user-sign {
-    color: white;
-    font-size: 70px;
-    text-align: center;
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    padding: 20px 0;
+body{
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+.field_with_errors {
+  display: contents;
+}
+.bottom-nav{
+  &_left{
+    display: none;
   }
-  & .user-wrap {
-    text-align: center;
-    & .error-message {
-      font-size: large;
-    }
-
-    & .user-field {
-      padding: 30px 0;
-      font-size: 40px;
-      font-family: Georgia, 'Times New Roman', Times, serif;
-      color: white;
-    }
-    & .form-label {
-      font-size: 40px;
-      font-family: Georgia, 'Times New Roman', Times, serif;
-    }
-    & .text-field {
-      font-size: 30px;
-      height: 50px;
-      width:500px;
-      margin-top: 10px;
-      background-color: rgba(99, 97, 97, 0.1);
-      border: none;
-      border-radius:3px ;
-      color: white;
-      font-family: Georgia, 'Times New Roman', Times, serif;
-    }
-    & .user-actions {
-      & .user-btn {
-        height: 50px;
-        width: 150px;
-        font-size: 20px;
-        font-family: Georgia, 'Times New Roman', Times, serif;
-        
-      }
-    }
+  &_right{
+    display: none;
   }
 }
-@keyframes kf-img{
-  0%{
-
-    // background-image: url(/assets/signup.jpg);
-    // opacity: 0.9;
-
-    opacity: 1;
+a{
+  text-decoration: none;
+}
+.bg-dot{
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  z-index: -1;
+  & .bg-cover{
+    content: "";
+    background-image: linear-gradient(45deg, rgba(0,0,0,.3) 50%, rgba(0,0,0,.7) 50%);
+    background-size: 4px 4px;
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    display: block;
+    top: 0;
+    left: 0;
+    z-index: 0;
   }
-  // 33%{
-  //   opacity: 1;
-  // }
+}
+
+#global-container{
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  background-size: cover;
+  animation-name: bg-img;
+  animation-iteration-count: infinite;
+  animation-duration: 20s;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+  z-index: 1;
+  & .user-wrap{
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    width: 50vw;
+    height: 100vh;
+      & .up-name{
+        color: white;
+        font-size: 50px;
+        font-weight: 600;
+        position: absolute;
+        top: 5%;
+        left: 50%;
+        transform: translateX(-50%);
+        text-shadow: 0 0 10px gray;
+      }
+      & .form-area{
+        width: 60vw;
+        height: 70vh;
+        position: absolute;
+        top: 15%;
+        background-size: cover;
+        border-radius: 20px;
+        animation-name:kf-back ,kf-border;
+        animation-duration: 20s , 20s;
+        animation-iteration-count: infinite,infinite;
+        border: 10px solid black;
+        display: flex;
+        flex-wrap: wrap;
+        overflow: hidden;
+        & .new_user{
+          width: 100%;
+          height: 100%;
+          display: flex;
+          align-items: center;
+          flex-direction: column;
+          & .name-content{
+            position: relative;
+            text-align: center;
+            width: 100%;
+            height: 17%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;        
+            margin-top: 3%;
+              & .name-label{
+                font-size: 25px;
+                font-weight: 600;
+                text-shadow:  5px 5px 5px gray;
+                animation: text-wrap 1s both;
+              }
+              & .name-field{
+                width: 55%;
+                height: 40%;
+                font-size: 20px;
+                outline: none;
+                box-shadow: 5px 5px 5px black;
+                background: linear-gradient(45deg, rgb(54, 53, 53), #3d3932 30%, #382d2a 60%, #2c3042);
+                padding-left: 4%;
+                color: white;
+                letter-spacing: 0.1em;
+              }
+              & .fusen-name{
+                content: "";
+                display: inline-block;
+                width: 15px;
+                height: 15px;
+                border-radius: 7.5px;
+                position: absolute;
+                background-color: white;
+                box-shadow: 3px 3px 2px black inset;
+                top: 57%;
+                left: 22%;
+              }
+              & .slide-span{
+                content: "";
+                display: inline-block;
+                width: 65%;
+                height: 60%;
+                position: absolute;
+                background-color: white;
+                top: 40%;
+                animation: bg-slide 1.5s 0.5s ease-in-out forwards;
+              }
+          }
+          & .email-content{
+            position: relative;
+            text-align: center;
+            width: 100%;
+            height: 17%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;        
+            margin-top: 2%;
+              & .email-label{
+                font-size: 25px;
+                font-weight: 600;
+                text-shadow:  5px 5px 5px gray;
+                animation: text-wrap 1s 1.8s both;
+              }
+              & .email-field{
+                width: 55%;
+                height: 40%;
+                font-size: 20px;
+                outline: none;
+                box-shadow: 5px 5px 5px black;
+                background: linear-gradient(45deg, rgb(54, 53, 53), #3d3932 30%, #382d2a 60%, #2c3042);
+                padding-left: 4%;
+                color: white;
+                letter-spacing: 0.1em;
+              }
+              & .fusen-email{
+                content:"";
+                position: absolute;
+                display: inline-block;
+                width: 15px;
+                height: 15px;
+                border-radius: 7.5px;
+                background-color: white;
+                box-shadow: 3px 3px 2px black inset;
+                top: 57%;
+                left: 22%;
+              }
+              & .slide-span{
+                content: "";
+                display: inline-block;
+                width: 65%;
+                height: 60%;
+                position: absolute;
+                background-color: white;
+                top: 40%;
+                z-index: 3;
+                animation: bg-slide 1.5s 2.3s ease-in-out forwards;
+              }
+          }
+          & .pass-content-1{
+            position: relative;
+            text-align: center;
+            width: 100%;
+            height: 17%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;        
+            margin-top: 2%;
+              & .pass-label{
+                font-size: 25px;
+                font-weight: 600;
+                text-shadow:  5px 5px 5px gray;
+                animation: text-wrap 1s 3.8s both;
+              }
+              & .password-field{
+                width: 35%;
+                height: 40%;
+                font-size: 20px;
+                outline: none;
+                box-shadow: 5px 5px 5px black;
+                background: linear-gradient(45deg, rgb(54, 53, 53), #3d3932 30%, #382d2a 60%, #2c3042);
+                padding-left: 4%;
+                color: white;
+              }
+              & .fusen-pass{
+                content:"";
+                position: absolute;
+                display: inline-block;
+                width: 15px;
+                height: 15px;
+                border-radius: 7.5px;
+                background-color: white;
+                box-shadow: 3px 3px 2px black inset;
+                top: 72%;
+                left: 32%;
+              }
+              & .slide-span{
+                content: "";
+                display: inline-block;
+                width: 65%;
+                height: 72%;
+                position: absolute;
+                background-color: white;
+                top: 40%;
+                z-index: 3;
+                animation: bg-slide 1.5s 4.3s ease-in-out forwards;
+              }
+              & em{
+                animation: text-wrap 1s 3.8s both;
+                 
+              }
+         }
+         & .pass-content-2{
+          position: relative;
+          text-align: center;
+          width: 100%;
+          height: 17%;
+          display: flex;
+          flex-direction: column;
+          align-items: center;        
+          margin-top: 2%;
+            & .pass-label_c{
+              font-size: 25px;
+              font-weight: 600;
+              text-shadow:  5px 5px 5px gray;
+              animation: text-wrap 1s 3.8s both;
+            }
+            & .password-field_c{
+              width: 35%;
+              height: 40%;
+              font-size: 20px;
+              outline: none;
+              box-shadow: 5px 5px 5px black;
+              background: linear-gradient(45deg, rgb(54, 53, 53), #3d3932 30%, #382d2a 60%, #2c3042);
+              padding-left: 4%;
+              color: white;
+              
+            }
+            & .fusen-pass_c{
+              content:"";
+              position: absolute;
+              display: inline-block;
+              width: 15px;
+              height: 15px;
+              border-radius: 7.5px;
+              background-color: white;
+              box-shadow: 3px 3px 2px black inset;
+              top: 57%;
+              left: 32%;
+            }
+            & .slide-span{
+              content: "";
+              display: inline-block;
+              width: 65%;
+              height: 72%;
+              position: absolute;
+              background-color: white;
+              top: 40%;
+              z-index: 3;
+              animation: bg-slide 1.5s 4.3s ease-in-out forwards;
+            }
+            
+         }
+         & .user-actions{
+           width: 100%;
+           height: 10%;
+           margin-top: 3%;
+           display: flex;
+           justify-content: center;
+           position: relative;
+           & .user-btn{
+             display: none;
+           }
+           & .sign-up-label{
+            display: inline-block;
+            width: 20%;
+            height: 70%;
+            font-size: 20px;
+            font-weight: 600;
+            cursor: pointer;
+            background-color: aqua;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-shadow:  5px 5px 5px gray;
+            box-shadow: 5px 5px 5px black;
+            position: relative;
+            overflow: hidden;
+            z-index: 2;
+            transition-duration: 0.4s;
+            &::after{
+              content: "";
+              position: absolute;
+              width: 15px;
+              height: 15px;
+              border-radius: 7.5px;
+              top: 50%;
+              left: 5%;
+              transform: translateY(-50%);
+              background-color: white;
+              box-shadow: 3px 3px 2px black inset;
+            }
+            &:hover{
+              color: white;
+            }
+            &::before{
+              content: "";
+              width: 100%;
+              height: 100%;
+              position: absolute;
+              top: 0;
+              left: 0;
+              z-index: -1;
+              display: inline-block;
+              transition-duration: 0.4s;
+            }
+            &:hover::before{
+              transform: scale(2) rotate(-180deg);
+              background-color: darkmagenta;
+            }
+           }
+           & .slide-span{
+             content: "";
+             position: absolute;
+             width: 40%;
+             height: 90%;
+             background-color: white;
+             top: 0;
+             left: 50%;
+             transform: translateX(-50%);
+             z-index: 20;
+             animation: bg-slide 1.5s 5.3s ease-in-out forwards;
+           }
+         }
+      }
+    } 
+  }
+  
+  
+  & .bg-signin{
+    content: "";
+    position: absolute;
+    display: block;
+    top: 0;
+    right: 0;
+    width: 100vw;
+    height: 100vh;
+    background-image: url(/assets/computer-416569_1280.jpg);
+    background-size: cover;
+    opacity: 0;
+    transition: all 0.6s;
+    transition-timing-function: ease-out;
+    z-index: 0;
+    
+  }  
+  &.menu-open-rt{
+    & .bg-signin{
+    opacity: 1;
+    }
+  }
+  & .bg-signup{
+    content: "";
+    position: absolute;
+    display: block;
+    top: 0;
+    right: 0;
+    width: 100vw;
+    height: 100vh;
+    background-image: url(/assets/pen-4337521_1280.jpg);
+    background-size: cover;
+    opacity: 0;
+    transition: all 0.6s;
+    transition-timing-function: ease-out;
+    z-index: 0;
+  }
+  &.menu-open-lt{
+    & .bg-signup{
+      opacity: 1;
+    }
+  }
+  & .user-wrap{
+    position: absolute;
+    width: 70%;
+    height: 100%;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 0;
+    
+
+  }
+}
+.top-nav{
+  position: absolute;
+  height: 100px;
+  width: 100vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 10;
+  &_right{
+    font-size: 30px;
+    font-weight: 600;
+    color: lightgrey;
+    margin:5% 10% 0 0;
+    text-shadow: 0 0 10px black;
+    
+    &:hover{
+      & .char-sub{
+        display: inline-block;
+        @for $i from 1 through 10 {
+        &:nth-child(#{$i}) {
+            animation-delay: $i * 0.06s;
+          }
+        }
+          animation-name: kf-deg;
+          animation-duration: 0.4s;
+          animation-fill-mode: forwards;
+      }
+    }  
+
+  }
+  &_left{
+    font-size: 30px;
+    font-weight: 600;
+    color: lightgrey;
+    margin:5% 0 0 10%;
+    text-shadow: 0 0 10px black;
+    z-index: 10;
+    &:hover{
+      & .char-sub{
+        display: inline-block;
+        @for $i from 1 through 10 {
+        &:nth-child(#{$i}) {
+            animation-delay: $i * 0.06s;
+          }
+        }
+          animation-name: kf-deg;
+          animation-duration: 0.4s;
+          animation-fill-mode: forwards;
+      }
+    }  
+
+  }
+}
+
+@keyframes bg-img{
+  0%{
+    background-image: url(/assets/notebook-1280538_1280.jpg);
+  }
+  33%{
+    background-image: url(/assets/hennsyuu.jpg);
+  }
+  66%{
+    background-image: url(/assets/laptop-1478822_1280.jpg);
+  }
+ 
+  100%{
+    background-image: url(/assets/notebook-1280538_1280.jpg);
+  }
+}
+@keyframes kf-deg {
+  0%{
+    transform:scale(1)rotateY(0);
+  }
   50%{
-    // background-image: url(/assets/signup.jpg);
-    opacity: 0.9;
+    transform:scale(2) rotateY(-180deg);
+    color: darkcyan;
   }
   100%{
-
-    // background-image: url(/assets/signup.jpg);
-
+    transform:scale(1)rotateY(0);
+    color: darkcyan;
+  }
+}
+@keyframes kf-back{
+  0%{
+    background-color: white;
     opacity: 1;
   }
+  33%{
+    background-color: white;
+    opacity: 1;
+  }
+  66%{
+    background-color: darkgray;
+    opacity: 0.8;
+  }
+  100%{
+    background-color: white;
+    opacity: 1;
+  }
+}
+@keyframes kf-border{
+  0%{
+    border: 5px solid black;
+  }
+  33%{
+    border: 5px solid rgb(19, 18, 18);
+  }
+  66%{
+    border:5px solid rgb(19, 18, 18);
+  }
+  100%{
+    border: 5px solid black;
+  }
+}
+@keyframes bg-slide {
+  99% {
+    transform: translateX(100%);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+}
+@keyframes text-wrap{
+  0%{
+    transform: translateX(-50%);
+    opacity: 0;
+  }
+  100%{
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+
+
+
+.user-wrap{
+  & .in-name{
+    color: white;
+    font-size: 50px;
+    font-weight: 600;
+    position: absolute;
+    top: 5%;
+    left: 50%;
+    transform: translateX(-50%);
+    text-shadow: 0 0 10px gray;
+  }
+  & .form-area_in{
+    width: 60vw;
+    height: 50vh;
+    position: absolute;
+    top: 23%;
+    background-size: cover;
+    border-radius: 20px;
+    animation-name:kf-back ,kf-border;
+    animation-duration: 20s , 20s;
+    animation-iteration-count: infinite,infinite;
+    border: 10px solid black;
+    display: flex;
+    flex-wrap: wrap;
+    overflow: hidden;
+    & .new_user{
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      & .email-content_in{
+        position: relative;
+        text-align: center;
+        width: 100%;
+        height: 23%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;        
+        margin-top: 3%;
+        & .email-label_in{
+          font-size: 25px;
+          font-weight: 600;
+          text-shadow:  5px 5px 5px gray;
+          animation: text-wrap 1s both;
+        }
+        & .email-field_in{
+          width: 55%;
+          height: 40%;
+          font-size: 20px;
+          outline: none;
+          box-shadow: 5px 5px 5px black;
+          background: linear-gradient(45deg, rgb(54, 53, 53), #3d3932 30%, #382d2a 60%, #2c3042);
+          padding-left: 4%;
+          color: white;
+          letter-spacing: 0.1em;
+        }
+        & .fusen-email{
+          content:"";
+          position: absolute;
+          display: inline-block;
+          width: 15px;
+          height: 15px;
+          border-radius: 7.5px;
+          background-color: white;
+          box-shadow: 3px 3px 2px black inset;
+          top: 58%;
+          left: 21.5%;
+        }
+        & .slide-span{
+          content: "";
+          display: inline-block;
+          width: 65%;
+          height: 75%;
+          position: absolute;
+          background-color: white;
+          top: 40%;
+          animation: bg-slide 1.5s 0.5s ease-in-out forwards;
+        }
+      }
+      & .pass-content_in{
+        position: relative;
+        text-align: center;
+        width: 100%;
+        height: 23%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;        
+        margin-top: 5%;
+        & .pass-label_in{
+          font-size: 25px;
+          font-weight: 600;
+          text-shadow:  5px 5px 5px gray;
+          animation: text-wrap 1s 1.9s both;
+        }
+        & .password-field_in{
+          width: 55%;
+          height: 40%;
+          font-size: 20px;
+          outline: none;
+          box-shadow: 5px 5px 5px black;
+          background: linear-gradient(45deg, rgb(54, 53, 53), #3d3932 30%, #382d2a 60%, #2c3042);
+          padding-left: 4%;
+          color: white;
+        }
+        & .fusen-pass{
+          content:"";
+          position: absolute;
+          display: inline-block;
+          width: 15px;
+          height: 15px;
+          border-radius: 7.5px;
+          background-color: white;
+          box-shadow: 3px 3px 2px black inset;
+          top: 58%;
+          left: 21.5%;
+        }
+        & .slide-span{
+          content: "";
+          display: inline-block;
+          width: 65%;
+          height: 65%;
+          position: absolute;
+          background-color: white;
+          top: 40%;
+          animation: bg-slide 1.5s 2.5s ease-in-out forwards;
+        }
+      }
+      & .user-actions{
+        width: 100%;
+        height: 10%;
+        margin-top: 7%;
+        display: flex;
+        justify-content: center;
+        position: relative;
+        & .user-btn{
+          display: none;
+        }
+        & .sign-in-label{
+          display: inline-block;
+          width: 20%;
+          height: 90%;
+          font-size: 20px;
+          font-weight: 600;
+          cursor: pointer;
+          background-color: lime;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          text-shadow:  5px 5px 5px gray;
+          box-shadow: 5px 5px 5px black;
+          position: relative;
+          overflow: hidden;
+          z-index: 2;
+          transition-duration: 0.4s;
+          &::after{
+            content: "";
+            position: absolute;
+            width: 15px;
+            height: 15px;
+            border-radius: 7.5px;
+            top: 50%;
+            left: 5%;
+            transform: translateY(-50%);
+            background-color: white;
+            box-shadow: 3px 3px 2px black inset;
+          }
+          &:hover{
+            color: white;
+          }
+          &::before{
+            content: "";
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: -1;
+            display: inline-block;
+            transition-duration: 0.4s;
+          }
+          &:hover::before{
+            transform: scale(2) rotate(-180deg);
+            background-color: rgb(3, 13, 107);
+          }
+        }
+        & .slide-span{
+          content: "";
+          position: absolute;
+          width: 40%;
+          height: 120%;
+          background-color: white;
+          top: 0;
+          left: 50%;
+          transform: translateX(-50%);
+          z-index: 20;
+          animation: bg-slide 1.5s 3.5s ease-in-out forwards;
+        }  
+      }
+      
+    }
+  }
+
 }

@@ -10,44 +10,82 @@
   <title>Document</title>
 </head>
 <body>
-  <div class="user-style">
-  <h2 class="user-sign">Sign up</h2>
-  <div class="user-wrap">
-    <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-      <div class="error-message">
-        <%= render "devise/shared/error_messages", resource: resource %>
+  <div id="global-container">
+      <!-- 背景のドット調coverの擬似要素 --> 
+        <div class="bg-dot">
+          <span class="bg-cover"></span>
+        </div>
+     <!-- ボタンにhoverしたときに表示される擬似要素 -->
+        <span class="bg-signup"></span>
+        <span class="bg-signin"></span>
+        <span class="bg-mypage"></span>
+        <span class="bg-search"></span>
+    <nav class="top-nav">
+            <%= link_to  root_path, class: "top-nav_left" do%>
+              <span class="char-sub">T</span><span class="char-sub">o</span><span class="char-sub">p</span><span class="char-sub">&nbsp</span><span class="char-sub">p</span><span class="char-sub">a</span><span class="char-sub">g</span><span class="char-sub">e</span>
+            <% end %>
+            <%= link_to  new_user_session_path, class: "top-nav_right" do%>
+              <span class="char-sub">L</span><span class="char-sub">o</span><span class="char-sub">g</span><span class="char-sub">&nbsp</span><span class="char-sub">i</span><span class="char-sub">n</span>
+            <% end  %>
+          </nav>
+          <nav class= "bottom-nav">
+            <%= link_to  root_path, class: "bottom-nav_left" do%>
+              <span class="char-sub">T</span><span class="char-sub">o</span><span class="char-sub">p</span><span class="char-sub">&nbsp</span><span class="char-sub">p</span><span class="char-sub">a</span><span class="char-sub">g</span><span class="char-sub">e</span></a>
+            <% end  %>
+            <%= link_to new_post_path,class:"bottom-nav_right" do%>
+              <span class="char-sub">W</span><span class="char-sub">r</span><span class="char-sub">i</span><span class="char-sub">t</span><span class="char-sub">e</span><span class="char-sub">&nbsp</span><span class="char-sub">a</span><span class="char-sub">&nbsp</span><span class="char-sub">p</span><span class="char-sub">o</span><span class="char-sub">s</span><span class="char-sub">t</span>
+            <% end %>
+     </nav>
+    <div class="user-wrap">
+      <p class="up-name">Sign up</p>
+      <div class="form-area">
+        <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+            <div class="error-message">
+              <%= render "devise/shared/error_messages", resource: resource %>
+            </div>
+
+            <div class="name-content">
+              <%= f.label :nickname, class: "name-label" %><br />
+              <span class="fusen-name"></span>
+              <span class="slide-span"></span>
+              <%= f.text_field :nickname, autofocus: true, autocomplete: "off", class:"name-field" %>
+            </div>
+
+            <div class="email-content">
+              <%= f.label :email, class: "email-label" %><br />
+              <span class="slide-span"></span>
+              <span class="fusen-email"></span>
+              <%= f.email_field :email, autocomplete: "email", class:"email-field" %>
+            </div>
+
+            <div class="pass-content-1">
+              <%= f.label :password, class: "pass-label" %>
+              <% if @minimum_password_length %>
+              <em>(<%= @minimum_password_length %> characters minimum)</em>
+              <% end %><br />
+              <span class="fusen-pass"></span>
+              <span class="slide-span"></span>
+              <%= f.password_field :password, autocomplete: "new-password", class:"password-field" %>
+            </div>
+
+            <div class="pass-content-2">
+              <%= f.label :password_confirmation, class: "pass-label_c"%><br />
+              <span class="fusen-pass_c"></span>
+              <span class="slide-span"></span>
+              <%= f.password_field :password_confirmation, autocomplete: "new-password", class:"password-field_c" %>
+            </div>
+
+            <div class="user-actions">
+              <%= f.label "Sign up" ,for:"signup-btn",class:"sign-up-label" %>
+              <span class="slide-span"></span>
+              <%= f.submit "Sign up" ,class:"user-btn",id:"sign-up-btn" %>
+            </div> 
+          <% end %>
+
+        
       </div>
-
-      <div class="user-field">
-        <%= f.label :nickname, class: "form-label" %><br />
-        <%= f.text_field :nickname, autocomplete: "nickname", class:"text-field" %>
-      </div>
-
-      <div class="user-field">
-        <%= f.label :email, class: "form-label" %><br />
-        <%= f.email_field :email, autofocus: true, autocomplete: "email", class:"text-field" %>
-      </div>
-
-      <div class="user-field">
-        <%= f.label :password, class: "form-label" %>
-        <% if @minimum_password_length %>
-        <em>(<%= @minimum_password_length %> characters minimum)</em>
-        <% end %><br />
-        <%= f.password_field :password, autocomplete: "new-password", class:"text-field" %>
-      </div>
-
-      <div class="user-field">
-        <%= f.label :password_confirmation, class: "form-label"%><br />
-        <%= f.password_field :password_confirmation, autocomplete: "new-password", class:"text-field" %>
-      </div>
-
-      <div class="user-actions">
-        <%= f.submit "Sign up" ,class:"user-btn" %>
-      </div> 
-    <% end %>
-
-    <%= render "devise/shared/links" %>
-  </div>
-</div>
+    </div>
+ </div>
+ <%= javascript_pack_tag 'main.js' %>
 </body>
 </html>

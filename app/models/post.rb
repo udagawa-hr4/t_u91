@@ -6,4 +6,11 @@ class Post < ApplicationRecord
   validates :text, presence: true,length:{
     in: 1..1000}
   validate :image
+  def self.search(search)
+    if search
+      Post.where(['text LIKE(?)OR title  LIKE(?)', "%#{search}%","%#{search}%"])
+    else
+      Post.all
+    end
+  end
 end

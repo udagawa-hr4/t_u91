@@ -20,6 +20,7 @@ Rails.application.routes.draw do
 
     collection do
       get 'tweets'
+      get 'search'
      
     end
     resources :comments, only: :create
