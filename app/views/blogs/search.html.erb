@@ -20,9 +20,13 @@
     <% end  %>
   </nav>
   
-  <div class="search-header">search results</div>
+  <div class="search-header">
+    <span class="char-title">R</span><span class="char-title">e</span><span class="char-title">s</span><span class="char-title">u</span><span class="char-title">l</span><span class="char-title">t</span>
+  </div>
   
   <div class="search-contents">
+    <span class="contents-span1"></span>
+    <span class="contents-span2"></span>
     <div class="contents-header">
       <div class="contents-title">
         <span>T</span><span>i</span><span>t</span><span>l</span><span>e</span>
@@ -38,11 +42,12 @@
     <ul>
       <% @blogs.each do |blog| %>
       <li class="s-lists">
+        
         <div class="s-title">
           <%= link_to blog.title, blog ,class:"b-title" %>
         </div>
         <div class="s-content">
-          <%= blog.content %>
+          <%= safe_join(blog.content.split("\n"),tag(:br)) %>
         </div>
           <div class="s-time">
             <%= blog.created_at.strftime('%Y/%m/%d') %>
@@ -50,7 +55,9 @@
         </li>
       <% end %>
     </ul>
+    <%= will_paginate @blogs, :previous_label => ' &lt Back', :next_label => 'Next &gt' %>
   </div>
+
 </div>
 
 

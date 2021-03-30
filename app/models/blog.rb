@@ -8,4 +8,4 @@ class Blog < ApplicationRecord
       Blog.all
     end
   end
-end
+end 
