@@ -4,7 +4,7 @@ class User < ApplicationRecord
   has_many :posts
   has_one :profile, dependent: :destroy
   accepts_nested_attributes_for :profile
-  has_many :calendar
+  has_many :blogs
 
 
   devise :database_authenticatable, :registerable,
