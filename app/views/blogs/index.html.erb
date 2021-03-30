@@ -11,43 +11,44 @@
   <% end %>
 </head>
 <body>
-  
-<div class="calendar-all">
-  <nav class="top-nav">
-    <%= link_to  root_path, class: "top-nav_left" do%>
-    <span class="char-sub">T</span><span class="char-sub">o</span><span class="char-sub">p</span><span class="char-sub">&nbsp</span><span class="char-sub">P</span><span class="char-sub">a</span><span class="char-sub">g</span><span class="char-sub">e</span>
-    <% end %>
-    <%= link_to  new_blog_path, class: "top-nav_right" do%><span class="char-sub">M</span><span class="char-sub">y</span><span class="char-sub">&nbsp</span><span class="char-sub">P</span><span class="char-sub">a</span><span class="char-sub">g</span><span class="char-sub">e</span>
-    <% end  %>
-  </nav>
-
-  <h1 class="calendar-header">
-    <span class="char-title">M</span><span class="char-title">y</span><span class="char-title">&nbsp;</span><span class="char-title">D</span><span class="char-title">i</span><span class="char-title">a</span><span class="char-title">r</span><span class="char-title">y</span>
-  </h1>
-
-  <table></table>
-  
-  <%= link_to new_blog_path, class:"diary-nik" do %>
-    <p class="nik-span">Write a diary</p>
-
-   <% end %> 
-  <%# <div class="calendar-index"> %>
-    <%= month_calendar class:"calendar-index", events: @blogs do |date, blogs| %>
-      <%= date.day %>
-      <% blogs.each do |blog| %>
-          <div>
-          <%= link_to blog.title, blog %>
-          </div>
+  <div class="calendar-all">
+    <nav class="top-nav">
+      <%= link_to  root_path, class: "top-nav_left" do%>
+      <span class="char-sub">T</span><span class="char-sub">o</span><span class="char-sub">p</span><span class="char-sub">&nbsp</span><span class="char-sub">P</span><span class="char-sub">a</span><span class="char-sub">g</span><span class="char-sub">e</span>
       <% end %>
-    <% end %>
-  <%# </div> %>
+      <%= link_to  new_blog_path, class: "top-nav_right" do%><span class="char-sub">M</span><span class="char-sub">y</span><span class="char-sub">&nbsp</span><span class="char-sub">P</span><span class="char-sub">a</span><span class="char-sub">g</span><span class="char-sub">e</span>
+      <% end  %>
+    </nav>
+
+    <h1 class="calendar-header">
+      <span class="char-title">M</span><span class="char-title">y</span><span class="char-title">&nbsp;</span><span class="char-title">D</span><span class="char-title">i</span><span class="char-title">a</span><span class="char-title">r</span><span class="char-title">y</span>
+    </h1>
+
+    <table></table>
+    
+    <%= link_to new_blog_path, class:"diary-nik" do %>
+      <p class="nik-span">Write a diary</p>
+
+    <% end %> 
+    <%# <div class="calendar-index"> %>
+      <%= month_calendar class:"calendar-index", events: @blogs do |date, blogs| %>
+        <%= date.day %>
+        <% blogs.each do |blog| %>
+            <div>
+            <%= link_to blog.title, blog %>
+            </div>
+        <% end %>
+      <% end %>
+    <%# </div> %>
+    
+  <div class="cl-search">
+      <%= form_tag(search_blogs_path, class:"search-group", :method => 'get') do %>
+      <%= text_field_tag :search, "", {class:"search-field"} %>
+      <%= submit_tag 'Search', :title => nil, class:"search-btn" %>
+      <% end %>
+  </div>
   
-<div class="cl-search">
-    <%= form_tag(search_blogs_path, class:"search-group", :method => 'get') do %>
-    <%= text_field_tag :search, "", {class:"search-field"} %>
-    <%= submit_tag 'Search', :title => nil, class:"search-btn" %>
-    <% end %>
-</div>
+
 
 
 

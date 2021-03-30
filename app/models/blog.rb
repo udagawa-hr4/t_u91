@@ -1,6 +1,6 @@
 class Blog < ApplicationRecord
   validates :title, presence: true
-
+  validates :user_id, presence:true
   def self.search(search)
     if search
       Blog.where(['content LIKE ?', "%#{search}%"])

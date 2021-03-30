@@ -15,6 +15,7 @@ class BlogsController < ApplicationController
   def create
     Blog.create(blog_parameter)
     redirect_to blogs_path
+    
   end
 
   def destroy
@@ -43,7 +44,7 @@ class BlogsController < ApplicationController
   private
 
   def blog_parameter
-    params.require(:blog).permit(:title, :content, :start_time)
+    params.require(:blog).permit(:title, :content, :start_time).merge(user_id: current_user.id)
   end
 
 end
