@@ -1,3 +1,7 @@
+body {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
 li {
   list-style: none;
 }
@@ -172,7 +176,7 @@ li {
   -webkit-box-pack: start;
       -ms-flex-pack: start;
           justify-content: flex-start;
-  text-shadow: 3px 3px 2px #222222;
+  text-shadow: 2px 2px 2px #222222;
   -webkit-box-shadow: 5px 5px 5px black;
           box-shadow: 5px 5px 5px black;
   overflow: scroll;
@@ -183,6 +187,7 @@ li {
   color: #012929;
   -webkit-transition-duration: 0.5s;
           transition-duration: 0.5s;
+  font-weight: 600;
 }
 
 .all-content .main-content .list-content .form-content .tweet-field .link_us .link-user:hover {
@@ -669,8 +674,8 @@ li {
   width: 80%;
   height: 95%;
   font-size: 20px;
-  color: white;
-  background-color: #55026e;
+  color: black;
+  background-color: #08f0d1;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -682,11 +687,17 @@ li {
           justify-content: center;
   -webkit-box-shadow: 5px 5px 5px black;
           box-shadow: 5px 5px 5px black;
-  text-shadow: 3px 3px 2px #222222;
+  text-shadow: 2px 2px 2px #222222;
   text-indent: 0.5em;
   overflow: hidden;
   cursor: pointer;
   z-index: 2;
+  -webkit-transition-duration: 0.5s;
+          transition-duration: 0.5s;
+}
+
+.all-content .main-content .list-content .comment-content .form-comment .with-all .fusen-all_2 .com-submit:hover {
+  color: white;
 }
 
 .all-content .main-content .list-content .comment-content .form-comment .with-all .fusen-all_2 .com-submit::after {

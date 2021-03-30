@@ -1,3 +1,6 @@
+body{
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
 li{
   list-style: none;
 }
@@ -97,13 +100,14 @@ li{
                 display: flex;
                 align-items: center;
                 justify-content: flex-start;
-                text-shadow: 3px 3px 2px rgb(34, 34, 34);
+                text-shadow: 2px 2px 2px rgb(34, 34, 34);
                 box-shadow: 5px 5px 5px black;
                 overflow: scroll;
                 white-space: nowrap;
                 & .link-user{
                   color: rgb(1, 41, 41);
                   transition-duration:0.5s ;
+                  font-weight: 600;
                   &:hover{
                     color: white;
                     text-shadow: none;
@@ -474,17 +478,21 @@ li{
                         width: 80%;
                         height: 95%;
                         font-size: 20px;
-                        color: white;
-                        background-color: rgb(85, 2, 110);
+                        color: black;
+                        background-color: rgb(8, 240, 209);
                         display: flex;
                         align-items: center;
                         justify-content: center;
                         box-shadow: 5px 5px 5px black;
-                        text-shadow: 3px 3px 2px rgb(34, 34, 34);
+                        text-shadow: 2px 2px 2px rgb(34, 34, 34);
                         text-indent: 0.5em;
                         overflow: hidden;
                         cursor: pointer;
                         z-index: 2;
+                        transition-duration: 0.5s;
+                        &:hover{
+                          color: white;
+                        }
                         &::after{
                          content: "";
                          position: absolute;
