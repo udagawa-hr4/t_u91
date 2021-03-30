@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <% content_for :css do %>
+    <%= stylesheet_link_tag 'user_edit'%>
+  <% end %>
+  <title>Document</title>
+</head>
+<body>
+
+ <div id="global-container">
+<!-- 背景のドット調coverの擬似要素 --> 
+    <div class="bg-dot">
+      <span class="bg-cover"></span>
+    </div>
+<!-- ボタンにhoverしたときに表示される擬似要素 -->
+    <span class="bg-signup"></span>
+    <span class="bg-signin"></span>
+    <span class="bg-mypage"></span>
+    <span class="bg-search"></span>
+
+        <nav class="top-nav">
+          <%= link_to  root_path, class: "top-nav_left" do%>
+              <span class="char-sub">T</span><span class="char-sub">o</span><span class="char-sub">p</span><span class="char-sub">&nbsp</span><span class="char-sub">p</span><span class="char-sub">a</span><span class="char-sub">g</span><span class="char-sub">e</span>
+          <% end %>
+          <%= link_to  new_user_session_path, class: "top-nav_right" do%><span class="char-sub">L</span><span class="char-sub">o</span><span class="char-sub">g</span><span class="char-sub">&nbsp</span><span class="char-sub">o</span><span class="char-sub">u</span><span class="char-sub">t</span>
+          <% end  %>
+        </nav>
+        <nav class= "bottom-nav">
+          <%= link_to  root_path, class: "bottom-nav_left" do%><span class="char-sub">M</span><span class="char-sub">y</span><span class="char-sub">&nbsp</span><span class="char-sub">p</span><span class="char-sub">a</span><span class="char-sub">g</span><span class="char-sub">e</span></a>
+          <% end  %>
+          <%= link_to new_post_path,class:"bottom-nav_right" do%>
+              <span class="char-sub">W</span><span class="char-sub">r</span><span class="char-sub">i</span><span class="char-sub">t</span><span class="char-sub">e</span><span class="char-sub">&nbsp</span><span class="char-sub">a</span><span class="char-sub">&nbsp</span><span class="char-sub">p</span><span class="char-sub">o</span><span class="char-sub">s</span><span class="char-sub">t</span>
+          <% end %>
+        </nav>
+
+        
+       
+ <!--　一覧表示 -->  
+   <div class="main-content">
+    <section class="edit-content">
+      <p class="edit-title"><span class="char-title">E</span><span class="char-title">d</span><span class="char-title">i</span><span class="char-title">t</span><span class="char-title">&nbsp</span><span class="char-title">P</span><span class="char-title">a</span><span class="char-title">g</span><span class="char-title">e</span></p>
+      <div class="edit-list">
+      
+      
+        <%= form_with model:@user,local: true,class:"form-all"  do |f|%>
+        <div class="form-name">
+        <%= f.label "Nickname" ,class:"name-title" %>
+        <span></span>
+        <%= f.text_field :nickname ,class:"name-area",autocomplete:"off"%>
+        </div>
+            <div class="form-intro">
+                <%= f.fields_for :profile,@user.profile,class:"form-child" do |fin| %>
+
+                <%= fin.label "Profile",class:"intro-title"  %>
+                <span class="span1"></span>
+                <span class="span2"></span>
+                <%= fin.text_area :introduction,class:"intro-area",autocomplete:"off"  %>
+            </div>
+            <div class="form-birth">
+                <%= fin.label "Birthday" ,class:"birth-name"%>
+                <div class="form-birth_list">
+                  <%= fin.date_select :birthday, {start_year:Time.now.year-60,end_year: Time.now.year,:use_month_numbers => true,date_separator: ' / ',datetime_separator: ' / ' } %>
+                </div>
+            </div>
+            <% end %>
+            <div class="form-submit">
+                <%= f.label "done",for:"btn-submit",class:"sub-btn" %>
+                <%= f.submit "送信",id:"btn-submit",class:"form-btn"%>
+            </div>
+        <% end %>
+
+      </div>
+
+    </section>
+   </div>
+   
+ </div>
+ <%= javascript_pack_tag 'main.js' %>
+
+</body>
+  
+
+</html>

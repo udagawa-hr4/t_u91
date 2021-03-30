@@ -351,6 +351,10 @@ a{
                 font-weight: 600;
                 // text-indent: 15%;
                 padding-left: 50px;
+                &::placeholder{
+                  font-size: 14px;
+                  font-family: Georgia, 'Times New Roman', Times, serif;
+                }
                 
               }
               
@@ -459,6 +463,15 @@ a{
             transform: translateX(-60%);
             
           }
+          & #file-name{
+            position: absolute;
+            top: 30%;
+            left: 70%;
+            display: inline-block;
+            z-index: 100;
+            font-size: 15px;
+            text-shadow: 3px 3px 3px gray;
+          }
           & .img-label{
             position: absolute;
             top: 0;
@@ -466,7 +479,6 @@ a{
             transform: translateX(-50%);
             display: inline-block;
             background: linear-gradient(45deg, rgb(54, 53, 53), #3d3932 30%, #382d2a 60%, #2c3042);
-           
             width: 30%;
             height: 50%;
             color: white;

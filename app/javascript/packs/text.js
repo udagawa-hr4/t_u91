@@ -20,7 +20,7 @@ class TextChange{
     this.DOM.btnImg.innerHTML = ("画像を選択");
     }
   _changeIntRvImg(){
-    this.DOM.btnImg.innerHTML = ("Upload data");
+    this.DOM.btnImg.innerHTML = ("Upload data limit:1");
     }
 
   _event(){
@@ -36,3 +36,15 @@ class TextChange{
   }
 }
  new TextChange();
+ 
+ document.addEventListener("DOMContentLoaded",function(){
+    const btn = document.getElementById('image-field')
+    btn.addEventListener("change", function () {
+    var file = this.files[0];
+    const fileName = document.getElementById("file-name");
+    if (file != null) {
+      fileName.textContent = ""
+      fileName.insertAdjacentHTML('afterbegin', file.name); 
+    }
+  });
+});

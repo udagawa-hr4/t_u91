@@ -13,12 +13,14 @@ Rails.application.routes.draw do
 
 # get 'blogs/index'
   resources :blogs
-  resources :users,only: [:show]
+  resources :users
 
 
-  resources :posts,only: [:show,:new,:create] do
+  resources :posts do
+
     collection do
       get 'tweets'
+     
     end
     resources :comments, only: :create
   end

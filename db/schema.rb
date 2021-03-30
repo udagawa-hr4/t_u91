@@ -61,10 +61,10 @@ ActiveRecord::Schema.define(version: 2021_03_23_035708) do
   end
 
   create_table "profiles", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "first_name", null: false
-    t.string "family_name", null: false
-    t.integer "phone_number", null: false
-    t.date "birthday", null: false
+    t.string "first_name"
+    t.string "family_name"
+    t.integer "phone_number"
+    t.date "birthday"
     t.text "introduction"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

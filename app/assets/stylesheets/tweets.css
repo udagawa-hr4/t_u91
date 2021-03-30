@@ -543,6 +543,12 @@ a {
   overflow: hidden;
 }
 
+.main-content .tweets-content .tweets-list .search-form {
+  width: 100%;
+  height: 12%;
+  background-color: black;
+}
+
 .main-content .tweets-content .tweets-title {
   font-size: 50px;
   font-weight: 600;
@@ -942,7 +948,7 @@ a {
   -webkit-animation: kf-lists 1s both;
           animation: kf-lists 1s both;
   width: 47%;
-  height: 15%;
+  height: 14%;
   -webkit-animation: kf-fusen 1s both;
           animation: kf-fusen 1s both;
   color: white;
@@ -951,7 +957,7 @@ a {
   -webkit-box-shadow: 5px 5px 5px black;
           box-shadow: 5px 5px 5px black;
   list-style: none;
-  margin: 10px 0 0 10px;
+  margin-left: 2%;
   overflow: scroll;
   word-break: break-all;
   opacity: 0;
@@ -1095,7 +1101,7 @@ a {
 .pagination {
   position: absolute;
   right: 0;
-  bottom: 3%;
+  bottom: 2%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;

@@ -337,13 +337,35 @@ a{
         display: flex;
         align-items: center;
         justify-content: center;
+        &::before{
+          content: "";
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          top: 0;
+          left: 0;
+          animation: img-wrap 2s  2s ease-in-out forwards;
+          background-color: white;
+          z-index: 10;
+
+        }
         & .fusen-text{
           position: relative;
           display: inline-block;
           width: 80%;
-          height: 90%;
+          height: 80%;
           background-color: chocolate;
           box-shadow: 5px 5px 5px black;
+          font-size:20px;
+          font-weight: 600;
+          padding-left: 5%;
+          padding-top: 2%;
+          display: flex;
+          align-items: flex-start;
+          word-break: break-all;
+          line-height: 105%;
+          overflow: scroll;
+          text-shadow: 3px 3px 2px gray;
           &::before{
             content: "";
             position: absolute;
@@ -383,7 +405,7 @@ a{
           height: 90%;
           background-size: 2px 2px;
           border: 4px solid black;
-          background: linear-gradient(45deg, rgb(54, 53, 53), #3d3932 30%, #382d2a 60%, #2c3042);
+          background: linear-gradient(45deg, rgb(31, 30, 30), #161514 30%, #1f1c1c 60%, #101013);
           border-radius: 10px;
           display: flex;
           flex-direction: column;
@@ -432,7 +454,7 @@ a{
                 height: 120%;
                 top: 0;
                 left: 0;
-                background: linear-gradient(45deg, rgb(54, 53, 53), #3d3932 30%, #382d2a 60%, #2c3042);
+                background: linear-gradient(45deg, rgb(31, 30, 30), #161514 30%, #1f1c1c 60%, #1f2025);
                 z-index: 10;
                 animation: img-wrap 1s 3s forwards;
               }
@@ -443,6 +465,10 @@ a{
                 display: flex;
                 align-items: center;
                 padding-left: 10%;
+                & a{
+                  color: white;
+                  text-shadow: 3px 3px 2px black;
+                }
 
                 &::before{
                   content: "";
