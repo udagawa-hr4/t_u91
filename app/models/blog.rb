@@ -1,7 +1,7 @@
 class Blog < ApplicationRecord
   validates :title, presence: true
 
-  # belongs_to :user
+  belongs_to :user
 
   def self.search(search)
     if search

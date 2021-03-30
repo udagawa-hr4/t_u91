@@ -7,16 +7,21 @@ RSpec.describe Blog, type: :model do
   
   describe 'Calendarの保存' do
     context 'Calendarに投稿出来る場合' do
-      it 'text,content,start_timeがある場合保存できる' do
+      it 'text,contentがある場合投稿できる' do
+        expect(@blog).to be_valid
+      end
+      it 'contentがなくてもtextがあれば投稿出来る' do
+        @blog.content = ""
         expect(@blog).to be_valid
       end
     end
+
+
     context 'calendarに保存できない場合' do
       it 'titleがないとitemは保存できない' do
         @blog.title = nil
         @blog.valid?
-        binding.pry
-        expect(@blog.errors.full_messages).to include("")
+        expect(@blog.errors.full_messages).to include("Title can't be blank")
       end
     end
   end
