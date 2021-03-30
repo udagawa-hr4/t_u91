@@ -351,6 +351,10 @@ a{
                 font-weight: 600;
                 // text-indent: 15%;
                 padding-left: 50px;
+                &::placeholder{
+                  font-size: 14px;
+                  font-family: Georgia, 'Times New Roman', Times, serif;
+                }
                 
               }
               

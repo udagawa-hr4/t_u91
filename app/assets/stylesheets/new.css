@@ -649,6 +649,26 @@ a {
   padding-left: 50px;
 }
 
+.main-content .post-content .form-post .form_all .form-title .fusen-all .title-area::-webkit-input-placeholder {
+  font-size: 14px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.main-content .post-content .form-post .form_all .form-title .fusen-all .title-area:-ms-input-placeholder {
+  font-size: 14px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.main-content .post-content .form-post .form_all .form-title .fusen-all .title-area::-ms-input-placeholder {
+  font-size: 14px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.main-content .post-content .form-post .form_all .form-title .fusen-all .title-area::placeholder {
+  font-size: 14px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
 .main-content .post-content .form-post .form_all .form-text {
   width: 100%;
   height: 50%;
