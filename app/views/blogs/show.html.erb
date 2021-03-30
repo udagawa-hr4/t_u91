@@ -20,7 +20,9 @@
     </nav>
 
     <div class="show-blog">
-      <h1 class="show-header">Detailed schedule</h1>
+      <h1 class="show-header">
+        <span class="char-title">S</span><span class="char-title">c</span><span class="char-title">h</span><span class="char-title">d</span><span class="char-title">e</span><span class="char-title">u</span><span class="char-title">l</span><span class="char-title">e</span>
+      </h1>
       <div class="show-content">
         <div class="form-contents">
           
@@ -45,7 +47,9 @@
             <div class="contents">
               <span class="contents-span1"></span>
               <span class="contents-span2"></span>
-              <div class="contents-date"><%= @blog.content %></div>
+              <div class="contents-date">
+                <%= safe_join(@blog.content.split("\n"),tag(:br)) %>
+                </div>
             </div>
           </div>
         

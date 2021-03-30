@@ -37,7 +37,7 @@ class BlogsController < ApplicationController
   end
 
   def search
-    @blogs = Blog.search(params[:search])
+    @blogs = Blog.search(params[:search]).paginate(page: params[:page], per_page: 4)
   end
 
   private
