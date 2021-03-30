@@ -20,7 +20,7 @@ class TextChange{
     this.DOM.btnImg.innerHTML = ("画像を選択");
     }
   _changeIntRvImg(){
-    this.DOM.btnImg.innerHTML = ("Upload data");
+    this.DOM.btnImg.innerHTML = ("Upload data limit:1");
     }
 
   _event(){
