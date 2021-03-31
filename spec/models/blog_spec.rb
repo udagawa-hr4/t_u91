@@ -2,7 +2,8 @@ require 'rails_helper'
 
 RSpec.describe Blog, type: :model do
   before do
-    @blog = FactoryBot.build(:blog)
+    user = FactoryBot.create(:user) 
+    @blog = FactoryBot.build(:blog, user_id: user.id)
   end
   
   describe 'Calendarの保存' do

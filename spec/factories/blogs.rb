@@ -3,6 +3,7 @@ FactoryBot.define do
 
     title {"株式会社Ruby、二次面接"}
     content {"持ち物：履歴書、職務経歴書、熱意"}
-    association :user
+    user_id {1}
+    association :user, factory: :user
   end
 end
