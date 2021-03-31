@@ -2,6 +2,7 @@ class ClTextChange{
   constructor(){
     this.DOM = {};
     this.DOM.btnCalendar = document.querySelector(".nik-span");
+    this.DOM.btnCal = document.querySelector(".diary-nik");
     this._event();
   }
 
@@ -13,8 +14,8 @@ class ClTextChange{
       
   }
   _event(){
-      this.DOM.btnCalendar.addEventListener("mouseover",this._changeTextRe.bind(this));
-      this.DOM.btnCalendar.addEventListener("mouseout",this._changeText.bind(this));
+      this.DOM.btnCal.addEventListener("mouseover",this._changeTextRe.bind(this));
+      this.DOM.btnCal.addEventListener("mouseout",this._changeText.bind(this));
   }
 }
  new ClTextChange();

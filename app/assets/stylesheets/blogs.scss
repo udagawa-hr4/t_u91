@@ -1,8 +1,8 @@
+
 .calendar-all {
   height: 100vh;
   width: 100vw;
   font-family: Georgia, 'Times New Roman', Times, serif;
-  padding: 10px;
   background-size: cover;
   animation-name: cbg-img;
   animation-duration: 15s;
@@ -110,10 +110,19 @@
     
   }
   & .cl-search {
+    margin-top: 0.5%;
     text-align: center;
-    margin-top: 1%;
+    width: 100%;
+    height: 10%;
+    position: relative;
+    & .search-group{
+     width: 100%;
+     height: 50%;
+     position: absolute;
+     bottom: 0;
+    
     & .search-field {
-      height: 20%;
+      height: 100%;
       width: 60%;
       font-size: 1.3em;
       font-family: Georgia, 'Times New Roman', Times, serif;
@@ -136,6 +145,7 @@
       }
     }
   }
+ }
 }
 @keyframes calendar-title{
   0%{
@@ -181,7 +191,7 @@ thead {
 }
 .simple-calendar {
   height: 65vh;
-  margin-bottom: 3.5%;
+  // margin-bottom: 3.5%;
   margin-top: 11%;
   & .today {
     background-color: #f5ffc0a6;
@@ -272,7 +282,8 @@ thead {
   & table {
     margin: 5% auto 0;
     width: 80vw;
-    height: 60vh;
+    height: 70vh;
+    border: none;
   }
 }
 
@@ -590,7 +601,8 @@ thead {
   position: absolute;
   right: 10.8vw;
   width: 12vh;
-  top: 15.2vh;
+  height: 4vh;
+  top: 13.5vh;
   color: black;
   background-color: rgba(235, 244, 60, 0.7);
   border: 4px double black;
@@ -599,6 +611,10 @@ thead {
   text-decoration: none;
   font-weight: bold;
   text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
 }
 
 
