@@ -1046,7 +1046,7 @@ a {
   height: 75%;
   position: absolute;
   background-color: white;
-  top: 40%;
+  top: 35%;
   -webkit-animation: bg-slide 1.5s 0.5s ease-in-out forwards;
           animation: bg-slide 1.5s 0.5s ease-in-out forwards;
 }
@@ -1110,7 +1110,7 @@ a {
   height: 65%;
   position: absolute;
   background-color: white;
-  top: 40%;
+  top: 35%;
   -webkit-animation: bg-slide 1.5s 2.5s ease-in-out forwards;
           animation: bg-slide 1.5s 2.5s ease-in-out forwards;
 }
