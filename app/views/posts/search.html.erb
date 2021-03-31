@@ -27,7 +27,7 @@
           <%= link_to  root_path, class: "top-nav_left" do%>
               <span class="char-sub">T</span><span class="char-sub">o</span><span class="char-sub">p</span><span class="char-sub">&nbsp</span><span class="char-sub">p</span><span class="char-sub">a</span><span class="char-sub">g</span><span class="char-sub">e</span>
           <% end %>
-          <%= link_to  new_user_session_path, class: "top-nav_right" do%><span class="char-sub">L</span><span class="char-sub">o</span><span class="char-sub">g</span><span class="char-sub">&nbsp</span><span class="char-sub">o</span><span class="char-sub">u</span><span class="char-sub">t</span>
+          <%= link_to  destroy_user_session_path, method: :delete, class: "top-nav_right" do%><span class="char-sub">L</span><span class="char-sub">o</span><span class="char-sub">g</span><span class="char-sub">&nbsp</span><span class="char-sub">o</span><span class="char-sub">u</span><span class="char-sub">t</span>
           <% end  %>
         </nav>
         <nav class= "bottom-nav">

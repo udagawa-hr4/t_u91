@@ -50,7 +50,7 @@
         <div class="form-name">
         <%= f.label "Nickname" ,class:"name-title" %>
         <span></span>
-        <%= f.text_field :nickname ,class:"name-area",autocomplete:"off"%>
+        <%= f.text_field :nickname ,class:"name-area",autocomplete:"off",placeholder:"20文字以内"%>
         </div>
             <div class="form-intro">
                 <%= f.fields_for :profile,@user.profile,class:"form-child" do |fin| %>

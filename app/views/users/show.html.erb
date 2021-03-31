@@ -71,9 +71,13 @@
                 <%= @user.nickname %>
               </div>
               <% if user_signed_in? && current_user.id == @user.id %>
+              　　　<%= link_to blogs_path(@user.blogs),class:"cal-btn" do%>
+                  <p>calendar</p>
+                 <% end %>
                   <%= link_to edit_user_path(@user.id),class:"edit-btn" do%>
                   <p>edit</p>
                   <% end %>
+
               <% end %>  
 
             </div>

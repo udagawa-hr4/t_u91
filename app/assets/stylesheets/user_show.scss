@@ -273,13 +273,48 @@ a{
           background-color: white;
           z-index: 10;
         }
+        & .cal-btn{
+          position: absolute;
+          right: 20%;
+          top: 50%;
+          width: 13%;
+          height: 50%;
+          background-color: rgb(0, 255, 179);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          padding-left: 1%;
+          transform: translateY(-50%);
+          text-shadow: 3px 3px 2px black;
+          box-shadow: 5px 5px 5px black;
+          color: white;
+          transition-duration: 0.5s;
+          z-index: 3;
+          &:hover{
+            color: black;
+            text-shadow: none;
+          }
+         
+          &::before{
+            content: "";
+            position: absolute;
+            width: 15px;
+            height: 15px;
+            border-radius: 7.5px;
+            box-shadow: 3px 3px 2px black inset;
+            background-color: white;
+            top: 50%;
+            left: 5%;
+            transform: translateY(-50%);
+          }
+        }
         & .edit-btn{
           position: absolute;
           right: 5%;
           top: 50%;
           width: 10%;
           height: 50%;
-          background-color: red;
+          background-color: rgb(255, 123, 0);
           display: flex;
           align-items: center;
           justify-content: center;
@@ -287,6 +322,11 @@ a{
           text-shadow: 3px 3px 2px black;
           box-shadow: 5px 5px 5px black;
           color: white;
+          transition-duration: 0.5s;
+          &:hover{
+            color: black;
+            text-shadow: none;
+          }
           &::before{
             content: "";
             position: absolute;
@@ -354,7 +394,7 @@ a{
           display: inline-block;
           width: 80%;
           height: 80%;
-          background-color: chocolate;
+          background-color: rgb(24, 159, 238);
           box-shadow: 5px 5px 5px black;
           font-size:20px;
           font-weight: 600;
@@ -366,6 +406,7 @@ a{
           line-height: 105%;
           overflow: scroll;
           text-shadow: 3px 3px 2px gray;
+          color: rgb(3, 15, 0);
           &::before{
             content: "";
             position: absolute;
@@ -441,10 +482,10 @@ a{
               overflow: hidden;
               
               &:nth-child(1){
-                background-color: rgb(255, 47, 64);
+                background-color: rgb(250, 60, 76);
               }
               &:nth-child(2){
-                background-color: rgb(10, 117, 240);
+                background-color: rgb(74, 152, 241);
               }
               &::before{
                 content: "";
@@ -468,6 +509,11 @@ a{
                 & a{
                   color: white;
                   text-shadow: 3px 3px 2px black;
+                  transition-duration: 0.5s;
+                  &:hover{
+                    text-shadow: none;
+                    color: black;
+                  }
                 }
 
                 &::before{

@@ -1042,7 +1042,7 @@ a {
 }
 
 .fusen:nth-child(8) {
-  background-color: #280555;
+  background-color: #0b3bda;
 }
 
 .fusen:nth-child(9) {
@@ -1064,6 +1064,13 @@ a {
   color: white;
   width: 12em;
   padding-left: 1em;
+  -webkit-transition-duration: 0.5s;
+          transition-duration: 0.5s;
+}
+
+.fusen .title-post:hover {
+  color: black;
+  text-shadow: none;
 }
 
 .fusen .nickname-post {
