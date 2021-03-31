@@ -10,8 +10,8 @@
     <%= stylesheet_link_tag 'blogs' %>
   <% end %>
 </head>
-<body>
-  <div class="calendar-all">
+<body class="calendar-all">
+  
     <nav class="top-nav">
       <%= link_to  root_path, class: "top-nav_left" do%>
       <span class="char-sub">T</span><span class="char-sub">o</span><span class="char-sub">p</span><span class="char-sub">&nbsp</span><span class="char-sub">P</span><span class="char-sub">a</span><span class="char-sub">g</span><span class="char-sub">e</span>
@@ -47,11 +47,6 @@
           <%= submit_tag 'Search', :title => nil, class:"search-btn" %>
           <% end %>
       </div>
- 
-   </div>
-  
-
-
 <%= javascript_pack_tag "calendar.js"%>
 </body>
 </html>
