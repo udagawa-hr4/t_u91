@@ -36,6 +36,10 @@
               <span class="char-sub">W</span><span class="char-sub">r</span><span class="char-sub">i</span><span class="char-sub">t</span><span class="char-sub">e</span><span class="char-sub">&nbsp</span><span class="char-sub">a</span><span class="char-sub">&nbsp</span><span class="char-sub">p</span><span class="char-sub">o</span><span class="char-sub">s</span><span class="char-sub">t</span>
             <% end %>
      </nav>
+     <div class='login-flash-message'>
+      <%= flash[:notice] %>
+      <%= flash[:alert] %>
+      </div>
   <div class="user-wrap">
     <p class="in-name">Log in</p>
     <div class="form-area_in">

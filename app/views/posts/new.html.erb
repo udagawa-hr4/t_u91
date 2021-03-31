@@ -37,14 +37,24 @@
           <% end %>
         </nav>
 
-      <% end %>   
+      <% end %> 
+      <div class="alert alert-danger">
+              <ul>
+              <% @post.errors.full_messages.each do |msg| %>
+                <li><%= msg %></li>
+              <% end %>
+              </ul>
+            </div>  
  <!--　一覧表示 -->  
    <div class="main-content">
     <section class="post-content">
       <p class="post-title"><span class="char-title">N</span><span class="char-title">e</span><span class="char-title">w</span><span class="char-title">&nbsp</span><span class="char-title">P</span><span class="char-title">o</span><span class="char-title">s</span><span class="char-title">t</span>
       
+            
         <div class ="form-post">
           <%= form_with model: @post, class: "form_all" ,local: true do |f| %>
+            <% if @post.errors.any? %>
+          <% end %>
             <div class = "form-title">
               <%= f.label :title,"Title",class:"title-label" %>
               <div class="fusen-all">

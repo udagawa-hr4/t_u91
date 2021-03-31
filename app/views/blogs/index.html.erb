@@ -41,12 +41,14 @@
       <% end %>
     <%# </div> %>
     
-  <div class="cl-search">
-      <%= form_tag(search_blogs_path, class:"search-group", :method => 'get') do %>
-      <%= text_field_tag :search, "", {class:"search-field"} %>
-      <%= submit_tag 'Search', :title => nil, class:"search-btn" %>
-      <% end %>
-  </div>
+      <div class="cl-search">
+          <%= form_tag(search_blogs_path, class:"search-group", :method => 'get') do %>
+          <%= text_field_tag :search, "", {class:"search-field"} %>
+          <%= submit_tag 'Search', :title => nil, class:"search-btn" %>
+          <% end %>
+      </div>
+ 
+   </div>
   
 
 

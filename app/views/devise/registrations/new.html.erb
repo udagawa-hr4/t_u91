@@ -36,19 +36,20 @@
               <span class="char-sub">W</span><span class="char-sub">r</span><span class="char-sub">i</span><span class="char-sub">t</span><span class="char-sub">e</span><span class="char-sub">&nbsp</span><span class="char-sub">a</span><span class="char-sub">&nbsp</span><span class="char-sub">p</span><span class="char-sub">o</span><span class="char-sub">s</span><span class="char-sub">t</span>
             <% end %>
      </nav>
+            <div class="error-message">
+              <%= render "devise/shared/error_messages", resource: resource %>
+            </div>
     <div class="user-wrap">
       <p class="up-name">Sign up</p>
       <div class="form-area">
         <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-            <div class="error-message">
-              <%= render "devise/shared/error_messages", resource: resource %>
-            </div>
+          
 
             <div class="name-content">
               <%= f.label :nickname, class: "name-label" %><br />
               <span class="fusen-name"></span>
               <span class="slide-span"></span>
-              <%= f.text_field :nickname, autofocus: true, autocomplete: "off", class:"name-field" %>
+              <%= f.text_field :nickname, autofocus: true, autocomplete: "off", class:"name-field",placeholder:"20文字以内" %>
             </div>
 
             <div class="email-content">
