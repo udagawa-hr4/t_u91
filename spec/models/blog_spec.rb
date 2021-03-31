@@ -18,10 +18,16 @@ RSpec.describe Blog, type: :model do
 
 
     context 'calendarに保存できない場合' do
-      it 'titleがないとitemは保存できない' do
+      it 'titleがないとCalendarは投稿できない' do
         @blog.title = nil
         @blog.valid?
         expect(@blog.errors.full_messages).to include("Title can't be blank")
+      end
+      it "ユーザーが紐付いていなければ投稿できない" do
+        @blog.user = nil
+        @blog.valid?
+        binding.pry
+        expect(@blog.errors.full_messages).to include("User must exist")
       end
     end
   end
