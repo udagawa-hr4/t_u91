@@ -26,7 +26,6 @@ RSpec.describe Blog, type: :model do
       it "ユーザーが紐付いていなければ投稿できない" do
         @blog.user = nil
         @blog.valid?
-        binding.pry
         expect(@blog.errors.full_messages).to include("User must exist")
       end
     end
