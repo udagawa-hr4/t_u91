@@ -140,7 +140,7 @@ a{
     &:hover{
       & .char-sub{
         display: inline-block;
-        @for $i from 1 through 10 {
+        @for $i from 1 through 15 {
         &:nth-child(#{$i}) {
             animation-delay: $i * 0.06s;
           }
@@ -161,7 +161,7 @@ a{
     &:hover{
       & .char-sub{
         display: inline-block;
-        @for $i from 1 through 10 {
+        @for $i from 1 through 15{
         &:nth-child(#{$i}) {
             animation-delay: $i * 0.06s;
           }
