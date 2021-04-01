@@ -11,6 +11,8 @@
   z-index: 1;
   margin: 0;
   overflow: hidden;
+
+  
   & .top-nav{
     z-index: 50;
     position: absolute;
@@ -128,6 +130,7 @@
       font-family: Georgia, 'Times New Roman', Times, serif;
       outline: none;
       box-shadow: 5px 5px 5px black;
+      text-shadow: 2px 2px 3px gray;
       opacity: 0.6;
       
     }
@@ -139,6 +142,8 @@
       font-family: Georgia, 'Times New Roman', Times, serif;
       cursor: pointer;
       background-color: rgba(172, 255, 47, 0.543);
+      transition-duration: 0.5s;
+      text-shadow: 2px 2px 3px gray;
       &:hover{
         box-shadow: none;
         
@@ -170,6 +175,9 @@ tbody {
   & tr{
     display: flex;
     width: 80vw;
+    & a{
+      text-shadow: 2px 2px 3px gray;
+    }
 
     & .day{
       display: flex;
@@ -215,8 +223,11 @@ thead {
     transform: translateX(-50%);
     & a {
       color: navy;
+      transition-duration: 0.5s;
+      text-shadow: 2px 2px 3px gray;
       &:hover {
         font-size: 1.5em;
+        text-shadow: none;
       }
     }
   }
@@ -224,11 +235,18 @@ thead {
   & .day {
     height: 11vh;
     overflow: scroll;
+    
     & a {
+      transition-duration: 0.7s;
       color: black;
+      line-height: 1.3em;
+      font-weight: 600;
+      text-decoration:none;
       &:hover {
-        color:blue;
+        color: white;
         font-size: 1.15em;
+        text-decoration: underline rgb(76, 75, 75) 2px;
+        
       }
     }
   }
@@ -334,7 +352,7 @@ thead {
     border: 5px solid black;
     position: relative;
     left: 50%;
-    top: 10vh;
+    top: 15vh;
 
     & .blog-form {
       display: flex;
@@ -343,9 +361,10 @@ thead {
       align-items: center;
       position: absolute;
       left: 50%;
-      top: 4%;
+      top: 2%;
       transform: translateX(-50%);
-      width: 88vh;
+      width: 50vw;
+      height: 70vh;
       
       & .blog-title {
         font-size: 30px;
@@ -400,6 +419,11 @@ thead {
             outline: none; 
             overflow: scroll;
             word-break: break-all;
+            text-shadow: 2px 2px 3px gray;
+            &::placeholder{
+              font-size: 14px;
+              text-shadow: 2px 2px 3px gray;
+            }
             
           }
         }
@@ -407,7 +431,7 @@ thead {
       
       & .blog-time {
         font-size: 30px;
-        height: 20%;
+        height: 18%;
         width: 100%;
         & .label-time {
           text-shadow: 5px 5px 5px grey;
@@ -532,32 +556,31 @@ thead {
           }
           & .field-content {
             height: 24vh;
-            width: 100%;
+            width: 95%;
             font-size: 25px;
             font-family: Georgia, 'Times New Roman', Times, serif;
             resize: none;
             background: linear-gradient(45deg, rgb(54, 53, 53), #3d3932 30%, #382d2a 60%, #2c3042);
             color: white;
-            padding-left: 5%;
+            padding-left: 7%;
             margin-bottom: 3vh;
             box-shadow: 5px 5px 5px black;
             outline: none;
+            text-shadow: 2px 2px 3px gray;
           }
         }
       }
     }
     & .blog-button {
-      margin-top: 3%;
-      border: 1px solid rgb(54, 53, 53);
-      background-color: rgb(54, 53, 53);
-      color: white;
-      padding: 10px 70px;
-      cursor: pointer;
+      
       position: relative;
-      box-shadow: 5px 5px 5px black;
-      animation: text-wrap 1s 6s both;
+      display: flex;
+      justify-content: center;
+      // animation: text-wrap 1s 6s both;
+      width: 100%;
+      height: 7%;
       &::before{
-        animation: img-wrap 1.5s  2.5s ease-in-out forwards;
+        animation: img-wrap 1.5s  4.5s ease-in-out forwards;
         background-color: rgb(203, 255, 239);
         bottom: 0;
         content: '';
@@ -571,26 +594,61 @@ thead {
         height: 150%;
         transform: translateX(-50%);  
       }
-      & .btn-span {
-        content:"";
-        position: absolute;
-        top: 50%;
-        left: 5%;
-        transform: translateY(-50%);
-        width: 15px;
-        height: 15px;
-        border-radius: 7.5px;
-        z-index: 40;
-        display: inline-block;
-        box-shadow: 3px 3px 2px black inset;
-        background-color: rgba(203, 255, 239, 0.8);;
-      }
+    
       & .blog-btn {
+            position: relative;
             text-shadow: 3px 3px 3px grey;
+            width: 20%;
+            height: 80%;
+            border: 1px solid rgb(54, 53, 53);
+            background-color: rgb(54, 53, 53);
+            color: white;
+            box-shadow: 5px 5px 5px black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            transition-duration: 0.5s;
+            z-index: 1;
+            overflow: hidden;
+            &::before{
+              
+                content:"";
+                position: absolute;
+                top: 50%;
+                left: 5%;
+                transform: translateY(-50%);
+                width: 15px;
+                height: 15px;
+                border-radius: 7.5px;
+                z-index: 40;
+                display: inline-block;
+                box-shadow: 3px 3px 2px black inset;
+                background-color: rgba(203, 255, 239, 0.8);;
+              
+            }
+          &::after{
+              content: "";
+              display: inline-block;
+              width: 100%;
+              height: 100%;
+              position: absolute;
+              top: 0;
+              left: 0;
+              z-index: -1;
+              transition-duration: 0.5s;
+
+          }
+          &:hover{
+            color: black;
+          }
+          &:hover::after{
+            background-color: rgb(60, 233, 161);
+            transform: rotate(-180deg) scale(2);
+          }
       }
       & #blog-submit {
         display: none;
-        font-size: 25px;
       }
     }
   }
@@ -599,10 +657,10 @@ thead {
 
 .diary-nik {
   position: absolute;
-  right: 10.8vw;
+  right: 10%;
   width: 12vh;
   height: 4vh;
-  top: 13.5vh;
+  top: 13.5%;
   color: black;
   background-color: rgba(235, 244, 60, 0.7);
   border: 4px double black;
@@ -614,6 +672,11 @@ thead {
   display: flex;
   justify-content: center;
   align-items: center;
+  text-shadow: 2px 2px 3px gray;
+  transition-duration: 0.5s;
+    &:hover{
+      text-shadow: none;
+    }
   
 }
 
@@ -715,6 +778,7 @@ thead {
           font-size: 40px;
           margin: 1vh 0 2vh 0;
           position: relative;
+          text-shadow: 2px 2px 3px rgb(179, 177, 177);
           &::before{
             animation: img-wrap 1.5s  1.5s ease-in-out forwards;
             background-color: rgb(203, 255, 239);
@@ -824,6 +888,7 @@ thead {
             word-break: break-all;
             font-size: 30px;
             padding-left: 1vh;
+            text-shadow: 2px 2px 3px rgb(179, 177, 177);
         }
       }
     }
@@ -891,18 +956,71 @@ thead {
             background: linear-gradient(45deg, rgb(54, 53, 53), #3d3932 30%, #382d2a 60%, #2c3042);
             color: white;
             font-family: Georgia, 'Times New Roman', Times, serif;
-            font-size: 30px;
+            font-size: 23px;
             box-shadow: 5px 5px 5px black;
             outline: none; 
             overflow: scroll;
             word-break: break-all;
             padding: 1vh 0 1vh 3.5vw;
+            text-shadow: 2px 2px 3px rgb(179, 177, 177);
           }
         }
       }
     }
   } 
 }
+.e-btn{
+  &::before{
+    content: "";
+    position: absolute;
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition-duration: 0.5s;
+  }
+  &:hover::before{
+    background-color: rgb(204, 158, 6);
+    transform: scale(2) rotate(-180deg);
+  }
+}
+.t-btn{
+  &::before{
+    content: "";
+    position: absolute;
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition-duration: 0.5s;
+  }
+  &:hover::before{
+    background-color: rgb(73, 236, 9);
+    transform: scale(2) rotate(-180deg);
+  }
+}
+.d-btn{
+  &::before{
+    content: "";
+    position: absolute;
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition-duration: 0.5s;
+  }
+  &:hover::before{
+    background-color: rgb(9, 153, 236);
+    transform: scale(2) rotate(-180deg);
+  }
+}
+
 .e-btn,.t-btn,.d-btn {
   position: relative;
   z-index: 1000;
@@ -923,12 +1041,17 @@ thead {
   animation-delay: 2s;
   opacity: 0;
   animation-fill-mode: both;
+  text-shadow: 2px 2px 3px rgb(179, 177, 177);
+  z-index: 2;
+  overflow: hidden;
+  
   &:hover {
     transition-duration: 0.5s;
     transform: skew(-20deg);
-    color: rgb(93, 246, 249);
+    color:black;
     box-shadow: 5px 5px 5px black;
   }
+  
   & span {
     display: inline-block;  
     animation-duration: 2s;
@@ -1064,6 +1187,7 @@ thead {
       margin-right: 2vw;
       & a {
         text-decoration: none;
+        transition-duration: 0.5s;
         &:hover {
           font-size: 1.2em;
           color: white;
@@ -1112,12 +1236,17 @@ thead {
   
   & .contents-header {
     font-family: Georgia, 'Times New Roman', Times, serif;
-    font-size: 2.5em;
+    font-size: 2.2em;
     display: flex;
-    padding-top: 10vh;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 15vh;
+    margin-left: 7vw;
     & .contents-title {
-      margin: 5vh 18vw 0 24vw;
-      display: inline-block;  
+      // margin: 5vh 18vw 0 24vw;
+      display: inline-block;
+      text-shadow: 2px 2px 3px gray;
+      font-weight: 600;  
       
       & span{
         display: inline-block;
@@ -1129,8 +1258,8 @@ thead {
       } 
     }
     & .contents-content {
-      margin-top: 5vh;
-      margin-right: 17vw;
+      text-shadow: 2px 2px 3px gray;
+      font-weight: 600;
       & span{
         display: inline-block;
         animation-duration: 2s;
@@ -1141,7 +1270,8 @@ thead {
       } 
     }
     & .contents-time {
-      margin-top: 5vh;
+      text-shadow: 2px 2px 3px gray;
+      font-weight: 600;
       & span{
         display: inline-block;
         animation-duration: 2.5s;
@@ -1175,17 +1305,33 @@ thead {
   & .s-lists {
     border-radius: 5px;
     width: 80%;
-    height: 70%;
+    height: 50%;
     margin: 1em auto;
     font-size: 1.5em;
+    padding-top: 4px;
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
+    align-items: center;
     list-style: circle;
-    background-color: #d8ff00ad;
     position: relative;
     animation: kf-open 2s 1.5s ease-in-out both;
     opacity: 0;
+    text-shadow: 2px 2px 3px gray;
     box-shadow: 5px 5px 5px black;
+    letter-spacing: 0.1em;
+    &:nth-child(1){
+      background-color: #d8ff00ad;
+    }
+    &:nth-child(2){
+      background-color: #054ba7ad;
+    }
+    &:nth-child(3){
+       background-color: #7903bdad;
+    }
+    &:nth-child(4){
+      background-color: #ff8800ad;
+    }
+    
 
     &::before {
       content:"";
@@ -1199,45 +1345,50 @@ thead {
         z-index: 20;
         display: inline-block;
         box-shadow: 3px 3px 2px black inset;
-        background-image: linear-gradient(45deg, rgba(159, 187, 106, 0.3) 50%, rgba(60, 231, 244, 0.7) 50%);background-color: rgba(203, 255, 239, 0.8);
+        background-color: white;
     }
 
     & .s-title {
-      text-align: center;
       height: 15vh;
-      width: 30%;
-      padding-left: 3%;
+      width: 20%;
+      padding-left: 5%;
       margin-right: 3vh;
-      display: inline-block;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       overflow-x: scroll;
-      position: relative;
+      text-shadow: 2px 2px 3px gray;
+      font-weight: 600;
       
-      
-      &:hover {
-        font-size: 1.2em;
-        color: white;
-      }
       & .b-title{
         color: black;
+        transition-duration: 0.5s;
         
         &:hover {
           color: blue;
+          font-size: 1.2em;
+          
         }
       }
     }
     & .s-content {
-      text-align: center;
+      display: flex;
+      justify-content: flex-start;
+      align-items: flex-start;
       height: 15vh;
-      width: 30%;
-      margin-right: 3vh;
-      display: inline-block;
-      overflow-y: scroll;
+      width: 50%;
+      overflow: scroll;
+      border-left: 2px dotted rgb(88, 87, 87);
+      padding-left: 2em;
+      word-break: break-all;
     }
     & .s-time {
-      text-align: center;
       height:  15vh;
-      width: 30%;
-      display: inline-block;
+      width: 20%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-left: 2px dotted rgb(88, 87, 87);
     }
   }
 }
