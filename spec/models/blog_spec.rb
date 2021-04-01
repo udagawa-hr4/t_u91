@@ -8,7 +8,7 @@ RSpec.describe Blog, type: :model do
   
   describe 'Calendarの保存' do
     context 'Calendarに投稿出来る場合' do
-      it 'text,contentがある場合投稿できる' do
+      it 'title,contentがある場合投稿できる' do
         expect(@blog).to be_valid
       end
       it 'contentがなくてもtextがあれば投稿出来る' do
@@ -22,12 +22,12 @@ RSpec.describe Blog, type: :model do
       it 'titleがないとCalendarは投稿できない' do
         @blog.title = nil
         @blog.valid?
-        expect(@blog.errors.full_messages).to include("Title can't be blank")
+        expect(@blog.errors.full_messages).to include("Titleを入力してください")
       end
       it "ユーザーが紐付いていなければ投稿できない" do
         @blog.user = nil
         @blog.valid?
-        expect(@blog.errors.full_messages).to include("User must exist")
+        expect(@blog.errors.full_messages).to include("Userを入力してください")
       end
     end
   end
