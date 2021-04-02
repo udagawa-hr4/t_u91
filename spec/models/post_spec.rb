@@ -3,7 +3,8 @@ require 'rails_helper'
 RSpec.describe Post, type: :model do
   before do
     user = FactoryBot.create(:user) 
-    @post = FactoryBot.build(:post, user_id: user.id)
+    @post = FactoryBot.create(:post, user_id: user.id)
+    # sleep 3
   end
   
   describe 'Tweetの保存' do
@@ -14,12 +15,12 @@ RSpec.describe Post, type: :model do
         expect(@post).to be_valid
       end
       it 'imageがなくてもtitle,textがあれば投稿出来る' do
+        @post.text = "テストテキスト"
         @post.image = nil
         @post.valid?
         expect(@post).to be_valid
       end
     end
-
 
     context 'Tweetが保存できない場合' do
       it 'titleがないとTweetは投稿できない' do
@@ -33,11 +34,11 @@ RSpec.describe Post, type: :model do
         expect(@post.errors.full_messages).to include("テキストを入力してください")
       end
       it 'textは1000文字以内でないと投稿できない' do
-        @post.text
+        @post.text= ("a" * 1001)
         @post.valid?
         expect(@post.errors.full_messages).to include("テキストは1000文字以内で入力してください")
       end
-      it 'titleが21文字以上でないとTweetは投稿できない' do
+      it 'titleが21文字以上だとTweetは投稿できない' do
         @post.title = "あいうえおかきくけこさしすせそたちつてとな"
         @post.valid?
         expect(@post.errors.full_messages).to include("タイトルは20文字以内で入力してください")

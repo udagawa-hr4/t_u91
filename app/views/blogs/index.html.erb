@@ -28,9 +28,7 @@
     
     <%= link_to new_blog_path, class:"diary-nik" do %>
       <p class="nik-span">Write a diary</p>
-
     <% end %> 
-    <%# <div class="calendar-index"> %>
       <%= month_calendar class:"calendar-index", events: @blogs do |date, blogs| %>
         <%= date.day %>
         <% blogs.each do |blog| %>
@@ -39,8 +37,7 @@
             </div>
         <% end %>
       <% end %>
-    <%# </div> %>
-    
+      
       <div class="cl-search">
           <%= form_tag(search_blogs_path, class:"search-group", :method => 'get') do %>
           <%= text_field_tag :search, "", {class:"search-field"} %>

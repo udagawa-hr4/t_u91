@@ -4,6 +4,7 @@ RSpec.describe Blog, type: :model do
   before do
     user = FactoryBot.create(:user) 
     @blog = FactoryBot.build(:blog, user_id: user.id)
+    # sleep 3
   end
   
   describe 'Calendarの保存' do
@@ -17,7 +18,6 @@ RSpec.describe Blog, type: :model do
       end
     end
 
-
     context 'calendarに保存できない場合' do
       it 'titleがないとCalendarは投稿できない' do
         @blog.title = nil
@@ -28,6 +28,11 @@ RSpec.describe Blog, type: :model do
         @blog.user = nil
         @blog.valid?
         expect(@blog.errors.full_messages).to include("Userを入力してください")
+      end
+      it 'titleが21文字以上だと投稿できない' do
+        @blog.title = "あいうえおかきくけこさしすせそたちつてとな"
+        @blog.valid?
+        expect(@blog.errors.full_messages).to include("Titleは20文字以内で入力してください")
       end
     end
   end

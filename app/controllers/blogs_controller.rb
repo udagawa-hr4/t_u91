@@ -1,4 +1,5 @@
 class BlogsController < ApplicationController
+  before_action :authenticate_user! 
 
   def index
     @blogs = current_user.blogs
@@ -10,6 +11,12 @@ class BlogsController < ApplicationController
 
   def show
     @blog = Blog.find(params[:id])
+    if @blog.user == current_user
+      render "show"
+    else
+      redirect_to blogs_path
+    end
+
   end
 
   def create
@@ -26,6 +33,11 @@ class BlogsController < ApplicationController
 
   def edit
     @blog = Blog.find(params[:id])
+    if @blog.user == current_user
+      render "edit"
+    else
+      redirect_to blogs_path
+    end
   end
 
   def update
@@ -38,7 +50,8 @@ class BlogsController < ApplicationController
   end
 
   def search
-    @blogs = Blog.search(params[:search]).paginate(page: params[:page], per_page: 4)
+    @blog = current_user.blogs
+    @blogs = @blog.search(params[:search]).includes(:user).order("created_at DESC").paginate(page: params[:page], per_page: 4)
   end
 
   private
@@ -46,5 +59,4 @@ class BlogsController < ApplicationController
   def blog_parameter
     params.require(:blog).permit(:title, :content, :start_time).merge(user_id: current_user.id)
   end
-
 end
