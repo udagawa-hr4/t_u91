@@ -10,22 +10,27 @@
   <% end %>
 </head>
 <body>
+<%# カレンダー編集機能の実装 %>
 <div class="calendar-all">
+<%# ヘッダーの実装 %>
   <nav class="top-nav">
+  <%# トップページに遷移 %>
     <%= link_to  root_path, class: "top-nav_left" do%>
     <span class="char-sub">T</span><span class="char-sub">o</span><span class="char-sub">p</span><span class="char-sub">&nbsp</span><span class="char-sub">P</span><span class="char-sub">a</span><span class="char-sub">g</span><span class="char-sub">e</span>
     <% end %>
+    <%# カレンダー一覧ページに遷移 %>
     <%= link_to  blogs_path, class: "top-nav_right" do%><span class="char-sub">B</span><span class="char-sub">a</span><span class="char-sub">c</span><span class="char-sub">k</span>
     <% end  %>
   </nav>
+  <%# 編集ページのタイトル %>
   <div class="new-blog">
     <h1 class="edit-title">
       <span>E</span><span>d</span><span>i</span><span>t</span><span>&nbsp</span><span>a</span><span>&nbsp</span><span>d</span><span>i</span><span>a</span><span>r</span><span>y</span>
      </h1>
-
+    <%# 編集ページのフォームの実装 %>
     <div class="blog-new">
       <%= form_with(model: @blog, local: true, class:"blog-form") do |form| %>
-      
+
       <div class="blog-title">
           <%= form.label :title, class:"label-title" %>
           <div class="title-style">
