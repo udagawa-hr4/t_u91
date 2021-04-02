@@ -66,3 +66,4 @@ gem 'will_paginate'
 gem 'bootstrap-will_paginate'
 gem 'jquery-rails'
 gem 'rails-i18n'
+gem "aws-sdk-s3", require: false
