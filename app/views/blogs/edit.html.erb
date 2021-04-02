@@ -22,6 +22,14 @@
     <%= link_to  blogs_path, class: "top-nav_right" do%><span class="char-sub">B</span><span class="char-sub">a</span><span class="char-sub">c</span><span class="char-sub">k</span>
     <% end  %>
   </nav>
+  <!--　エラー文表示エリア --> 
+             <div class="alert alert-danger">
+              <ul>
+              <% @blog.errors.full_messages.each do |msg| %>
+                <li><%= msg %></li>
+              <% end %>
+              </ul>
+            </div>  
   <%# 編集ページのタイトル %>
   <div class="new-blog">
     <h1 class="edit-title">
