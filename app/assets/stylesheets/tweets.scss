@@ -276,15 +276,78 @@ a{
      text-shadow: 0 0 10px gray;
      & .char-title{
        display: inline-block;
-       @for $i from 1 through 11 {
-         &:nth-child(#{$i}) {
-           animation-delay: $i * 0.06s;
-          }
-        }
-          animation-name: kf-title;
-          animation-duration: 2.5s;
-          animation-fill-mode: forwards;
-          animation-iteration-count: infinite;
+       opacity: 0;
+       &:nth-child(1){
+        animation-name: title-action1 ,kf-title;
+         animation-fill-mode: both,forwards;
+         animation-duration: 4s ,2.5s;
+         animation-iteration-count: 1 ,infinite;
+         animation-delay: 0s ,4s;
+       }
+       &:nth-child(2){
+        animation-name: title-action2,kf-title;
+         animation-fill-mode: both,forwards;
+         animation-duration: 4s ,2.5s;
+         animation-iteration-count: 1 ,infinite;
+         animation-delay: 0s ,4.04s;
+       }
+       &:nth-child(3){
+        animation-name: title-action3 ,kf-title;
+         animation-fill-mode: both,forwards;
+         animation-duration: 4s ,2.5s;
+         animation-iteration-count: 1 ,infinite;
+         animation-delay: 0s ,4.08s;
+       }
+       &:nth-child(4){
+        animation-name: title-action4,kf-title;
+         animation-fill-mode: both,forwards;
+         animation-duration: 4s ,2.5s;
+         animation-iteration-count: 1 ,infinite;
+         animation-delay: 0s ,4.12s;
+       }
+       &:nth-child(5){
+        animation-name: title-action5 ,kf-title;
+         animation-fill-mode: both,forwards;
+         animation-duration: 4s ,2.5s;
+         animation-iteration-count: 1 ,infinite;
+         animation-delay: 0s ,4.16s;
+       }
+       &:nth-child(6){
+        animation-name: title-action6 ,kf-title;
+         animation-fill-mode: both,forwards;
+         animation-duration: 4s ,2.5s;
+         animation-iteration-count: 1 ,infinite;
+         animation-delay: 0s ,4.20s;
+       }
+       
+       &:nth-child(8){
+        animation-name: title-action8 ,kf-title;
+        animation-fill-mode: both,forwards;
+        animation-duration: 4s ,2.5s;
+        animation-iteration-count: 1 ,infinite;
+        animation-delay: 0s ,4.28s;
+       }
+       &:nth-child(9){
+        animation-name: title-action9 ,kf-title;
+         animation-fill-mode: both,forwards;
+         animation-duration: 4s ,2.5s;
+         animation-iteration-count: 1 ,infinite;
+         animation-delay: 0s ,4.32s;
+       }
+       &:nth-child(10){
+        animation-name: title-action10 ,kf-title;
+         animation-fill-mode: both,forwards;
+         animation-duration: 4s ,2.5s;
+         animation-iteration-count: 1 ,infinite;
+         animation-delay: 0s ,4.36s;
+       }
+       &:nth-child(11){
+        animation-name: title-action11 ,kf-title;
+         animation-fill-mode: both,forwards;
+         animation-duration: 4s ,2.5s;
+         animation-iteration-count: 1 ,infinite;
+         animation-delay: 0s ,4.4s;
+       }
      }
 
      
@@ -409,6 +472,355 @@ a{
   20%{
     color: black;
     transform: scale(1);
+  }
+  80%{
+    transform: translate(0,0);
+    opacity: 1;
+  }
+  
+}
+@keyframes title-action1{
+  9%{
+    transform:translate(300% ,-200%);
+    opacity: 0;
+  }
+  19%,45%{
+    transform:translate(300% ,0) ;
+    color: lime;
+    opacity: 1;
+  }
+  53%{
+    transform: translate(440%,-100%);
+  }
+  62%{
+    transform: translate(440%,-100%);
+     opacity: 1;
+  }
+  76%{
+    transform: translate(0,0);
+    opacity: 1;
+    color: lime;
+  }
+  77%{
+    transform: translate(0,0);
+    opacity: 1;
+    color: lime;
+  }
+  78%{
+    transform: scale(1.2);
+    color: black;
+  }
+  100%{
+    opacity: 1;
+  }
+}
+@keyframes title-action2{
+  18%{
+    transform:translate(380% ,-200%) ;
+    opacity: 0;
+  }
+  28%,45%{
+    transform:translate(380% ,0) ;
+    color: lime;
+    opacity: 1;
+  }
+  53%{
+    transform: translate(260%,-100%);
+  }
+  62%{
+    transform: translate(260%,-100%);
+    opacity: 1;
+  }
+  76%{
+    transform: translate(0,0);
+    opacity: 1;
+    color: lime;
+  }
+  79%{
+    transform: translate(0,0);
+    opacity: 1;
+    color: lime;
+  }
+  80%{
+    transform: scale(1.2);
+    color: black;
+  }
+  100%{
+    opacity: 1;
+  }
+}
+@keyframes title-action3{
+  15%{
+    transform:translate(280% ,-200%);
+    opacity: 0;
+  }
+  25%,45%{
+    transform:translate(280% ,0) ;
+    color: lime;
+    opacity: 1;
+  }
+  53%{
+    transform: translate(260%,-100%);
+  }
+  62%{
+    transform: translate(260%,-100%);
+    opacity: 1;
+  }
+  76%{
+    transform: translate(0,0);
+    opacity: 1;
+    color: lime;
+  }
+  81%{
+    transform: translate(0,0);
+    opacity: 1;
+    color: lime;
+  }
+  82%{
+    transform: scale(1.2);
+    color: black;
+  }
+  100%{
+    opacity: 1;
+  }
+}
+@keyframes title-action4{
+  24%{
+    transform:translate(550% ,-200%);
+    opacity: 0;
+  }
+  34%,45%{
+    transform:translate(550% ,0);
+    color: lime;
+    opacity: 1;
+  }
+  53%{
+    transform: translate(170%,-100%);
+  }
+  62%{
+    transform: translate(170%,-100%);
+    opacity: 1;
+  }
+  76%{
+    transform: translate(0,0);
+    opacity: 1;
+  }
+  83%{
+    transform: translate(0,0);
+    opacity: 1;
+    color: lime;
+  }
+  84%{
+    transform: scale(1.2);
+    color: black;
+  }
+  100%{
+    opacity: 1;
+  }
+}
+@keyframes title-action5{
+  21%{
+    transform:translate(545% ,-200%);
+    opacity: 0;
+  }
+  31%,45%{
+    transform:translate(545% ,0);
+    color: lime;
+    opacity: 1;
+  }
+  53%{
+    transform: translate(110%,-100%);
+  }
+  62%{
+    transform: translate(110%,-100%);
+    opacity: 1;
+  }
+  76%{
+    transform: translate(0,0);
+    opacity: 1;
+  }
+  85%{
+    transform: translate(0,0);
+    opacity: 1;
+    color: lime;
+  }
+  86%{
+    transform: scale(1.2);
+    color: black;
+  }
+  100%{
+    opacity: 1;
+  }
+}
+@keyframes title-action6{
+  27%{
+    transform:translate(540% ,-200%);
+    opacity: 0;
+  }
+  37%,45%{
+    transform:translate(540% ,0);
+    color: lime;
+    opacity: 1;
+  }
+  53%{
+    transform: translate(10%,-100%);
+  }
+  62%{
+    transform: translate(10%,-100%);
+    opacity: 1;
+  }
+  76%{
+    transform: translate(0,0);
+    opacity: 1;
+  }
+  87%{
+    transform: translate(0,0);
+    opacity: 1;
+    color: lime;
+  }
+  88%{
+    transform: scale(1.2);
+    color: black;
+  }
+  100%{
+    opacity: 1;
+  }
+}
+
+@keyframes title-action8{
+  3%{
+    transform:translate(-430% ,-200%);
+    opacity: 0;
+  }
+  13%,45%{
+    transform:translate(-430% ,0);
+    color: lime;
+    opacity: 1;
+  }
+  53%{
+    transform: translate(-110%,-100%);
+  }
+  62%{
+    transform: translate(-110%,-100%);
+    opacity: 1;
+  }
+  76%{
+    transform: translate(0,0);
+    opacity: 1;
+  }
+  89%{
+    transform: translate(0,0);
+    opacity: 1;
+    color: lime;
+  }
+  90%{
+    transform: scale(1.2);
+    color: black;
+  }
+  100%{
+    opacity: 1;
+  }
+}
+@keyframes title-action9{
+  12%{
+    transform:translate(-500% ,-200%);
+    opacity: 0;
+  }
+  22%,45%{
+    transform:translate(-500% ,0);
+    color: lime;
+    opacity: 1;
+  }
+  53%{
+    transform: translate(-390%,-100%);
+  }
+  62%{
+    transform: translate(-390%,-100%);
+    opacity: 1;
+  }
+  76%{
+    transform: translate(0,0);
+    opacity: 1;
+  }
+  91%{
+    transform: translate(0,0);
+    opacity: 1;
+    color: lime;
+  }
+  92%{
+    transform: scale(1.2);
+    color: black;
+  }
+  100%{
+    opacity: 1;
+  }
+}
+@keyframes title-action10{
+  0%{
+    transform:translate(-880% ,-200%);
+    opacity: 0;
+  }
+  10%,45%{
+    transform:translate(-880% ,0);
+    color: lime;
+    opacity: 1;
+  }
+  53%{
+    transform: translate(-340%,-100%);
+  }
+  62%{
+    transform: translate(-340%,-100%);
+    opacity: 1;
+  }
+  76%{
+    transform: translate(0,0);
+    opacity: 1;
+  }
+  93%{
+    transform: translate(0,0);
+    opacity: 1;
+    color: lime;
+  }
+  94%{
+    transform: scale(1.2);
+    color: black;
+  }
+  100%{
+    opacity: 1;
+  }
+}
+@keyframes title-action11{
+  6%{
+    transform:translate(-950% ,-200%);
+    opacity: 0;
+  }
+  16%,45%{
+    transform:translate(-950% ,0);
+    color: lime;
+    opacity: 1;
+  }
+  53%{
+    transform: translate(-550%,-100%);
+  }
+  62%{
+    transform: translate(-550%,-100%);
+    opacity: 1;
+  }
+  76%{
+    transform: translate(0,0);
+    opacity: 1;
+  }
+  95%{
+    transform: translate(0,0);
+    opacity: 1;
+    color: lime;
+  }
+  96%{
+    transform: scale(1.2);
+    color: black;
+  }
+  100%{
+    opacity: 1;
   }
 }
 @keyframes bg-img{

@@ -23,7 +23,7 @@ Rails.application.routes.draw do
       get 'search'
      
     end
-    resources :comments, only: :create
+    resources :comments, only: [:create,:update,:destroy,:edit]
   end
 
 

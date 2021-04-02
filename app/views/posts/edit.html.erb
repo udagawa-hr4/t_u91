@@ -5,7 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <% content_for :css do %>
-    <%= stylesheet_link_tag 'new' %>
+    <%= stylesheet_link_tag 'new','edit' %>
   <% end %>
   <title>Document</title>
 </head>
@@ -31,7 +31,7 @@
           <% end  %>
         </nav>
         <nav class= "bottom-nav">
-          <%= link_to  :back, class: "bottom-nav_left" do%><span class="char-sub">B</span><span class="char-sub">a</span><span class="char-sub">c</span><span class="char-sub">k</span></a>
+          <%= link_to  user_path(current_user.id), class: "bottom-nav_left" do%><span class="char-sub">M</span><span class="char-sub">y</span><span class="char-sub">&nbsp</span><span class="char-sub">p</span><span class="char-sub">a</span><span class="char-sub">g</span><span class="char-sub">e</span></a>
           <% end  %>
           <%= link_to tweets_posts_path,class:"bottom-nav_right" do%><span class="char-sub">T</span><span class="char-sub">w</span><span class="char-sub">e</span><span class="char-sub">e</span><span class="char-sub">t</span><span class="char-sub">s</span>&nbsp</span><span class="char-sub">l</span><span class="char-sub">i</span><span class="char-sub">s</span><span class="char-sub">t</span></a>
           <% end %>
@@ -48,7 +48,7 @@
  <!--　一覧表示 -->  
    <div class="main-content">
     <section class="post-content">
-      <p class="post-title"><span class="char-title">N</span><span class="char-title">e</span><span class="char-title">w</span><span class="char-title">&nbsp</span><span class="char-title">P</span><span class="char-title">o</span><span class="char-title">s</span><span class="char-title">t</span>
+      <p class="post-title"><span class="char-title">E</span><span class="char-title">d</span><span class="char-title">i</span><span class="char-title">t</span><span class="char-title">&nbsp</span><span class="char-title">P</span><span class="char-title">a</span><span class="char-title">g</span><span class="char-title">e</span>
       
             
         <div class ="form-post">
@@ -80,6 +80,10 @@
                <%= f.label "Tweet",for:"submit-btn",class:"btn-label" %> 
                <%= f.submit class:"submit-area",id:"submit-btn" %>
             </div>
+          <% end %>
+          <%= link_to post_path(@post),method: :delete,class:"delete-btn"  do%>
+            <span class="slide-del"></span>
+            <p>Delete</p>
           <% end %>
         </div>
      

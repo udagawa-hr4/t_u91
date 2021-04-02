@@ -195,6 +195,19 @@ li {
   text-shadow: none;
 }
 
+.all-content .main-content .list-content .form-content .tweet-field .link_us .link-user1 {
+  color: #012929;
+  -webkit-transition-duration: 0.5s;
+          transition-duration: 0.5s;
+  font-weight: 500;
+  font-size: 23px;
+}
+
+.all-content .main-content .list-content .form-content .tweet-field .link_us .link-user1:hover {
+  color: white;
+  text-shadow: none;
+}
+
 .all-content .main-content .list-content .form-content .tweet-field .link_us::before {
   content: "";
   position: absolute;
@@ -513,6 +526,38 @@ li {
 .all-content .main-content .list-content .comment-content .comments-list .tweets-list .com-li .com-all .link-name .user-name:hover {
   color: white;
   text-shadow: none;
+}
+
+.all-content .main-content .list-content .comment-content .comments-list .tweets-list .com-li .com-all .link-name .edit-com {
+  color: blue;
+  display: inline-block;
+  -webkit-transition-duration: 0.2s;
+          transition-duration: 0.2s;
+  font-size: 14px;
+}
+
+.all-content .main-content .list-content .comment-content .comments-list .tweets-list .com-li .com-all .link-name .edit-com:hover {
+  color: #f9fd05;
+  font-weight: 600;
+  text-shadow: 0px 0px 15px #070707;
+  -webkit-transform: scale(1.3);
+          transform: scale(1.3);
+}
+
+.all-content .main-content .list-content .comment-content .comments-list .tweets-list .com-li .com-all .link-name .delete-com {
+  color: blue;
+  display: inline-block;
+  -webkit-transition-duration: 0.2s;
+          transition-duration: 0.2s;
+  font-size: 14px;
+}
+
+.all-content .main-content .list-content .comment-content .comments-list .tweets-list .com-li .com-all .link-name .delete-com:hover {
+  color: #f9fd05;
+  font-weight: 600;
+  text-shadow: 0px 0px 15px #070707;
+  -webkit-transform: rotateZ(360deg) scale(1.3);
+          transform: rotateZ(360deg) scale(1.3);
 }
 
 .all-content .main-content .list-content .comment-content .comments-list .tweets-list .com-li .com-all .com-spn1 {
