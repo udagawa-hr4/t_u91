@@ -10,6 +10,7 @@
   <title>Document</title>
 </head>
 <body>
+<%# ログイン %>
   <div id="global-container">
   <!-- 背景のドット調coverの擬似要素 --> 
         <div class="bg-dot">
@@ -21,6 +22,7 @@
         <span class="bg-mypage"></span>
         <span class="bg-search"></span>
          <nav class="top-nav">
+         <%# ヘッダー %>
             <%= link_to  root_path, class: "top-nav_left" do%>
               <span class="char-sub">T</span><span class="char-sub">o</span><span class="char-sub">p</span><span class="char-sub">&nbsp</span><span class="char-sub">p</span><span class="char-sub">a</span><span class="char-sub">g</span><span class="char-sub">e</span>
             <% end %>
@@ -40,6 +42,7 @@
       <%= flash[:notice] %>
       <%= flash[:alert] %>
       </div>
+      <%# ログインフォーム %>
   <div class="user-wrap">
     <p class="in-name">Log in</p>
     <div class="form-area_in">
