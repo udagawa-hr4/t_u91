@@ -10,6 +10,7 @@
   <title>Document</title>
 </head>
 <body>
+<%# 新規登録 %>
   <div id="global-container">
       <!-- 背景のドット調coverの擬似要素 --> 
         <div class="bg-dot">
@@ -40,11 +41,11 @@
               <%= render "devise/shared/error_messages", resource: resource %>
             </div>
     <div class="user-wrap">
+    <%# タイトル %>
       <p class="up-name">Sign up</p>
+      <%# 投稿フォーム %>
       <div class="form-area">
         <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-          
-
             <div class="name-content">
               <%= f.label :nickname, class: "name-label" %><br />
               <span class="fusen-name"></span>
