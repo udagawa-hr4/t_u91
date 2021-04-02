@@ -5,6 +5,7 @@ class Blog < ApplicationRecord
   belongs_to :user
 
   def self.search(search)
+    
     if search
       Blog.where('title LIKE ? OR content LIKE ?', "%#{search}%","%#{search}%")
     else
