@@ -1,4 +1,3 @@
-// 新規登録画面
 body{
   font-family: Georgia, 'Times New Roman', Times, serif;
 }
@@ -13,6 +12,7 @@ body{
     display: none;
   }
 }
+//エラー文の表示_areaのstyle
 .error-message,.login-flash-message{
   position: absolute;
   left: 2%;
@@ -32,6 +32,7 @@ body{
 a{
   text-decoration: none;
 }
+//ドット調背景のstyle
 .bg-dot{
   position: relative;
   width: 100vw;
@@ -51,7 +52,7 @@ a{
     z-index: 0;
   }
 }
-
+//大枠のstyle
 #global-container{
   position: relative;
   width: 100vw;
@@ -65,12 +66,14 @@ a{
   justify-content: space-between;
   overflow: hidden;
   z-index: 1;
+  //contentsの大枠のstyle
   & .user-wrap{
     display: flex;
     position: relative;
     flex-direction: column;
     width: 50vw;
     height: 100vh;
+    //titleのstyle
       & .up-name{
         color: white;
         font-size: 50px;
@@ -81,6 +84,7 @@ a{
         transform: translateX(-50%);
         text-shadow: 0 0 10px gray;
       }
+      //白枠内のstyle
       & .form-area{
         width: 60vw;
         height: 70vh;
@@ -101,6 +105,7 @@ a{
           display: flex;
           align-items: center;
           flex-direction: column;
+        　//nick-name_areaのstyle
           & .name-content{
             position: relative;
             text-align: center;
@@ -155,6 +160,7 @@ a{
                 animation: bg-slide 1.5s 0.5s ease-in-out forwards;
               }
           }
+          //email_areaのstyle
           & .email-content{
             position: relative;
             text-align: center;
@@ -205,6 +211,7 @@ a{
                 animation: bg-slide 1.5s 2.3s ease-in-out forwards;
               }
           }
+          //password_areaのstyle
           & .pass-content-1{
             position: relative;
             text-align: center;
@@ -258,6 +265,7 @@ a{
                  
               }
          }
+         //confirmation_areaのstyle
          & .pass-content-2{
           position: relative;
           text-align: center;
@@ -309,6 +317,7 @@ a{
             }
             
          }
+         //ボタン要素のstyle
          & .user-actions{
            width: 100%;
            height: 10%;
@@ -383,8 +392,7 @@ a{
       }
     } 
   }
-  
-  
+  //右上ボタンにホバーした時のstyle
   & .bg-signin{
     content: "";
     position: absolute;
@@ -406,6 +414,7 @@ a{
     opacity: 1;
     }
   }
+  //左上ボタンにホバーした時のstyle
   & .bg-signup{
     content: "";
     position: absolute;
@@ -441,6 +450,7 @@ a{
 
   }
 }
+//上部header要素のstyle
 .top-nav{
   position: absolute;
   height: 100px;
@@ -578,6 +588,7 @@ a{
 
 
 
+//sign-in
 
 .user-wrap{
   & .in-name{
@@ -590,6 +601,7 @@ a{
     transform: translateX(-50%);
     text-shadow: 0 0 10px gray;
   }
+  //formの大枠のstyle
   & .form-area_in{
     width: 60vw;
     height: 50vh;
@@ -610,6 +622,7 @@ a{
       display: flex;
       align-items: center;
       flex-direction: column;
+      //email_areaのstyle
       & .email-content_in{
         position: relative;
         text-align: center;
@@ -659,6 +672,7 @@ a{
           animation: bg-slide 1.5s 0.5s ease-in-out forwards;
         }
       }
+      //password_areaのstyle
       & .pass-content_in{
         position: relative;
         text-align: center;
@@ -707,6 +721,7 @@ a{
           animation: bg-slide 1.5s 2.5s ease-in-out forwards;
         }
       }
+      //ボタン要素のstyle
       & .user-actions{
         width: 100%;
         height: 10%;

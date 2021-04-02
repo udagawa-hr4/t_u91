@@ -6,6 +6,7 @@ body{
 a{
   text-decoration: none;
 }
+//ドット調の背景のstyle
 .bg-dot{
   position: relative;
   width: 100vw;
@@ -26,6 +27,7 @@ a{
     z-index: 0;
   }
 }
+//viewの大枠のstyle
 #global-container{
   position: relative;
   width: 100vw;
@@ -39,6 +41,7 @@ a{
   justify-content: space-between;
   overflow: hidden;
   z-index: 10;
+  //右上ボタンにホバーした時の背景
   & .bg-signin{
     content: "";
     position: absolute;
@@ -60,6 +63,7 @@ a{
     opacity: 1;
     }
   }
+  //左上のボタンにホバーした時の背景のstyle
   & .bg-signup{
     content: "";
     position: absolute;
@@ -80,6 +84,7 @@ a{
       opacity: 1;
     }
   }
+  //左下のボタンにホバーした時のstyle
   & .bg-mypage{
     content: "";
     position: absolute;
@@ -121,6 +126,7 @@ a{
     }
   }
 }
+//header要素のstyle
 .top-nav{
   position: absolute;
   height: 100px;
@@ -172,6 +178,7 @@ a{
 
   }
 }
+//header要素のstyle
 .bottom-nav{
   position: absolute;
   top: 90%;
@@ -225,26 +232,24 @@ a{
     
   }
 }
+//contentsの大枠のstyle
 .main-content{
   position: absolute;
   top: 0;
   left: 50%;
   transform: translateX(-50%);
-  
-  
   & .edit-content{
     display: flex;
     position: relative;
     flex-direction: column;
     width: 50vw;
     height: 100vh;
+    //編集formのstyle
     & .edit-list{
       position: relative;
       width: 60vw;
       height: 70vh;
-      // background-color:rgba($color: white, $alpha: 0.7);
       background-size: cover;
-      
       border-radius: 20px;
       position: absolute;
       z-index: 5;
@@ -264,6 +269,7 @@ a{
         align-items: center;
         width: 100%;
         height: 100%;
+        //nick-name_areaのstyle
         & .form-name{
           position: relative;
           display: flex;
@@ -310,6 +316,7 @@ a{
              }
            
         }
+        //自己紹介文_areaのstyle
         & .form-intro{
           display: flex;
           flex-direction: column;
@@ -366,6 +373,7 @@ a{
             }
           
         }
+        //誕生日_areaのstyle
         & .form-birth{
           display: flex;
           flex-direction: column;
@@ -413,6 +421,7 @@ a{
             }
           }
         }
+        //ボタン_areaのstyle
         & .form-submit{
           position: relative;
            width: 15%;
@@ -471,6 +480,7 @@ a{
       
 
     }
+    //page-titleのstyle
     & .edit-title{
      font-size: 50px;
      font-weight: 600;

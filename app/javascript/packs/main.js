@@ -1,23 +1,3 @@
-// const img = document.querySelector(".container")
-// const cb = function(entries,observer){
-//   // img.classList.toggle("active")
-//   entries.forEach(entry=>{
-//     if(entry.isIntersecting){
-//       entry.target.classList.add("active")
-//       console.log("active")
-//     } else {
-//       entry.target.classList.remove("active")
-//       console.log("non-active")
-//     }
-//   });
-// }
-// const options = {
-//  root: null,
-//  rootMargin: "-200px 0px -200px 0px",
-//  threshold: 0
-// }
-// const io = new IntersectionObserver(cb, options)
-// io.observe(img)
 
 class LinkMenu {
   constructor() {

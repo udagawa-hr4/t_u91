@@ -56,9 +56,9 @@
             <% end %>
           </nav>
       <% end %>   
- <!--　一覧表示 -->  
+   
    <div class="main-content">
-
+<!--　タイトル -->
     <section class="tweets-content">
       <p class="tweets-title"><span class="char-title">S</span><span class="char-title">e</span><span class="char-title">a</span><span class="char-title">r</span><span class="char-title">c</span><span class="char-title">h</span><span class="char-title">&nbsp</span><span class="char-title">R</span><span class="char-title">e</span><span class="char-title">s</span><span class="char-title">u</span><span class="char-title">l</span><span class="char-title">t</span><span class="char-title">s</span></p>
       <ul class="tweets-list">
@@ -74,7 +74,7 @@
       <%= will_paginate @posts, :previous_label => ' &lt Back', :next_label => 'Next &gt' %>
       
       </ul>
-
+<!--　form -->
     <div class="search-form">
         <%= form_with  url:search_posts_path, class:"search-group", method: :get,local: true do |f| %>
         <%= f.text_field  :search,type: "text", class:"search-field",placeholder: "検索ワードを入力",autocomplete:"off" %>

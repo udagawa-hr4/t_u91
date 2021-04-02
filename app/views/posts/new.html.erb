@@ -38,6 +38,7 @@
         </nav>
 
       <% end %> 
+ <!--　エラー文表示エリア --> 
       <div class="alert alert-danger">
               <ul>
               <% @post.errors.full_messages.each do |msg| %>
@@ -45,12 +46,11 @@
               <% end %>
               </ul>
             </div>  
- <!--　一覧表示 -->  
+ <!--　タイトル -->  
    <div class="main-content">
     <section class="post-content">
-      <p class="post-title"><span class="char-title">N</span><span class="char-title">e</span><span class="char-title">w</span><span class="char-title">&nbsp</span><span class="char-title">P</span><span class="char-title">o</span><span class="char-title">s</span><span class="char-title">t</span>
-      
-            
+      <p class="post-title"><span class="char-title">N</span><span class="char-title">e</span><span class="char-title">w</span><span class="char-title">&nbsp</span><span class="char-title">P</span><span class="char-title">o</span><span class="char-title">s</span><span class="char-title">t</span> 
+ <!--　form -->   
         <div class ="form-post">
           <%= form_with model: @post, class: "form_all" ,local: true do |f| %>
             <% if @post.errors.any? %>

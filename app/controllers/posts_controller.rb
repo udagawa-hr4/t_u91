@@ -7,6 +7,7 @@ class PostsController < ApplicationController
     @post = Post.new
   end
   def create
+   
     @post = Post.new(post_params)
     if @post.save
       redirect_to action: :tweets
@@ -16,21 +17,24 @@ class PostsController < ApplicationController
   end
   
   def tweets
-    @posts = Post.paginate(page: params[:page], per_page: 8)
+    @posts = Post.includes(:user).order("created_at DESC").paginate(page: params[:page], per_page: 8)
     
   end
  
  
   def show
     @post = Post.find(params[:id])
-    @comments = @post.comments.includes(:user).paginate(page: params[:page], per_page: 2)
+    @comments = @post.comments.includes(:user).order("created_at DESC").paginate(page: params[:page], per_page: 2)
     @comment = Comment.new
   end
   def search
-    @posts = Post.search(params[:search]).paginate(page: params[:page], per_page: 8)
+    @posts = Post.search(params[:search]).includes(:user).order("created_at DESC").paginate(page: params[:page], per_page: 8)
   end
   def edit
-    @post = Post.find(params[:id])
+      @post = Post.find(params[:id])
+      unless user_signed_in? && current_user.id == @post.user.id
+        redirect_to root_path
+      end
   end
   def update
     @post = Post.find(params[:id])
@@ -43,8 +47,12 @@ class PostsController < ApplicationController
   def destroy
     @post = Post.find(params[:id])
     user = @post.user_id
-    @post.destroy
-    redirect_to controller: :users, action: :show, id: user
+    if user_signed_in? && current_user.id == @post.user.id
+     @post.destroy
+     redirect_to controller: :users, action: :show, id: user
+    else
+     redirect_to root_path
+    end
   end
 
   private

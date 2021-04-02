@@ -898,11 +898,19 @@ a {
   text-shadow: 3px 3px 2px black;
   -webkit-transition-duration: 0.5s;
           transition-duration: 0.5s;
+  width: 60%;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 .main-content .prof-content .form-content .post-content .post-list .post-ul .fusen-post .post-li a:hover {
   text-shadow: none;
   color: black;
+}
+
+.main-content .prof-content .form-content .post-content .post-list .post-ul .fusen-post .post-li .post-time {
+  font-size: 1px;
 }
 
 .main-content .prof-content .form-content .post-content .post-list .post-ul .fusen-post .post-li::before {

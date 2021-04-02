@@ -6,6 +6,7 @@ body{
 a{
   text-decoration: none;
 }
+//大枠のstyle
 #global-container{
   position: relative;
   width: 100vw;
@@ -19,6 +20,7 @@ a{
   justify-content: space-between;
   overflow: hidden;
   z-index: 10;
+  //title要素のstyle
   & .main-name{
     position: absolute;
     top: 50%;
@@ -30,20 +32,19 @@ a{
     transform: translate(-50%,-200%);
     & .char{
       transform: translate(-500px,0) scale(0);
-
       display: inline-block;
-     animation-name: slide;
-     animation-duration: 0.8s;
-     animation-fill-mode: forwards;
-     opacity: 0;
-     @for $i from 1 through 10 {
-      &:nth-child(#{$i}) {
-          animation-delay: $i * 0.04s;
+      animation-name: slide;
+      animation-duration: 0.8s;
+      animation-fill-mode: forwards;
+      opacity: 0;
+      @for $i from 1 through 10 {
+        &:nth-child(#{$i}) {
+            animation-delay: $i * 0.04s;
         }
       }
-    }
-    
+    }  
   }
+  //sub-titleのstyle
   & .sub-name{
     position: absolute;
     display: inline-block;
@@ -79,6 +80,7 @@ a{
     animation-fill-mode: both;
     
   }
+  //右上ボタンにホバーした時のstyle
   & .bg-signin{
     content: "";
     position: absolute;
@@ -100,6 +102,7 @@ a{
     opacity: 1;
     }
   }
+  //左上のボタンにホバーした時のstyle
   & .bg-signup{
     content: "";
     position: absolute;
@@ -120,6 +123,7 @@ a{
       opacity: 1;
     }
   }
+  //左下ボタンにホバーした時のstyle
   & .bg-mypage{
     content: "";
     position: absolute;
@@ -140,6 +144,7 @@ a{
       opacity: 1;
     }
   }
+  //右下ボタンにホバーした時のstyle
   & .bg-search{
     content: "";
     position: absolute;
@@ -161,6 +166,7 @@ a{
     }
   }
 }
+//上部header要素のstyle
 .top-nav{
   position: absolute;
   height: 100px;
@@ -211,6 +217,7 @@ a{
 
   }
 }
+//下部header要素のstyle
 .bottom-nav{
   position: absolute;
   top: 90%;

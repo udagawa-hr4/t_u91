@@ -68,15 +68,14 @@
       
        <% @posts.each do |post| %>
         <li class="fusen">
-          <%# <p class="test-p"><%= post.title %>
-         
           <%= link_to post_path(post.id),class:"title-post" do%>
           <%= post.title %>
           <% end %>
           
           <div class="nickname-post">
          
-          <%= post.created_at.strftime('%C%y-%m-%d %k:%M') %>
+              <%= post.created_at.strftime('%C%y-%m-%d %k:%M') %>
+          </div>
           
           
           
@@ -90,7 +89,7 @@
         <%= f.label "Search" ,for:"submit_btn",class:"btn_label"%>
         <%= f.submit 'Search',class:"search-btn",id:"submit_btn" %>
         <% end %>
-     </div>
+      </div>
     </section>
    </div>
    

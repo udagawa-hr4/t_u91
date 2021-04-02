@@ -26,13 +26,14 @@
     <span class="bg-signin"></span>
     <span class="bg-mypage"></span>
     <span class="bg-search"></span>
-        <!-- sign inしているときのボタン -->
+<!-- sign inしているときのボタン -->
      <% if user_signed_in? %> 
         <nav class="top-nav">
           <%= link_to  :back, class: "top-nav_left" do%>
           <span class="char-sub">B</span><span class="char-sub">a</span><span class="char-sub">c</span><span class="char-sub">k</span>
           <% end %>
-          <%= link_to destroy_user_session_path, method: :delete , class: "top-nav_right" do %><span class="char-sub">L</span><span class="char-sub">o</span><span class="char-sub">g</span><span class="char-sub">&nbsp</span><span class="char-sub">o</span><span class="char-sub">u</span><span class="char-sub">t</span>
+          <%= link_to  root_path, class: "top-nav_right" do%>
+          <span class="char-sub">T</span><span class="char-sub">o</span><span class="char-sub">p</span><span class="char-sub">&nbsp</span><span class="char-sub">p</span><span class="char-sub">a</span><span class="char-sub">g</span><span class="char-sub">e</span>
           <% end %>
         </nav>
         <nav class= "bottom-nav">
@@ -59,10 +60,11 @@
       <% end %>
           
        
- <!--　一覧表示 -->  
+ <!--　タイトル -->  
    <div class="all-content">
     <section class="main-content">
       <p class="main-title"><span class="char-title">D</span><span class="char-title">e</span><span class="char-title">t</span><span class="char-title">a</span><span class="char-title">i</span><span class="char-title">l</span><span class="char-title">s</span><span class="char-title">&nbsp</span><span class="char-title">p</span><span class="char-title">a</span><span class="char-title">g</span><span class="char-title">e</span>
+<!--　投稿表示_area -->
       <div class="list-content">
         <div class ="form-content">
           <div class= "img-field">
