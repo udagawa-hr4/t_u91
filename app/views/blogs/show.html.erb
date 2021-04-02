@@ -8,7 +8,6 @@
   <% content_for :css do %>
     <%= stylesheet_link_tag 'blogs' %>
   <% end %>
-  
 </head>
 <body>
   <div class="calendar-all"> 
@@ -19,7 +18,9 @@
       <%= link_to  user_path(current_user.id), class: "top-nav_right" do%><span class="char-sub">M</span><span class="char-sub">y</span><span class="char-sub">&nbsp</span><span class="char-sub">P</span><span class="char-sub">a</span><span class="char-sub">g</span><span class="char-sub">e</span>
       <% end  %>
     </nav>
+
   <%# カレンダー詳細 %>
+
     <div class="show-blog">
       <h1 class="show-header">
         <span class="char-title">S</span><span class="char-title">c</span><span class="char-title">h</span><span class="char-title">d</span><span class="char-title">e</span><span class="char-title">u</span><span class="char-title">l</span><span class="char-title">e</span>
@@ -53,7 +54,6 @@
                 </div>
             </div>
           </div>
-        
           <%= link_to edit_blog_path(@blog),class:"e-btn" do%>
             <div class="edit-path">
               <span>E</span><span>d</span><span>i</span><span>t</span>
