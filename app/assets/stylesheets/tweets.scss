@@ -6,6 +6,7 @@ body{
 a{
   text-decoration: none;
 }
+//ドット調の背景のstyle
 .bg-dot{
   position: relative;
   width: 100vw;
@@ -26,6 +27,7 @@ a{
     z-index: 0;
   }
 }
+//大枠のstyle
 #global-container{
   position: relative;
   width: 100vw;
@@ -39,6 +41,7 @@ a{
   justify-content: space-between;
   overflow: hidden;
   z-index: 10;
+  //右上ボタンにホバーした時のstyle
   & .bg-signin{
     content: "";
     position: absolute;
@@ -60,6 +63,7 @@ a{
     opacity: 1;
     }
   }
+  //左上ボタンにホバーした時のstyle
   & .bg-signup{
     content: "";
     position: absolute;
@@ -80,6 +84,7 @@ a{
       opacity: 1;
     }
   }
+  //左下ボタンにホバーした時のstyle
   & .bg-mypage{
     content: "";
     position: absolute;
@@ -100,6 +105,7 @@ a{
       opacity: 1;
     }
   }
+  //右下ボタンにホバーした時のstyle
   & .bg-search{
     content: "";
     position: absolute;
@@ -121,6 +127,7 @@ a{
     }
   }
 }
+//上部header要素のstyle
 .top-nav{
   position: absolute;
   height: 100px;
@@ -172,6 +179,7 @@ a{
 
   }
 }
+//下部header要素のstyle
 .bottom-nav{
   position: absolute;
   top: 90%;
@@ -225,26 +233,26 @@ a{
     
   }
 }
+//大枠のstyle
 .main-content{
   position: absolute;
   top: 0;
   left: 50%;
   transform: translateX(-50%);
   
-  
+  //main-contentsのstyle
   & .tweets-content{
     display: flex;
     position: relative;
     flex-direction: column;
     width: 50vw;
     height: 100vh;
+    //白枠内のstyle
     & .tweets-list{
       position: relative;
       width: 60vw;
       height: 70vh;
-      // background-color:rgba($color: white, $alpha: 0.7);
       background-size: cover;
-      
       border-radius: 20px;
       position: absolute;
       z-index: 5;
@@ -258,13 +266,8 @@ a{
       display: flex;
       flex-wrap: wrap;
       overflow: hidden;
-      
-
-      
-      
-      
-
     }
+    //titleのstyle
     & .tweets-title{
      font-size: 50px;
      font-weight: 600;
@@ -354,6 +357,209 @@ a{
     }
   }
 }
+//付箋調の背景のstyle
+.fusen{
+  position: relative;
+  animation: kf-lists 1s both;
+  width: 47%;
+  height: 14%;
+  top: 5%;
+  animation: kf-fusen 1s both;
+  @for $i from 1 through 11 {
+    &:nth-child(#{$i}) {
+      animation-delay: $i * 0.3s;
+     }
+   }
+
+  color: white;
+  font-size: 20px;
+  font-weight: 600;
+  box-shadow: 5px 5px 5px black;
+  list-style: none;
+  margin-left: 2%;
+  overflow: scroll;
+  word-break: break-all;
+  opacity: 0;
+
+  &:nth-child(1){
+    background-color: rgb(41, 165, 41);
+  } 
+  &:nth-child(2){
+    background-color: rgb(93, 80, 173);
+  }
+  &:nth-child(3){
+    background-color: rgb(85, 148, 148);
+  }
+  &:nth-child(4){
+    background-color: rgb(155, 5, 97);
+    
+  }
+  &:nth-child(5){
+    background-color: rgb(182, 6, 6);
+  }
+  &:nth-child(6){
+    background-color: rgb(179, 124, 5);
+  }
+  &:nth-child(7){
+    background-color: rgb(137, 8, 243);
+  }
+  
+  &:nth-child(8){
+    background-color: rgb(11, 59, 218);
+    
+  }
+  &:nth-child(9){
+    background-color: rgb(55, 240, 17);
+    
+  }
+  &:nth-child(10){
+    background-color: rgb(226, 212, 10);
+    
+  }
+  //付箋内投稿されたもののtitleのstyle
+  & .title-post{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    text-shadow: 3px 3px 2px black;
+    font-size: 20px;
+    color: white;
+    width: 12em;
+    padding-left: 1em;
+    transition-duration: 0.5s;
+    &:hover{
+      color: black;
+      text-shadow: none;
+    }
+
+    
+  }
+  
+  & .nickname-post{
+    position: absolute;
+    top: 100%;
+    right: 0;
+    transform: translate(-10%,-150%);
+    color: white;
+    font-size: 15px;
+  }
+  &::before{
+    content:"";
+    width: 20px;
+    height: 20px;
+    border-radius: 10px;
+    background-color: white;
+    display: inline-block;
+    position: absolute;
+    z-index: 10;
+    top: 50%;
+    left: 10%;
+    transform: translate(-50%,-50%);
+    box-shadow: 3px 3px 2px black inset;
+  }
+ }
+.pagination{
+  position: absolute;
+  right: 0;
+  bottom: 2%;
+  display: flex;
+  width: 100%;
+  height: 5%;
+  align-items: center;
+  justify-content: space-around;
+  list-style: none;
+  font-weight: 600;
+  & .next{
+    & a{
+      color: black;
+      font-family: Shippori Mincho;
+    }
+  }
+  & .prev{
+    & a{
+      color: rgb(54, 58, 2);
+      font-family: Shippori Mincho;
+      
+    }
+  }
+}
+.search-form{
+  position: absolute;
+  bottom: 3%;
+  left: 50%;
+  width: 100%;
+  height: 10%;
+  transform: translateX(-50%);
+  & .search-group{
+    margin-top: 2%;
+    height: 60%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    & .search-field{
+      width: 65%;
+      height: 100%;
+      outline: none;
+      padding-left: 2%;
+      font-size: 25px;
+      background: linear-gradient(45deg, rgb(54, 53, 53), #3d3932 30%, #382d2a 60%, #2c3042);
+      text-shadow: 3px 3px 2px gray;
+      box-shadow: 5px 5px 5px black;
+      border: none;
+      color: white;
+      &::placeholder{
+        font-size: 14px;
+        font-family: Georgia, 'Times New Roman', Times, serif;
+        text-shadow: 1px 1px 2px gray;
+      }
+    }
+    & .search-btn{
+      display: none;
+    }
+    & .btn_label{
+      display: inline-block;
+      height: 100%;
+      width: 15%;
+      position: relative;
+      top: 0%;
+      left: 2%;
+      font-weight: 600;
+      background-color: yellowgreen;
+      border: none;
+      text-shadow: 3px 3px 2px gray;
+      box-shadow: 5px 5px 5px black;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      outline: none;
+      cursor: pointer;
+      overflow: hidden;
+      transition-duration: 0.5s;
+      z-index: 2;
+      &:hover{
+        color: white;
+      }
+      &:hover::before{
+        background-color: rgb(3, 86, 141);
+        transform: rotate(-180deg) scale(2);
+      }
+      &::before{
+       content: "";
+       position: absolute;
+       display: inline-block;
+       width: 100%;
+       height: 100%;
+       top: 0;
+       left: 0;
+       z-index: -1;
+       transition-duration: 0.6s;
+      }
+    }
+    
+  }
+}
+
 @keyframes bg-img{
   0%{
     background-image: url(/assets/notebook-1280538_1280.jpg);
@@ -848,206 +1054,5 @@ a{
     transform: translateX(0%);
     opacity: 1;
 
-  }
-}
-.fusen{
-  position: relative;
-  animation: kf-lists 1s both;
-  width: 47%;
-  height: 14%;
-  top: 5%;
-
-  // background: linear-gradient(45deg, rgb(54, 53, 53), #3d3932 30%, #382d2a 60%, #2c3042);
-  animation: kf-fusen 1s both;
-  @for $i from 1 through 11 {
-    &:nth-child(#{$i}) {
-      animation-delay: $i * 0.3s;
-     }
-   }
-
-  color: white;
-  font-size: 20px;
-  font-weight: 600;
-  box-shadow: 5px 5px 5px black;
-  list-style: none;
-  margin-left: 2%;
-  overflow: scroll;
-  word-break: break-all;
-  opacity: 0;
-
-  &:nth-child(1){
-    background-color: rgb(41, 165, 41);
-  } 
-  &:nth-child(2){
-    background-color: rgb(93, 80, 173);
-  }
-  &:nth-child(3){
-    background-color: rgb(85, 148, 148);
-  }
-  &:nth-child(4){
-    background-color: rgb(155, 5, 97);
-    
-  }
-  &:nth-child(5){
-    background-color: rgb(182, 6, 6);
-  }
-  &:nth-child(6){
-    background-color: rgb(179, 124, 5);
-  }
-  &:nth-child(7){
-    background-color: rgb(137, 8, 243);
-  }
-  
-  &:nth-child(8){
-    background-color: rgb(11, 59, 218);
-    
-  }
-  &:nth-child(9){
-    background-color: rgb(55, 240, 17);
-    
-  }
-  &:nth-child(10){
-    background-color: rgb(226, 212, 10);
-    
-  }
-  & .title-post{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
-    text-shadow: 3px 3px 2px black;
-    font-size: 20px;
-    color: white;
-    width: 12em;
-    padding-left: 1em;
-    transition-duration: 0.5s;
-    &:hover{
-      color: black;
-      text-shadow: none;
-    }
-
-    
-  }
-  & .nickname-post{
-    position: absolute;
-    top: 100%;
-    right: 0;
-    transform: translate(-10%,-150%);
-    color: white;
-    font-size: 15px;
-  }
-  &::before{
-    content:"";
-    width: 20px;
-    height: 20px;
-    border-radius: 10px;
-    background-color: white;
-    display: inline-block;
-    position: absolute;
-    z-index: 10;
-    top: 50%;
-    left: 10%;
-    transform: translate(-50%,-50%);
-    box-shadow: 3px 3px 2px black inset;
-  }
- }
-.pagination{
-  position: absolute;
-  right: 0;
-  bottom: 2%;
-  display: flex;
-  width: 100%;
-  height: 5%;
-  align-items: center;
-  justify-content: space-around;
-  list-style: none;
-  font-weight: 600;
-  & .next{
-    & a{
-      color: black;
-      font-family: Shippori Mincho;
-    }
-  }
-  & .prev{
-    & a{
-      color: rgb(54, 58, 2);
-      font-family: Shippori Mincho;
-      
-    }
-  }
-}
-.search-form{
-  position: absolute;
-  bottom: 3%;
-  left: 50%;
-  width: 100%;
-  height: 10%;
-  transform: translateX(-50%);
-  & .search-group{
-    margin-top: 2%;
-    height: 60%;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    & .search-field{
-      width: 65%;
-      height: 100%;
-      outline: none;
-      padding-left: 2%;
-      font-size: 25px;
-      background: linear-gradient(45deg, rgb(54, 53, 53), #3d3932 30%, #382d2a 60%, #2c3042);
-      text-shadow: 3px 3px 2px gray;
-      box-shadow: 5px 5px 5px black;
-      border: none;
-      color: white;
-      &::placeholder{
-        font-size: 14px;
-        font-family: Georgia, 'Times New Roman', Times, serif;
-        text-shadow: 1px 1px 2px gray;
-      }
-    }
-    & .search-btn{
-      display: none;
-    }
-    & .btn_label{
-      display: inline-block;
-      height: 100%;
-      width: 15%;
-      position: relative;
-      top: 0%;
-      left: 2%;
-      font-weight: 600;
-      background-color: yellowgreen;
-      border: none;
-      text-shadow: 3px 3px 2px gray;
-      box-shadow: 5px 5px 5px black;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      outline: none;
-      cursor: pointer;
-      overflow: hidden;
-      transition-duration: 0.5s;
-      z-index: 2;
-      &:hover{
-        color: white;
-      }
-      &:hover::before{
-        background-color: rgb(3, 86, 141);
-        transform: rotate(-180deg) scale(2);
-      }
-      &::before{
-       content: "";
-       position: absolute;
-       display: inline-block;
-       width: 100%;
-       height: 100%;
-       top: 0;
-       left: 0;
-       z-index: -1;
-       transition-duration: 0.6s;
-      }
-    }
-    
   }
 }

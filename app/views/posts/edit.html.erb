@@ -45,12 +45,12 @@
               <% end %>
               </ul>
             </div>  
- <!--　一覧表示 -->  
+ <!--　タイトル　-->  
    <div class="main-content">
     <section class="post-content">
       <p class="post-title"><span class="char-title">E</span><span class="char-title">d</span><span class="char-title">i</span><span class="char-title">t</span><span class="char-title">&nbsp</span><span class="char-title">P</span><span class="char-title">a</span><span class="char-title">g</span><span class="char-title">e</span>
       
-            
+ <!--　form　--> 
         <div class ="form-post">
           <%= form_with model: @post, class: "form_all" ,local: true do |f| %>
             <% if @post.errors.any? %>

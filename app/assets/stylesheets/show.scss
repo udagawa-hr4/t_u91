@@ -9,6 +9,7 @@ li{
     display: none;
   }
 }
+//contentsの大枠のstyle
 .all-content{
   position: absolute;
   top: 0;
@@ -22,6 +23,7 @@ li{
     flex-direction: column;
     width: 50vw;
     height: 100vh;
+    //titleのstyle
     & .main-title{
       font-size: 50px;
       font-weight: 600;
@@ -46,6 +48,7 @@ li{
     
       
     }
+    //白枠内のstyle
     & .list-content{ 
         & .form-content{
           position: relative;
@@ -64,7 +67,7 @@ li{
           border: 10px solid black;
           display: flex;
           overflow: hidden;
-
+        //画像表示_areaのstyle
           & .img-field{
             position: absolute;
             height: 20vh;
@@ -72,7 +75,6 @@ li{
             background: linear-gradient(45deg, rgb(54, 53, 53), #3d3932 30%, #382d2a 60%, #2c3042);
             top: 10%;
             left: 3%;
-            
             & .img-tag{
               width: 100%;
               height: 100%;
@@ -84,10 +86,9 @@ li{
               left: 50%;
               transform: translate(-50%,-50%);
               font-size: 10px;
-
-            }
-            
+            }  
           }
+          //投稿されたtitle,text& editボタンのstyle
           & .tweet-field{
               & .link_us{
                 position: absolute;
@@ -149,7 +150,7 @@ li{
                 left: 21%;
                 animation: img-wrap2 3s  ease-in-out forwards;
               }
-            
+              //title要素のstyle
               & .tweet-title{
                 display: flex;
                 align-items: center;
@@ -199,6 +200,7 @@ li{
                 animation: img-wrap 1.5s ease-in-out forwards;
 
               }
+          //text要素のstyle
               & .tweet-text{
                 display: flex;
                 align-items: flex-start;
@@ -218,7 +220,6 @@ li{
                 
               }
               & .fusen-left1{
-                  
                   content: "";
                   width: 15px;
                   height: 15px;
@@ -251,10 +252,8 @@ li{
               
             }
         }
+        //コメント_areaのstyle
         & .comment-content{
-          
-          
-          
           & .comments-list{
             width: 55vw;
             height: 25vh;
@@ -436,6 +435,7 @@ li{
                 }
               }
           }
+        //コメント_areaのstyle
             & .form-comment{
               position: absolute;
               width: 100%;
@@ -446,7 +446,6 @@ li{
               & .with-all{
                 display: flex;
                 justify-content: space-between;
-                // align-items: center;
                 width: 100%;
                 height: 40%;
                   & .fusen-all_1{
