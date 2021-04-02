@@ -19,7 +19,7 @@
       <%= link_to  user_path(current_user.id), class: "top-nav_right" do%><span class="char-sub">M</span><span class="char-sub">y</span><span class="char-sub">&nbsp</span><span class="char-sub">P</span><span class="char-sub">a</span><span class="char-sub">g</span><span class="char-sub">e</span>
       <% end  %>
     </nav>
-
+  <%# カレンダー詳細 %>
     <div class="show-blog">
       <h1 class="show-header">
         <span class="char-title">S</span><span class="char-title">c</span><span class="char-title">h</span><span class="char-title">d</span><span class="char-title">e</span><span class="char-title">u</span><span class="char-title">l</span><span class="char-title">e</span>
@@ -62,6 +62,7 @@
           <%= link_to  blogs_path, class:"t-btn" do %>
             <span>B</span><span>a</span><span>c</span><span>k</span>
           <% end %>
+          <%# 削除機能 %>
           <%= link_to blog_path(@blog.id), class:"d-btn", method: :delete  do %>
             <span>D</span><span>e</span><span>l</span><span>e</span><span>t</span><span>e</span>
           <% end %>
