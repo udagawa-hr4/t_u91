@@ -29,7 +29,7 @@
 <!-- sign inしているときのボタン -->
      <% if user_signed_in? %> 
         <nav class="top-nav">
-          <%= link_to  :back, class: "top-nav_left" do%>
+          <%= link_to  'javascript:history.back()' , class: "top-nav_left" do%>
           <span class="char-sub">B</span><span class="char-sub">a</span><span class="char-sub">c</span><span class="char-sub">k</span>
           <% end %>
           <%= link_to  root_path, class: "top-nav_right" do%>

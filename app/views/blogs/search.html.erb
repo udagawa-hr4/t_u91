@@ -50,7 +50,7 @@
           <%= safe_join(blog.content.split("\n"),tag(:br)) %>
         </div>
           <div class="s-time">
-            <%= blog.created_at.strftime('%Y/%m/%d') %>
+            <%= blog.start_time.strftime('%Y/%m/%d') %>
           </div>
         </li>
       <% end %>
