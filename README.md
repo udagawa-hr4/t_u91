@@ -12,6 +12,10 @@
 ### URL 
 - https://job-start.herokuapp.com
 
+### ベージック認証
+- ユーザー名: ut91
+- パスワード: 1234
+
 ### テストアカウント
 - Email: test@test
 - password: qwe123
@@ -60,7 +64,6 @@
 
 # ER図
 ## テーブル設計
-
 ## users テーブル
 
 | Column   | Type   | Options     |
@@ -130,13 +133,13 @@
 
 ## profile テーブル
 
-| Column       | Type      | Options                         |
-| ------------ | --------- | ------------------------------- |
-| first_name   | string    | null:false                      |
-| family_name  | string    | null:false                      |
-| phone_number | integer   | null:false                      |
-| birthday     | date      |                                 |
-| introduction | text      | null:false                      |
+| Column       | Type       | Options                        |
+| ------------ | ---------- | ------------------------------ |
+| first_name   | string     | null:false                     |
+| family_name  | string     | null:false                     |
+| phone_number | integer    | null:false                     |
+| birthday     | date       |                                |
+| introduction | text       | null:false                     |
 | user         | references | null: false, foreign_key: true |
 
 ### Association
@@ -148,4 +151,5 @@
 
 # ページ遷移図
 
+![ページ遷移図](jobstart.jpg)
 
