@@ -84,8 +84,10 @@
             </div>
             <div class="text-content">
               <div class="fusen-text">
-               <% if @user.profile && @user.profile.introduction != NULL %>
+               <% unless @user.profile.introduction.empty? && @user.profile.introduction != NULL %>
                <%= safe_join(@user.profile.introduction.split("\n"),tag(:br)) %>
+               <% else %>
+               <p>自己紹介</p>
                <% end %>
               </div>
             </div>
