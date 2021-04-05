@@ -84,7 +84,7 @@
             </div>
             <div class="text-content">
               <div class="fusen-text">
-               <% if @user.profile.present? %>
+               <% if @user.profile.present? && @user.profile.introduction != NULL %>
                <%= safe_join(@user.profile.introduction.split("\n"),tag(:br)) %>
                <% end %>
               </div>
