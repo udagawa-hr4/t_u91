@@ -28,7 +28,7 @@ class PostsController < ApplicationController
     @comment = Comment.new
   end
   def search
-    @posts = Post.search(params[:search]).includes(:user).order("created_at DESC").paginate(page: params[:page], per_page: 8)
+    @posts = Post.search(params[:search]).includes(:user).order("posts.created_at DESC").paginate(page: params[:page], per_page: 8)
   end
   def edit
       @post = Post.find(params[:id])

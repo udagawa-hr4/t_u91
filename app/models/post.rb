@@ -8,7 +8,7 @@ class Post < ApplicationRecord
   validate :image
   def self.search(search)
     if search
-      Post.where(['text LIKE(?)OR title  LIKE(?)', "%#{search}%","%#{search}%"])
+      Post.joins(:user).where(['text LIKE(?)OR title  LIKE(?)OR nickname LIKE(?)', "%#{search}%","%#{search}%","%#{search}%"])
     else
       Post.all
     end
